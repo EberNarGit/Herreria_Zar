@@ -21,3 +21,27 @@ C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.Usuari
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.Empleados.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.Respaldo.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.Clientes.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\bin\Debug\HerreriaZar.exe.config
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\bin\Debug\HerreriaZar.exe
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\bin\Debug\HerreriaZar.pdb
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\bin\Debug\HerreriaZar.xml
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.vbprojAssemblyReference.cache
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.AñadirProducto.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.CatalogoDeProductos.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.Clientes.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.LogIn.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.MenuPrincipal.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.Resources.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.Pagos.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.Pedidos.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.ReporteVentas.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.Respaldo.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.Usuario.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.Empleados.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.VentaEspecifica.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.VentaG.resources
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.vbproj.GenerateResource.cache
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.vbproj.CoreCompileInputs.cache
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.exe
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.xml
+C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.pdb
