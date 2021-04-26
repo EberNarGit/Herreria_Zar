@@ -1,4 +1,4 @@
-﻿Public Class en
+﻿Public Class Clientes
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub

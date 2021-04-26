@@ -24,15 +24,15 @@ Partial Class MenuPrincipal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuPrincipal))
         Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.ButtonReporte = New System.Windows.Forms.Button()
+        Me.ButtonPedidos = New System.Windows.Forms.Button()
         Me.ButtonCatálogo = New System.Windows.Forms.Button()
         Me.ButtonPagos = New System.Windows.Forms.Button()
         Me.ButtonVentas = New System.Windows.Forms.Button()
         Me.ButtonUsuarios = New System.Windows.Forms.Button()
         Me.LabelVentaEspe = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ButtonProfile = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'VScrollBar1
@@ -42,37 +42,37 @@ Partial Class MenuPrincipal
         Me.VScrollBar1.Size = New System.Drawing.Size(22, 432)
         Me.VScrollBar1.TabIndex = 4
         '
-        'Button5
+        'ButtonReporte
         '
-        Me.Button5.BackColor = System.Drawing.Color.White
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(529, 279)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(122, 108)
-        Me.Button5.TabIndex = 14
-        Me.Button5.Text = "  Reporte "
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.ButtonReporte.BackColor = System.Drawing.Color.White
+        Me.ButtonReporte.FlatAppearance.BorderSize = 0
+        Me.ButtonReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonReporte.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonReporte.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.ButtonReporte.Image = CType(resources.GetObject("ButtonReporte.Image"), System.Drawing.Image)
+        Me.ButtonReporte.Location = New System.Drawing.Point(529, 279)
+        Me.ButtonReporte.Name = "ButtonReporte"
+        Me.ButtonReporte.Size = New System.Drawing.Size(122, 108)
+        Me.ButtonReporte.TabIndex = 14
+        Me.ButtonReporte.Text = "  Reporte "
+        Me.ButtonReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ButtonReporte.UseVisualStyleBackColor = False
         '
-        'Button3
+        'ButtonPedidos
         '
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(60, 279)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(122, 108)
-        Me.Button3.TabIndex = 16
-        Me.Button3.Text = "Pedidos"
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.ButtonPedidos.BackColor = System.Drawing.Color.White
+        Me.ButtonPedidos.FlatAppearance.BorderSize = 0
+        Me.ButtonPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonPedidos.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPedidos.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.ButtonPedidos.Image = CType(resources.GetObject("ButtonPedidos.Image"), System.Drawing.Image)
+        Me.ButtonPedidos.Location = New System.Drawing.Point(60, 279)
+        Me.ButtonPedidos.Name = "ButtonPedidos"
+        Me.ButtonPedidos.Size = New System.Drawing.Size(122, 108)
+        Me.ButtonPedidos.TabIndex = 16
+        Me.ButtonPedidos.Text = "Pedidos"
+        Me.ButtonPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ButtonPedidos.UseVisualStyleBackColor = False
         '
         'ButtonCatálogo
         '
@@ -160,17 +160,17 @@ Partial Class MenuPrincipal
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "User"
         '
-        'Button2
+        'ButtonProfile
         '
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(665, 12)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(41, 39)
-        Me.Button2.TabIndex = 2
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ButtonProfile.FlatAppearance.BorderSize = 0
+        Me.ButtonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonProfile.ForeColor = System.Drawing.SystemColors.Control
+        Me.ButtonProfile.Image = CType(resources.GetObject("ButtonProfile.Image"), System.Drawing.Image)
+        Me.ButtonProfile.Location = New System.Drawing.Point(665, 12)
+        Me.ButtonProfile.Name = "ButtonProfile"
+        Me.ButtonProfile.Size = New System.Drawing.Size(41, 39)
+        Me.ButtonProfile.TabIndex = 2
+        Me.ButtonProfile.UseVisualStyleBackColor = True
         '
         'MenuPrincipal
         '
@@ -180,14 +180,14 @@ Partial Class MenuPrincipal
         Me.ClientSize = New System.Drawing.Size(718, 401)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LabelVentaEspe)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.ButtonReporte)
+        Me.Controls.Add(Me.ButtonPedidos)
         Me.Controls.Add(Me.ButtonCatálogo)
         Me.Controls.Add(Me.ButtonPagos)
         Me.Controls.Add(Me.ButtonVentas)
         Me.Controls.Add(Me.ButtonUsuarios)
         Me.Controls.Add(Me.VScrollBar1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.ButtonProfile)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "MenuPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -197,13 +197,13 @@ Partial Class MenuPrincipal
 
     End Sub
     Friend WithEvents VScrollBar1 As VScrollBar
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents ButtonReporte As Button
+    Friend WithEvents ButtonPedidos As Button
     Friend WithEvents ButtonCatálogo As Button
     Friend WithEvents ButtonPagos As Button
     Friend WithEvents ButtonVentas As Button
     Friend WithEvents ButtonUsuarios As Button
     Friend WithEvents LabelVentaEspe As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents ButtonProfile As Button
 End Class

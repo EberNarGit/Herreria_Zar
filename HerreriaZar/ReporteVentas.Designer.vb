@@ -32,15 +32,15 @@ Partial Class ReporteVentas
         Me.ButtonVentas = New System.Windows.Forms.Button()
         Me.LabelVentaEspe = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.De = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ventas_realizadas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ganado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.BotonAñadir = New System.Windows.Forms.Button()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.De = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.A = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ventas_realizadas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ganado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -176,6 +176,26 @@ Partial Class ReporteVentas
         Me.DataGridView1.Size = New System.Drawing.Size(416, 289)
         Me.DataGridView1.TabIndex = 11
         '
+        'De
+        '
+        Me.De.HeaderText = "De"
+        Me.De.Name = "De"
+        '
+        'A
+        '
+        Me.A.HeaderText = "A"
+        Me.A.Name = "A"
+        '
+        'Ventas_realizadas
+        '
+        Me.Ventas_realizadas.HeaderText = "Ventas_realizadas"
+        Me.Ventas_realizadas.Name = "Ventas_realizadas"
+        '
+        'Ganado
+        '
+        Me.Ganado.HeaderText = "Ganado"
+        Me.Ganado.Name = "Ganado"
+        '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(182, 85)
@@ -221,26 +241,6 @@ Partial Class ReporteVentas
         Me.Label2.TabIndex = 36
         Me.Label2.Text = "A:"
         '
-        'De
-        '
-        Me.De.HeaderText = "De"
-        Me.De.Name = "De"
-        '
-        'A
-        '
-        Me.A.HeaderText = "A"
-        Me.A.Name = "A"
-        '
-        'Ventas_realizadas
-        '
-        Me.Ventas_realizadas.HeaderText = "Ventas_realizadas"
-        Me.Ventas_realizadas.Name = "Ventas_realizadas"
-        '
-        'Ganado
-        '
-        Me.Ganado.HeaderText = "Ganado"
-        Me.Ganado.Name = "Ganado"
-        '
         'ReporteVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -262,6 +262,7 @@ Partial Class ReporteVentas
         Me.Controls.Add(Me.ButtonVentas)
         Me.Controls.Add(Me.ButtonUsuarios)
         Me.Name = "ReporteVentas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ReporteVentas"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

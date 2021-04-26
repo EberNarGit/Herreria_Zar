@@ -38,7 +38,7 @@ Partial Class CatalogoDeProductos
         Me.ButtonVentas = New System.Windows.Forms.Button()
         Me.ButtonUsuarios = New System.Windows.Forms.Button()
         Me.MensajeDeBienvenida = New System.Windows.Forms.Label()
-        Me.BotonDeIngreso = New System.Windows.Forms.Button()
+        Me.ButtonAddProduct = New System.Windows.Forms.Button()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -234,18 +234,18 @@ Partial Class CatalogoDeProductos
         Me.MensajeDeBienvenida.TabIndex = 2
         Me.MensajeDeBienvenida.Text = "Catálogo Zar"
         '
-        'BotonDeIngreso
+        'ButtonAddProduct
         '
-        Me.BotonDeIngreso.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
-        Me.BotonDeIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BotonDeIngreso.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BotonDeIngreso.ForeColor = System.Drawing.SystemColors.Control
-        Me.BotonDeIngreso.Location = New System.Drawing.Point(695, 25)
-        Me.BotonDeIngreso.Name = "BotonDeIngreso"
-        Me.BotonDeIngreso.Size = New System.Drawing.Size(185, 45)
-        Me.BotonDeIngreso.TabIndex = 8
-        Me.BotonDeIngreso.Text = "Añadir Producto"
-        Me.BotonDeIngreso.UseVisualStyleBackColor = False
+        Me.ButtonAddProduct.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
+        Me.ButtonAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonAddProduct.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonAddProduct.ForeColor = System.Drawing.SystemColors.Control
+        Me.ButtonAddProduct.Location = New System.Drawing.Point(695, 25)
+        Me.ButtonAddProduct.Name = "ButtonAddProduct"
+        Me.ButtonAddProduct.Size = New System.Drawing.Size(185, 45)
+        Me.ButtonAddProduct.TabIndex = 8
+        Me.ButtonAddProduct.Text = "Añadir Producto"
+        Me.ButtonAddProduct.UseVisualStyleBackColor = False
         '
         'CatalogoDeProductos
         '
@@ -253,7 +253,7 @@ Partial Class CatalogoDeProductos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(938, 443)
-        Me.Controls.Add(Me.BotonDeIngreso)
+        Me.Controls.Add(Me.ButtonAddProduct)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.MensajeDeBienvenida)
         Me.Controls.Add(Me.Button3)
@@ -270,6 +270,7 @@ Partial Class CatalogoDeProductos
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "CatalogoDeProductos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Catalogo De Productos"
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -295,5 +296,5 @@ Partial Class CatalogoDeProductos
     Friend WithEvents ButtonVentas As Button
     Friend WithEvents ButtonUsuarios As Button
     Friend WithEvents MensajeDeBienvenida As Label
-    Friend WithEvents BotonDeIngreso As Button
+    Friend WithEvents ButtonAddProduct As Button
 End Class

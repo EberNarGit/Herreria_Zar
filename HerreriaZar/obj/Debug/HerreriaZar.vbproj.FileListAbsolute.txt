@@ -10,7 +10,6 @@ C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.xml
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.pdb
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.MenuPrincipal.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.VentaG.resources
-C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.en.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.LogIn.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.VentaEspecifica.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.AñadirProducto.resources
@@ -21,3 +20,4 @@ C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.Pagos.
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.Usuario.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.Empleados.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.Respaldo.resources
+C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.Clientes.resources

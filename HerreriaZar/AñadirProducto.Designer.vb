@@ -117,6 +117,7 @@ Partial Class AñadirProducto
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "AñadirProducto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Añadir Producto"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

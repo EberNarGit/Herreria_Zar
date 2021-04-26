@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class en
+Partial Class Clientes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,9 +22,14 @@ Partial Class en
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(en))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Clientes))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Materno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Teléfono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LabelVentaEspe = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LabelTelefono = New System.Windows.Forms.Label()
@@ -39,11 +44,6 @@ Partial Class en
         Me.TextBoxNombre = New System.Windows.Forms.TextBox()
         Me.BotonAñadir = New System.Windows.Forms.Button()
         Me.ButtonEliminar = New System.Windows.Forms.Button()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Materno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Teléfono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +68,31 @@ Partial Class en
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(543, 268)
         Me.DataGridView1.TabIndex = 0
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'Paterno
+        '
+        Me.Paterno.HeaderText = "Paterno"
+        Me.Paterno.Name = "Paterno"
+        '
+        'Materno
+        '
+        Me.Materno.HeaderText = "Materno"
+        Me.Materno.Name = "Materno"
+        '
+        'Correo
+        '
+        Me.Correo.HeaderText = "Correo"
+        Me.Correo.Name = "Correo"
+        '
+        'Teléfono
+        '
+        Me.Teléfono.HeaderText = "Teléfono"
+        Me.Teléfono.Name = "Teléfono"
         '
         'LabelVentaEspe
         '
@@ -218,32 +243,7 @@ Partial Class en
         Me.ButtonEliminar.Text = "Eliminar"
         Me.ButtonEliminar.UseVisualStyleBackColor = False
         '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Paterno
-        '
-        Me.Paterno.HeaderText = "Paterno"
-        Me.Paterno.Name = "Paterno"
-        '
-        'Materno
-        '
-        Me.Materno.HeaderText = "Materno"
-        Me.Materno.Name = "Materno"
-        '
-        'Correo
-        '
-        Me.Correo.HeaderText = "Correo"
-        Me.Correo.Name = "Correo"
-        '
-        'Teléfono
-        '
-        Me.Teléfono.HeaderText = "Teléfono"
-        Me.Teléfono.Name = "Teléfono"
-        '
-        'en
+        'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -262,7 +262,8 @@ Partial Class en
         Me.Controls.Add(Me.LabelCorreo)
         Me.Controls.Add(Me.LabelTelefono)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "en"
+        Me.Name = "Clientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clientes"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

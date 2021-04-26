@@ -223,6 +223,7 @@ Partial Class Usuario
         Me.Controls.Add(Me.ButtonVentas)
         Me.Controls.Add(Me.ButtonUsuarios)
         Me.Name = "Usuario"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Usuarios"
         Me.ResumeLayout(False)
         Me.PerformLayout()
