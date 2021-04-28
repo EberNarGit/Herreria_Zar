@@ -25,12 +25,6 @@ Partial Class Pedidos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pedidos))
         Me.LabelVentaEspe = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha_Venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha_de_entrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Pagado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.ButtonCatálogo = New System.Windows.Forms.Button()
@@ -39,6 +33,12 @@ Partial Class Pedidos
         Me.ButtonVentas = New System.Windows.Forms.Button()
         Me.ButtonUsuarios = New System.Windows.Forms.Button()
         Me.BotonActualizar = New System.Windows.Forms.Button()
+        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha_Venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha_de_entrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Pagado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -62,36 +62,6 @@ Partial Class Pedidos
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(642, 293)
         Me.DataGridView1.TabIndex = 5
-        '
-        'Cliente
-        '
-        Me.Cliente.HeaderText = "Cliente"
-        Me.Cliente.Name = "Cliente"
-        '
-        'ID_Venta
-        '
-        Me.ID_Venta.HeaderText = "ID_Venta"
-        Me.ID_Venta.Name = "ID_Venta"
-        '
-        'Fecha_Venta
-        '
-        Me.Fecha_Venta.HeaderText = "Fecha_Venta"
-        Me.Fecha_Venta.Name = "Fecha_Venta"
-        '
-        'Fecha_de_entrega
-        '
-        Me.Fecha_de_entrega.HeaderText = "Fecha_de_entrega"
-        Me.Fecha_de_entrega.Name = "Fecha_de_entrega"
-        '
-        'Costo
-        '
-        Me.Costo.HeaderText = "Costo"
-        Me.Costo.Name = "Costo"
-        '
-        'Pagado
-        '
-        Me.Pagado.HeaderText = "Pagado"
-        Me.Pagado.Name = "Pagado"
         '
         'Button5
         '
@@ -217,6 +187,36 @@ Partial Class Pedidos
         Me.BotonActualizar.TabIndex = 24
         Me.BotonActualizar.Text = "Actualizar"
         Me.BotonActualizar.UseVisualStyleBackColor = False
+        '
+        'Cliente
+        '
+        Me.Cliente.HeaderText = "Cliente"
+        Me.Cliente.Name = "Cliente"
+        '
+        'ID_Venta
+        '
+        Me.ID_Venta.HeaderText = "Descripción"
+        Me.ID_Venta.Name = "ID_Venta"
+        '
+        'Fecha_Venta
+        '
+        Me.Fecha_Venta.HeaderText = "Fecha_Venta"
+        Me.Fecha_Venta.Name = "Fecha_Venta"
+        '
+        'Fecha_de_entrega
+        '
+        Me.Fecha_de_entrega.HeaderText = "Fecha_de_entrega"
+        Me.Fecha_de_entrega.Name = "Fecha_de_entrega"
+        '
+        'Costo
+        '
+        Me.Costo.HeaderText = "Costo"
+        Me.Costo.Name = "Costo"
+        '
+        'Pagado
+        '
+        Me.Pagado.HeaderText = "Pagado"
+        Me.Pagado.Name = "Pagado"
         '
         'Pedidos
         '

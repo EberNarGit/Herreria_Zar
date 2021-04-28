@@ -38,10 +38,8 @@ Partial Class VentaG
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBoxAnticipo = New System.Windows.Forms.TextBox()
         Me.TextBoxTotal = New System.Windows.Forms.TextBox()
-        Me.TextBoxCliente = New System.Windows.Forms.TextBox()
         Me.FechaVenta = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBoxAlto = New System.Windows.Forms.TextBox()
         Me.TextBoxLargo = New System.Windows.Forms.TextBox()
         Me.TextBoxAncho = New System.Windows.Forms.TextBox()
@@ -56,6 +54,10 @@ Partial Class VentaG
         Me.LabelAncho = New System.Windows.Forms.Label()
         Me.LabelLargo = New System.Windows.Forms.Label()
         Me.LabelAlto = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ComboBoxEmpleado = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxCliente = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -186,7 +188,7 @@ Partial Class VentaG
         Me.TextBoxAnticipo.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxAnticipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxAnticipo.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxAnticipo.Location = New System.Drawing.Point(126, 404)
+        Me.TextBoxAnticipo.Location = New System.Drawing.Point(155, 404)
         Me.TextBoxAnticipo.Name = "TextBoxAnticipo"
         Me.TextBoxAnticipo.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxAnticipo.TabIndex = 8
@@ -196,26 +198,16 @@ Partial Class VentaG
         Me.TextBoxTotal.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxTotal.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxTotal.Location = New System.Drawing.Point(126, 368)
+        Me.TextBoxTotal.Location = New System.Drawing.Point(155, 368)
         Me.TextBoxTotal.Name = "TextBoxTotal"
         Me.TextBoxTotal.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxTotal.TabIndex = 9
-        '
-        'TextBoxCliente
-        '
-        Me.TextBoxCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.TextBoxCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBoxCliente.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCliente.Location = New System.Drawing.Point(126, 439)
-        Me.TextBoxCliente.Name = "TextBoxCliente"
-        Me.TextBoxCliente.Size = New System.Drawing.Size(215, 21)
-        Me.TextBoxCliente.TabIndex = 10
         '
         'FechaVenta
         '
         Me.FechaVenta.CalendarFont = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FechaVenta.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FechaVenta.Location = New System.Drawing.Point(126, 334)
+        Me.FechaVenta.Location = New System.Drawing.Point(155, 334)
         Me.FechaVenta.Name = "FechaVenta"
         Me.FechaVenta.Size = New System.Drawing.Size(215, 21)
         Me.FechaVenta.TabIndex = 11
@@ -230,22 +222,12 @@ Partial Class VentaG
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Empleado"
         '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(126, 477)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(215, 21)
-        Me.TextBox1.TabIndex = 14
-        '
         'TextBoxAlto
         '
         Me.TextBoxAlto.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxAlto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxAlto.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxAlto.Location = New System.Drawing.Point(126, 166)
+        Me.TextBoxAlto.Location = New System.Drawing.Point(155, 166)
         Me.TextBoxAlto.Name = "TextBoxAlto"
         Me.TextBoxAlto.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxAlto.TabIndex = 33
@@ -255,7 +237,7 @@ Partial Class VentaG
         Me.TextBoxLargo.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxLargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxLargo.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxLargo.Location = New System.Drawing.Point(126, 201)
+        Me.TextBoxLargo.Location = New System.Drawing.Point(155, 201)
         Me.TextBoxLargo.Name = "TextBoxLargo"
         Me.TextBoxLargo.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxLargo.TabIndex = 32
@@ -265,7 +247,7 @@ Partial Class VentaG
         Me.TextBoxAncho.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxAncho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxAncho.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxAncho.Location = New System.Drawing.Point(126, 233)
+        Me.TextBoxAncho.Location = New System.Drawing.Point(155, 233)
         Me.TextBoxAncho.Name = "TextBoxAncho"
         Me.TextBoxAncho.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxAncho.TabIndex = 31
@@ -275,7 +257,7 @@ Partial Class VentaG
         Me.TextBoxColor.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxColor.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxColor.Location = New System.Drawing.Point(126, 263)
+        Me.TextBoxColor.Location = New System.Drawing.Point(155, 263)
         Me.TextBoxColor.Name = "TextBoxColor"
         Me.TextBoxColor.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxColor.TabIndex = 30
@@ -285,7 +267,7 @@ Partial Class VentaG
         Me.TextBoxProductos.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxProductos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxProductos.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxProductos.Location = New System.Drawing.Point(126, 93)
+        Me.TextBoxProductos.Location = New System.Drawing.Point(155, 93)
         Me.TextBoxProductos.Name = "TextBoxProductos"
         Me.TextBoxProductos.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxProductos.TabIndex = 29
@@ -295,7 +277,7 @@ Partial Class VentaG
         Me.TextBoxOtro.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxOtro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxOtro.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxOtro.Location = New System.Drawing.Point(126, 298)
+        Me.TextBoxOtro.Location = New System.Drawing.Point(155, 298)
         Me.TextBoxOtro.Name = "TextBoxOtro"
         Me.TextBoxOtro.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxOtro.TabIndex = 28
@@ -305,7 +287,7 @@ Partial Class VentaG
         Me.TextBoxPrecio.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxPrecio.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxPrecio.Location = New System.Drawing.Point(126, 129)
+        Me.TextBoxPrecio.Location = New System.Drawing.Point(155, 129)
         Me.TextBoxPrecio.Name = "TextBoxPrecio"
         Me.TextBoxPrecio.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxPrecio.TabIndex = 27
@@ -394,19 +376,56 @@ Partial Class VentaG
         Me.LabelAlto.TabIndex = 20
         Me.LabelAlto.Text = "Alto"
         '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(155, 510)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(215, 21)
+        Me.DateTimePicker1.TabIndex = 35
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(33, 510)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(115, 19)
+        Me.Label2.TabIndex = 34
+        Me.Label2.Text = "Fecha de Entrega"
+        '
+        'ComboBoxEmpleado
+        '
+        Me.ComboBoxEmpleado.FormattingEnabled = True
+        Me.ComboBoxEmpleado.Location = New System.Drawing.Point(155, 474)
+        Me.ComboBoxEmpleado.Name = "ComboBoxEmpleado"
+        Me.ComboBoxEmpleado.Size = New System.Drawing.Size(215, 21)
+        Me.ComboBoxEmpleado.TabIndex = 15
+        '
+        'ComboBoxCliente
+        '
+        Me.ComboBoxCliente.FormattingEnabled = True
+        Me.ComboBoxCliente.Location = New System.Drawing.Point(155, 442)
+        Me.ComboBoxCliente.Name = "ComboBoxCliente"
+        Me.ComboBoxCliente.Size = New System.Drawing.Size(215, 21)
+        Me.ComboBoxCliente.TabIndex = 36
+        '
         'VentaG
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1039, 570)
+        Me.Controls.Add(Me.ComboBoxCliente)
+        Me.Controls.Add(Me.ComboBoxEmpleado)
+        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBoxAlto)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBoxProductos)
         Me.Controls.Add(Me.FechaVenta)
         Me.Controls.Add(Me.TextBoxLargo)
-        Me.Controls.Add(Me.TextBoxCliente)
         Me.Controls.Add(Me.LabelAlto)
         Me.Controls.Add(Me.LabelLargo)
         Me.Controls.Add(Me.TextBoxTotal)
@@ -444,11 +463,9 @@ Partial Class VentaG
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBoxAnticipo As TextBox
     Friend WithEvents TextBoxTotal As TextBox
-    Friend WithEvents TextBoxCliente As TextBox
     Friend WithEvents FechaVenta As DateTimePicker
     Friend WithEvents BotonSiguiente As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBoxAlto As TextBox
     Friend WithEvents TextBoxLargo As TextBox
     Friend WithEvents TextBoxAncho As TextBox
@@ -470,4 +487,8 @@ Partial Class VentaG
     Friend WithEvents Precio As DataGridViewTextBoxColumn
     Friend WithEvents Anticipo As DataGridViewTextBoxColumn
     Friend WithEvents Cliente As DataGridViewTextBoxColumn
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Label2 As Label
+    Friend WithEvents ComboBoxEmpleado As ComboBox
+    Friend WithEvents ComboBoxCliente As ComboBox
 End Class
