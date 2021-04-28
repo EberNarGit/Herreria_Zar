@@ -28,6 +28,7 @@ Partial Class Respaldo
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BotonRespaldo = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ButtonCerrarSesion = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -35,6 +36,7 @@ Partial Class Respaldo
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.ButtonCerrarSesion)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.BotonRespaldo)
@@ -71,9 +73,9 @@ Partial Class Respaldo
         Me.BotonRespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BotonRespaldo.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BotonRespaldo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
-        Me.BotonRespaldo.Location = New System.Drawing.Point(195, 201)
+        Me.BotonRespaldo.Location = New System.Drawing.Point(130, 205)
         Me.BotonRespaldo.Name = "BotonRespaldo"
-        Me.BotonRespaldo.Size = New System.Drawing.Size(210, 67)
+        Me.BotonRespaldo.Size = New System.Drawing.Size(140, 52)
         Me.BotonRespaldo.TabIndex = 20
         Me.BotonRespaldo.Text = "Respaldo"
         Me.BotonRespaldo.UseVisualStyleBackColor = False
@@ -88,6 +90,19 @@ Partial Class Respaldo
         Me.Label1.Size = New System.Drawing.Size(46, 22)
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "User"
+        '
+        'ButtonCerrarSesion
+        '
+        Me.ButtonCerrarSesion.BackColor = System.Drawing.Color.White
+        Me.ButtonCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonCerrarSesion.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
+        Me.ButtonCerrarSesion.Location = New System.Drawing.Point(380, 205)
+        Me.ButtonCerrarSesion.Name = "ButtonCerrarSesion"
+        Me.ButtonCerrarSesion.Size = New System.Drawing.Size(140, 52)
+        Me.ButtonCerrarSesion.TabIndex = 22
+        Me.ButtonCerrarSesion.Text = "Cerrar Sesión"
+        Me.ButtonCerrarSesion.UseVisualStyleBackColor = False
         '
         'Respaldo
         '
@@ -111,4 +126,5 @@ Partial Class Respaldo
     Friend WithEvents Label1 As Label
     Friend WithEvents BotonRespaldo As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents ButtonCerrarSesion As Button
 End Class

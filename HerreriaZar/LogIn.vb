@@ -9,7 +9,7 @@ Public Class LogIn
 
         'Probar conexion'
         Try
-            cnx.ConnectionString = "Server = localhost; Database = herreriazar; Uid = root; Pwd = Eber844@;"
+            cnx.ConnectionString = "Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz"
             cnx.Open()
 
         Catch ex As Exception
@@ -24,13 +24,16 @@ Public Class LogIn
 
         If r.HasRows <> False Then
             r.Read()
-            MsgBox(r.GetString("nombre"))
+            MsgBox("Bienvenido de Vuelta: " + r.GetString("nombre"))
             MenuPrincipal.Show()
+            Me.Hide()
         Else
             MsgBox("Error, Usuario o contaseña no validos")
         End If
-
         'cerrar conexion'
+        user.Text = ""
+        Contraseña.Text = ""
+        user.Focus()
         cnx.Close()
     End Sub
 
