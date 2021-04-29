@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Pedidos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,11 @@ Partial Class Pedidos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pedidos))
         Me.LabelVentaEspe = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGVPedidos = New System.Windows.Forms.DataGridView()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.ButtonCatálogo = New System.Windows.Forms.Button()
@@ -33,13 +33,7 @@ Partial Class Pedidos
         Me.ButtonVentas = New System.Windows.Forms.Button()
         Me.ButtonUsuarios = New System.Windows.Forms.Button()
         Me.BotonActualizar = New System.Windows.Forms.Button()
-        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha_Venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha_de_entrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Pagado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGVPedidos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelVentaEspe
@@ -54,14 +48,13 @@ Partial Class Pedidos
         Me.LabelVentaEspe.TabIndex = 4
         Me.LabelVentaEspe.Text = "Consulta de Pedidos"
         '
-        'DataGridView1
+        'DGVPedidos
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cliente, Me.ID_Venta, Me.Fecha_Venta, Me.Fecha_de_entrega, Me.Costo, Me.Pagado})
-        Me.DataGridView1.Location = New System.Drawing.Point(142, 90)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(642, 293)
-        Me.DataGridView1.TabIndex = 5
+        Me.DGVPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVPedidos.Location = New System.Drawing.Point(142, 90)
+        Me.DGVPedidos.Name = "DGVPedidos"
+        Me.DGVPedidos.Size = New System.Drawing.Size(642, 293)
+        Me.DGVPedidos.TabIndex = 5
         '
         'Button5
         '
@@ -188,36 +181,6 @@ Partial Class Pedidos
         Me.BotonActualizar.Text = "Actualizar"
         Me.BotonActualizar.UseVisualStyleBackColor = False
         '
-        'Cliente
-        '
-        Me.Cliente.HeaderText = "Cliente"
-        Me.Cliente.Name = "Cliente"
-        '
-        'ID_Venta
-        '
-        Me.ID_Venta.HeaderText = "Descripción"
-        Me.ID_Venta.Name = "ID_Venta"
-        '
-        'Fecha_Venta
-        '
-        Me.Fecha_Venta.HeaderText = "Fecha_Venta"
-        Me.Fecha_Venta.Name = "Fecha_Venta"
-        '
-        'Fecha_de_entrega
-        '
-        Me.Fecha_de_entrega.HeaderText = "Fecha_de_entrega"
-        Me.Fecha_de_entrega.Name = "Fecha_de_entrega"
-        '
-        'Costo
-        '
-        Me.Costo.HeaderText = "Costo"
-        Me.Costo.Name = "Costo"
-        '
-        'Pagado
-        '
-        Me.Pagado.HeaderText = "Pagado"
-        Me.Pagado.Name = "Pagado"
-        '
         'Pedidos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -232,19 +195,19 @@ Partial Class Pedidos
         Me.Controls.Add(Me.ButtonPagos)
         Me.Controls.Add(Me.ButtonVentas)
         Me.Controls.Add(Me.ButtonUsuarios)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DGVPedidos)
         Me.Controls.Add(Me.LabelVentaEspe)
         Me.Name = "Pedidos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pedidos"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGVPedidos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents LabelVentaEspe As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DGVPedidos As DataGridView
     Friend WithEvents Button5 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents ButtonCatálogo As Button
@@ -253,10 +216,4 @@ Partial Class Pedidos
     Friend WithEvents ButtonVentas As Button
     Friend WithEvents ButtonUsuarios As Button
     Friend WithEvents BotonActualizar As Button
-    Friend WithEvents Cliente As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Venta As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha_Venta As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha_de_entrega As DataGridViewTextBoxColumn
-    Friend WithEvents Costo As DataGridViewTextBoxColumn
-    Friend WithEvents Pagado As DataGridViewTextBoxColumn
 End Class

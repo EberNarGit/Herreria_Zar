@@ -1,5 +1,11 @@
-﻿Public Class Pedidos
+﻿
+
+Public Class Pedidos
+
+
     Private Sub Pedidos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim pedidos As New ClasePedidos
+        pedidos.poblarDGVPedidos(DGVPedidos)
 
     End Sub
 
@@ -36,7 +42,10 @@
         Me.Hide()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPedidos.CellContentClick
 
     End Sub
 End Class

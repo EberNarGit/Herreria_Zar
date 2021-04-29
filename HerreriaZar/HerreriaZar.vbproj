@@ -86,6 +86,7 @@
     <Compile Include="CatalogoDeProductos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ClasePedidos.vb" />
     <Compile Include="Clientes.Designer.vb">
       <DependentUpon>Clientes.vb</DependentUpon>
     </Compile>
