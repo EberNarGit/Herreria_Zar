@@ -18,9 +18,10 @@ Public Class ClasePedidos
         comando.CommandText = "SELECT cc.nombre as cliente, vg.id as ID_Venta, vg.fecha as fecha_pedido, vg.fecha_b as fecha_entrega, vg.total, vg.anticipo" & " 
                                                     FROM venta_general as vg JOIN catalogo_clientes as cc ON (cc.id = vg.clientes_fk);"
 
-        Dim r As MySqlDataReader
+        consultaPedidos = comando.CommandText
 
-        r = comando.ExecuteReader
+
+
     End Function
 
     Public Sub poblarDGVPedidos(ByVal DGVPedidos As DataGridView)
