@@ -31,16 +31,12 @@ Partial Class ReporteVentas
         Me.ButtonUsuarios = New System.Windows.Forms.Button()
         Me.ButtonVentas = New System.Windows.Forms.Button()
         Me.LabelVentaEspe = New System.Windows.Forms.Label()
-        Me.DGVreporte = New System.Windows.Forms.DataGridView()
-        Me.De = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.A = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ventas_realizadas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ganado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DTPpre = New System.Windows.Forms.DateTimePicker()
         Me.BotonAñadir = New System.Windows.Forms.Button()
         Me.DTPdes = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.DGVreporte = New System.Windows.Forms.DataGridView()
         CType(Me.DGVreporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -175,45 +171,6 @@ Partial Class ReporteVentas
         Me.LabelVentaEspe.TabIndex = 10
         Me.LabelVentaEspe.Text = "Reporte de Ventas"
         '
-        'DGVreporte
-        '
-        Me.DGVreporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVreporte.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.De, Me.A, Me.Ventas_realizadas, Me.Ganado})
-        Me.DGVreporte.Location = New System.Drawing.Point(304, 156)
-        Me.DGVreporte.Margin = New System.Windows.Forms.Padding(4)
-        Me.DGVreporte.Name = "DGVreporte"
-        Me.DGVreporte.RowHeadersWidth = 51
-        Me.DGVreporte.Size = New System.Drawing.Size(555, 356)
-        Me.DGVreporte.TabIndex = 11
-        '
-        'De
-        '
-        Me.De.HeaderText = "De"
-        Me.De.MinimumWidth = 6
-        Me.De.Name = "De"
-        Me.De.Width = 125
-        '
-        'A
-        '
-        Me.A.HeaderText = "A"
-        Me.A.MinimumWidth = 6
-        Me.A.Name = "A"
-        Me.A.Width = 125
-        '
-        'Ventas_realizadas
-        '
-        Me.Ventas_realizadas.HeaderText = "Ventas_realizadas"
-        Me.Ventas_realizadas.MinimumWidth = 6
-        Me.Ventas_realizadas.Name = "Ventas_realizadas"
-        Me.Ventas_realizadas.Width = 125
-        '
-        'Ganado
-        '
-        Me.Ganado.HeaderText = "Ganado"
-        Me.Ganado.MinimumWidth = 6
-        Me.Ganado.Name = "Ganado"
-        Me.Ganado.Width = 125
-        '
         'DTPpre
         '
         Me.DTPpre.Location = New System.Drawing.Point(243, 105)
@@ -264,18 +221,28 @@ Partial Class ReporteVentas
         Me.Label2.TabIndex = 36
         Me.Label2.Text = "A:"
         '
+        'DGVreporte
+        '
+        Me.DGVreporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVreporte.Location = New System.Drawing.Point(243, 166)
+        Me.DGVreporte.Name = "DGVreporte"
+        Me.DGVreporte.RowHeadersWidth = 51
+        Me.DGVreporte.RowTemplate.Height = 24
+        Me.DGVreporte.Size = New System.Drawing.Size(705, 280)
+        Me.DGVreporte.TabIndex = 38
+        '
         'ReporteVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1067, 549)
+        Me.Controls.Add(Me.DGVreporte)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DTPdes)
         Me.Controls.Add(Me.BotonAñadir)
         Me.Controls.Add(Me.DTPpre)
-        Me.Controls.Add(Me.DGVreporte)
         Me.Controls.Add(Me.LabelVentaEspe)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button3)
@@ -301,14 +268,10 @@ Partial Class ReporteVentas
     Friend WithEvents ButtonUsuarios As Button
     Friend WithEvents ButtonVentas As Button
     Friend WithEvents LabelVentaEspe As Label
-    Friend WithEvents DGVreporte As DataGridView
     Friend WithEvents DTPpre As DateTimePicker
     Friend WithEvents BotonAñadir As Button
     Friend WithEvents DTPdes As DateTimePicker
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents De As DataGridViewTextBoxColumn
-    Friend WithEvents A As DataGridViewTextBoxColumn
-    Friend WithEvents Ventas_realizadas As DataGridViewTextBoxColumn
-    Friend WithEvents Ganado As DataGridViewTextBoxColumn
+    Friend WithEvents DGVreporte As DataGridView
 End Class
