@@ -164,7 +164,7 @@ Partial Class ReporteVentas
         Me.LabelVentaEspe.AutoSize = True
         Me.LabelVentaEspe.BackColor = System.Drawing.Color.White
         Me.LabelVentaEspe.Font = New System.Drawing.Font("Microsoft YaHei UI", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelVentaEspe.Location = New System.Drawing.Point(392, 34)
+        Me.LabelVentaEspe.Location = New System.Drawing.Point(307, 9)
         Me.LabelVentaEspe.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelVentaEspe.Name = "LabelVentaEspe"
         Me.LabelVentaEspe.Size = New System.Drawing.Size(367, 50)
@@ -185,7 +185,7 @@ Partial Class ReporteVentas
         Me.BotonAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BotonAñadir.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BotonAñadir.ForeColor = System.Drawing.SystemColors.Control
-        Me.BotonAñadir.Location = New System.Drawing.Point(925, 468)
+        Me.BotonAñadir.Location = New System.Drawing.Point(729, 468)
         Me.BotonAñadir.Margin = New System.Windows.Forms.Padding(4)
         Me.BotonAñadir.Name = "BotonAñadir"
         Me.BotonAñadir.Size = New System.Drawing.Size(125, 43)
@@ -195,7 +195,7 @@ Partial Class ReporteVentas
         '
         'DTPdes
         '
-        Me.DTPdes.Location = New System.Drawing.Point(688, 105)
+        Me.DTPdes.Location = New System.Drawing.Point(594, 105)
         Me.DTPdes.Margin = New System.Windows.Forms.Padding(4)
         Me.DTPdes.Name = "DTPdes"
         Me.DTPdes.Size = New System.Drawing.Size(260, 22)
@@ -214,7 +214,7 @@ Partial Class ReporteVentas
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(657, 105)
+        Me.Label2.Location = New System.Drawing.Point(563, 105)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(21, 17)
@@ -228,7 +228,7 @@ Partial Class ReporteVentas
         Me.DGVreporte.Name = "DGVreporte"
         Me.DGVreporte.RowHeadersWidth = 51
         Me.DGVreporte.RowTemplate.Height = 24
-        Me.DGVreporte.Size = New System.Drawing.Size(705, 280)
+        Me.DGVreporte.Size = New System.Drawing.Size(611, 279)
         Me.DGVreporte.TabIndex = 38
         '
         'ReporteVentas
@@ -236,7 +236,7 @@ Partial Class ReporteVentas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1067, 549)
+        Me.ClientSize = New System.Drawing.Size(901, 552)
         Me.Controls.Add(Me.DGVreporte)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
