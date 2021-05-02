@@ -10,8 +10,8 @@ Public Class ReporteVentas
     Private Sub BotonAñadir_Click(sender As Object, e As EventArgs) Handles BotonAñadir.Click
         'Botón de guardar, cuando se quiere registrar la información, validamos que se haya
         'capturado texto en las cajas de texto
-        Dim F As String = DTPpre.Value.Date
-        Dim L As String = DTPdes.Value.Date
+        Dim F As String = DTPpre.Value.Date.ToString("yyyy/MM/dd")
+        Dim L As String = DTPdes.Value.Date.ToString("yyyy/MM/dd")
 
         'Declaracion de variables necesarias'
         Dim cnx As MySqlConnection = New MySqlConnection
@@ -28,7 +28,7 @@ Public Class ReporteVentas
             MsgBox(ex.Message)
         End Try
 
-        comando.CommandText = "SELECT vg.fecha, p.fecha, COUNT(vg.id) As Num_Ventas, (SUM(anticipo) + SUM(pago)) As Ganancias FROM pagos As p JOIN venta_general As vg ON (vg.id = p.venta_general_fk) WHERE vg.fecha >= '" + F + "'  AND p.fecha <='" + L + " ' "
+        comando.CommandText = "SELECT vg.fecha As fecha_inicial, p.fecha As fecha_final, COUNT(vg.id) As Num_Ventas, (SUM(anticipo) + SUM(pago)) As Ganancias FROM pagos As p JOIN venta_general As vg ON (vg.id = p.venta_general_fk) WHERE vg.fecha >= '" + F + "'  AND p.fecha <='" + L + " ' "
 
         Dim dt As DataTable = New DataTable
         Dim da As MySqlDataAdapter = New MySqlDataAdapter(comando)
@@ -50,7 +50,9 @@ Public Class ReporteVentas
 
     End Sub
 
+    Private Sub DGVreporte_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVreporte.CellContentClick
 
+    End Sub
 End Class
 
 
