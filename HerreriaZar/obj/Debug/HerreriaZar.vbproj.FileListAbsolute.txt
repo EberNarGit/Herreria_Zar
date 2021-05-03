@@ -11,7 +11,6 @@ C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.pdb
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.MenuPrincipal.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.VentaG.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.LogIn.resources
-C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.VentaEspecifica.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.AñadirProducto.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.CatalogoDeProductos.resources
 C:\Users\sarap\source\repos\HerreriaZar\HerreriaZar\obj\Debug\HerreriaZar.Pedidos.resources

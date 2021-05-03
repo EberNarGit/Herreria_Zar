@@ -9,7 +9,8 @@ Public Class LogIn
 
         'Probar conexion'
         Try
-            cnx.ConnectionString = "Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@"
+            cnx.ConnectionString = "Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz"
+            'zP8HlxqCBwCFHcHz password JP'
             cnx.Open()
 
         Catch ex As Exception

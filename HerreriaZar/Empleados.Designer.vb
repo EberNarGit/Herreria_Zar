@@ -52,19 +52,17 @@ Partial Class Empleados
         Me.Panel1.Controls.Add(Me.LabelVentaEspe)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(743, 559)
+        Me.Panel1.Size = New System.Drawing.Size(557, 454)
         Me.Panel1.TabIndex = 1
         '
         'DGVusuarios
         '
         Me.DGVusuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVusuarios.Location = New System.Drawing.Point(53, 133)
-        Me.DGVusuarios.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DGVusuarios.Location = New System.Drawing.Point(40, 108)
         Me.DGVusuarios.Name = "DGVusuarios"
         Me.DGVusuarios.RowHeadersWidth = 51
-        Me.DGVusuarios.Size = New System.Drawing.Size(585, 330)
+        Me.DGVusuarios.Size = New System.Drawing.Size(439, 268)
         Me.DGVusuarios.TabIndex = 0
         '
         'LabelVentaEspe
@@ -73,10 +71,9 @@ Partial Class Empleados
         Me.LabelVentaEspe.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
         Me.LabelVentaEspe.Font = New System.Drawing.Font("Microsoft YaHei UI", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelVentaEspe.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.LabelVentaEspe.Location = New System.Drawing.Point(127, 37)
-        Me.LabelVentaEspe.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelVentaEspe.Location = New System.Drawing.Point(95, 30)
         Me.LabelVentaEspe.Name = "LabelVentaEspe"
-        Me.LabelVentaEspe.Size = New System.Drawing.Size(225, 50)
+        Me.LabelVentaEspe.Size = New System.Drawing.Size(176, 39)
         Me.LabelVentaEspe.TabIndex = 3
         Me.LabelVentaEspe.Text = "Empleados"
         '
@@ -84,10 +81,9 @@ Partial Class Empleados
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(53, 30)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(40, 24)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(65, 55)
+        Me.PictureBox1.Size = New System.Drawing.Size(49, 45)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
@@ -98,10 +94,9 @@ Partial Class Empleados
         Me.ButtonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonEliminar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEliminar.ForeColor = System.Drawing.SystemColors.Control
-        Me.ButtonEliminar.Location = New System.Drawing.Point(1145, 417)
-        Me.ButtonEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonEliminar.Location = New System.Drawing.Point(859, 339)
         Me.ButtonEliminar.Name = "ButtonEliminar"
-        Me.ButtonEliminar.Size = New System.Drawing.Size(119, 46)
+        Me.ButtonEliminar.Size = New System.Drawing.Size(89, 37)
         Me.ButtonEliminar.TabIndex = 33
         Me.ButtonEliminar.Text = "Eliminar"
         Me.ButtonEliminar.UseVisualStyleBackColor = False
@@ -112,10 +107,9 @@ Partial Class Empleados
         Me.BotonAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BotonAñadir.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BotonAñadir.ForeColor = System.Drawing.SystemColors.Control
-        Me.BotonAñadir.Location = New System.Drawing.Point(831, 417)
-        Me.BotonAñadir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BotonAñadir.Location = New System.Drawing.Point(623, 339)
         Me.BotonAñadir.Name = "BotonAñadir"
-        Me.BotonAñadir.Size = New System.Drawing.Size(111, 46)
+        Me.BotonAñadir.Size = New System.Drawing.Size(83, 37)
         Me.BotonAñadir.TabIndex = 32
         Me.BotonAñadir.Text = "Añadir"
         Me.BotonAñadir.UseVisualStyleBackColor = False
@@ -125,10 +119,9 @@ Partial Class Empleados
         Me.TextBoxNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxNombre.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxNombre.Location = New System.Drawing.Point(969, 186)
-        Me.TextBoxNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBoxNombre.Location = New System.Drawing.Point(727, 151)
         Me.TextBoxNombre.Name = "TextBoxNombre"
-        Me.TextBoxNombre.Size = New System.Drawing.Size(286, 25)
+        Me.TextBoxNombre.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxNombre.TabIndex = 31
         '
         'TextBoxPaterno
@@ -136,10 +129,9 @@ Partial Class Empleados
         Me.TextBoxPaterno.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxPaterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxPaterno.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxPaterno.Location = New System.Drawing.Point(969, 226)
-        Me.TextBoxPaterno.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBoxPaterno.Location = New System.Drawing.Point(727, 184)
         Me.TextBoxPaterno.Name = "TextBoxPaterno"
-        Me.TextBoxPaterno.Size = New System.Drawing.Size(286, 25)
+        Me.TextBoxPaterno.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxPaterno.TabIndex = 30
         '
         'TextBoxMaterno
@@ -147,10 +139,9 @@ Partial Class Empleados
         Me.TextBoxMaterno.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxMaterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxMaterno.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxMaterno.Location = New System.Drawing.Point(969, 264)
-        Me.TextBoxMaterno.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBoxMaterno.Location = New System.Drawing.Point(727, 214)
         Me.TextBoxMaterno.Name = "TextBoxMaterno"
-        Me.TextBoxMaterno.Size = New System.Drawing.Size(286, 25)
+        Me.TextBoxMaterno.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxMaterno.TabIndex = 29
         '
         'TextBoxUsuario
@@ -158,10 +149,9 @@ Partial Class Empleados
         Me.TextBoxUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxUsuario.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUsuario.Location = New System.Drawing.Point(969, 306)
-        Me.TextBoxUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBoxUsuario.Location = New System.Drawing.Point(727, 249)
         Me.TextBoxUsuario.Name = "TextBoxUsuario"
-        Me.TextBoxUsuario.Size = New System.Drawing.Size(286, 25)
+        Me.TextBoxUsuario.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxUsuario.TabIndex = 28
         '
         'TextBoxCon
@@ -169,20 +159,19 @@ Partial Class Empleados
         Me.TextBoxCon.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxCon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxCon.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCon.Location = New System.Drawing.Point(969, 348)
-        Me.TextBoxCon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBoxCon.Location = New System.Drawing.Point(727, 283)
         Me.TextBoxCon.Name = "TextBoxCon"
-        Me.TextBoxCon.Size = New System.Drawing.Size(286, 25)
+        Me.TextBoxCon.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxCon.TabIndex = 27
+        Me.TextBoxCon.UseSystemPasswordChar = True
         '
         'LabelNombre
         '
         Me.LabelNombre.AutoSize = True
         Me.LabelNombre.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelNombre.Location = New System.Drawing.Point(827, 185)
-        Me.LabelNombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelNombre.Location = New System.Drawing.Point(620, 150)
         Me.LabelNombre.Name = "LabelNombre"
-        Me.LabelNombre.Size = New System.Drawing.Size(78, 23)
+        Me.LabelNombre.Size = New System.Drawing.Size(60, 19)
         Me.LabelNombre.TabIndex = 25
         Me.LabelNombre.Text = "Nombre"
         '
@@ -190,10 +179,9 @@ Partial Class Empleados
         '
         Me.LabelPaterno.AutoSize = True
         Me.LabelPaterno.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelPaterno.Location = New System.Drawing.Point(827, 225)
-        Me.LabelPaterno.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelPaterno.Location = New System.Drawing.Point(620, 183)
         Me.LabelPaterno.Name = "LabelPaterno"
-        Me.LabelPaterno.Size = New System.Drawing.Size(72, 23)
+        Me.LabelPaterno.Size = New System.Drawing.Size(57, 19)
         Me.LabelPaterno.TabIndex = 24
         Me.LabelPaterno.Text = "Paterno"
         '
@@ -201,10 +189,9 @@ Partial Class Empleados
         '
         Me.LabelMaterno.AutoSize = True
         Me.LabelMaterno.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMaterno.Location = New System.Drawing.Point(827, 263)
-        Me.LabelMaterno.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelMaterno.Location = New System.Drawing.Point(620, 214)
         Me.LabelMaterno.Name = "LabelMaterno"
-        Me.LabelMaterno.Size = New System.Drawing.Size(79, 23)
+        Me.LabelMaterno.Size = New System.Drawing.Size(62, 19)
         Me.LabelMaterno.TabIndex = 23
         Me.LabelMaterno.Text = "Materno"
         '
@@ -212,10 +199,9 @@ Partial Class Empleados
         '
         Me.LabelUsuario.AutoSize = True
         Me.LabelUsuario.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelUsuario.Location = New System.Drawing.Point(827, 305)
-        Me.LabelUsuario.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelUsuario.Location = New System.Drawing.Point(620, 248)
         Me.LabelUsuario.Name = "LabelUsuario"
-        Me.LabelUsuario.Size = New System.Drawing.Size(72, 23)
+        Me.LabelUsuario.Size = New System.Drawing.Size(56, 19)
         Me.LabelUsuario.TabIndex = 22
         Me.LabelUsuario.Text = "Usuario"
         '
@@ -223,10 +209,9 @@ Partial Class Empleados
         '
         Me.LabelPass.AutoSize = True
         Me.LabelPass.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelPass.Location = New System.Drawing.Point(827, 346)
-        Me.LabelPass.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelPass.Location = New System.Drawing.Point(620, 281)
         Me.LabelPass.Name = "LabelPass"
-        Me.LabelPass.Size = New System.Drawing.Size(100, 23)
+        Me.LabelPass.Size = New System.Drawing.Size(79, 19)
         Me.LabelPass.TabIndex = 21
         Me.LabelPass.Text = "Contraseña"
         '
@@ -236,20 +221,19 @@ Partial Class Empleados
         Me.ButtonModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonModificar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonModificar.ForeColor = System.Drawing.SystemColors.Control
-        Me.ButtonModificar.Location = New System.Drawing.Point(973, 417)
-        Me.ButtonModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonModificar.Location = New System.Drawing.Point(730, 339)
         Me.ButtonModificar.Name = "ButtonModificar"
-        Me.ButtonModificar.Size = New System.Drawing.Size(143, 46)
+        Me.ButtonModificar.Size = New System.Drawing.Size(107, 37)
         Me.ButtonModificar.TabIndex = 34
         Me.ButtonModificar.Text = "Modificar"
         Me.ButtonModificar.UseVisualStyleBackColor = False
         '
         'Empleados
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1299, 554)
+        Me.ClientSize = New System.Drawing.Size(974, 450)
         Me.Controls.Add(Me.ButtonModificar)
         Me.Controls.Add(Me.ButtonEliminar)
         Me.Controls.Add(Me.BotonAñadir)
@@ -264,7 +248,6 @@ Partial Class Empleados
         Me.Controls.Add(Me.LabelUsuario)
         Me.Controls.Add(Me.LabelPass)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Empleados"
         Me.Text = "Administración de Usuarios"
         Me.Panel1.ResumeLayout(False)

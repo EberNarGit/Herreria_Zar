@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Clientes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +20,11 @@ Partial Class Clientes
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Clientes))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Materno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Teléfono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGVClientes = New System.Windows.Forms.DataGridView()
         Me.LabelVentaEspe = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LabelTelefono = New System.Windows.Forms.Label()
@@ -45,14 +40,14 @@ Partial Class Clientes
         Me.BotonAñadir = New System.Windows.Forms.Button()
         Me.ButtonEliminar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGVClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.DataGridView1)
+        Me.Panel1.Controls.Add(Me.DGVClientes)
         Me.Panel1.Controls.Add(Me.LabelVentaEspe)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(-5, 0)
@@ -60,39 +55,13 @@ Partial Class Clientes
         Me.Panel1.Size = New System.Drawing.Size(636, 453)
         Me.Panel1.TabIndex = 0
         '
-        'DataGridView1
+        'DGVClientes
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Paterno, Me.Materno, Me.Correo, Me.Teléfono})
-        Me.DataGridView1.Location = New System.Drawing.Point(40, 108)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(543, 268)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Paterno
-        '
-        Me.Paterno.HeaderText = "Paterno"
-        Me.Paterno.Name = "Paterno"
-        '
-        'Materno
-        '
-        Me.Materno.HeaderText = "Materno"
-        Me.Materno.Name = "Materno"
-        '
-        'Correo
-        '
-        Me.Correo.HeaderText = "Correo"
-        Me.Correo.Name = "Correo"
-        '
-        'Teléfono
-        '
-        Me.Teléfono.HeaderText = "Teléfono"
-        Me.Teléfono.Name = "Teléfono"
+        Me.DGVClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVClientes.Location = New System.Drawing.Point(40, 108)
+        Me.DGVClientes.Name = "DGVClientes"
+        Me.DGVClientes.Size = New System.Drawing.Size(543, 268)
+        Me.DGVClientes.TabIndex = 0
         '
         'LabelVentaEspe
         '
@@ -267,7 +236,7 @@ Partial Class Clientes
         Me.Text = "Clientes"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGVClientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -275,7 +244,7 @@ Partial Class Clientes
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DGVClientes As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LabelVentaEspe As Label
     Friend WithEvents LabelTelefono As Label
@@ -290,9 +259,4 @@ Partial Class Clientes
     Friend WithEvents TextBoxNombre As TextBox
     Friend WithEvents BotonAñadir As Button
     Friend WithEvents ButtonEliminar As Button
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Paterno As DataGridViewTextBoxColumn
-    Friend WithEvents Materno As DataGridViewTextBoxColumn
-    Friend WithEvents Correo As DataGridViewTextBoxColumn
-    Friend WithEvents Teléfono As DataGridViewTextBoxColumn
 End Class

@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Empleados
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
@@ -14,7 +15,7 @@ Public Class Empleados
         'capturado texto en las cajas de texto
 
         'Declaracion de variables necesarias'
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+
         Dim command As New MySqlCommand("INSERT INTO `usuarios`(`nombre`, `paterno`, `materno`, `usuario`, `password`) VALUES (@nombre,@paterno,@materno,@usuario,@password)", cnx)
 
         command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
@@ -27,7 +28,69 @@ Public Class Empleados
 
         If command.ExecuteNonQuery() = 1 Then
 
-            MessageBox.Show("Usuario Guardado")
+            MessageBox.Show("Empleado Guardado")
+
+        Else
+
+            MessageBox.Show("ERROR")
+
+        End If
+
+        TextBoxNombre.Text = ""
+        TextBoxPaterno.Text = ""
+        TextBoxMaterno.Text = ""
+        TextBoxUsuario.Text = ""
+        TextBoxCon.Text = ""
+
+        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, usuario FROM `usuarios`", cnx)
+
+        Dim dt As DataTable = New DataTable
+        Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
+
+        da.Fill(dt)
+        DGVusuarios.DataSource = dt
+        cnx.Close()
+
+
+    End Sub
+
+    Private Sub DGVusuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVusuarios.CellContentClick
+        Dim renglon As Integer
+        'Al darle clic al renglón mostramos los datos en las cajas de texto
+        renglon = DGVusuarios.CurrentCellAddress.Y
+        TextBoxNombre.Text = DGVusuarios.Rows(renglon).Cells(1).Value
+        TextBoxPaterno.Text = DGVusuarios.Rows(renglon).Cells(2).Value
+        TextBoxMaterno.Text = DGVusuarios.Rows(renglon).Cells(3).Value
+        TextBoxUsuario.Text = DGVusuarios.Rows(renglon).Cells(4).Value
+    End Sub
+
+    Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, usuario FROM `usuarios`", cnx)
+
+        Dim dt As DataTable = New DataTable
+        Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
+
+        da.Fill(dt)
+        DGVusuarios.DataSource = dt
+        cnx.Close()
+    End Sub
+
+    Private Sub ButtonEliminar_Click(sender As Object, e As EventArgs) Handles ButtonEliminar.Click
+        Dim command As New MySqlCommand("delete FROM `usuarios` WHERE usuario=@usuario ", cnx)
+
+        command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
+        command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
+        command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
+        command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
+        command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
+
+        cnx.Open()
+
+        If command.ExecuteNonQuery() = 1 Then
+
+            MessageBox.Show("Empleado Eliminado")
 
         Else
 
@@ -43,17 +106,25 @@ Public Class Empleados
         da.Fill(dt)
         DGVusuarios.DataSource = dt
         cnx.Close()
+        TextBoxNombre.Text = ""
+        TextBoxPaterno.Text = ""
+        TextBoxMaterno.Text = ""
+        TextBoxUsuario.Text = ""
+        TextBoxCon.Text = ""
+
 
 
     End Sub
 
-    Private Sub DGVusuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVusuarios.CellContentClick
+    Private Sub ButtonModificar_Click(sender As Object, e As EventArgs) Handles ButtonModificar.Click
+        Dim command As New MySqlCommand("UPDATE `usuarios` SET  usuario=@usuario WHERE nombre=@nombre;", cnx)
 
-    End Sub
+        command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
+        command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
+        command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
 
-    Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cnx.Open()
 
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, usuario FROM `usuarios`", cnx)
 
         Dim dt As DataTable = New DataTable
@@ -62,5 +133,11 @@ Public Class Empleados
         da.Fill(dt)
         DGVusuarios.DataSource = dt
         cnx.Close()
+        TextBoxNombre.Text = ""
+        TextBoxPaterno.Text = ""
+        TextBoxMaterno.Text = ""
+        TextBoxUsuario.Text = ""
+        TextBoxCon.Text = ""
+
     End Sub
 End Class
