@@ -158,12 +158,6 @@
     <Compile Include="Empleados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentaEspecifica.Designer.vb">
-      <DependentUpon>VentaEspecifica.vb</DependentUpon>
-    </Compile>
-    <Compile Include="VentaEspecifica.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="VentaG.Designer.vb">
       <DependentUpon>VentaG.vb</DependentUpon>
     </Compile>
@@ -210,9 +204,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados.resx">
       <DependentUpon>Empleados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentaEspecifica.resx">
-      <DependentUpon>VentaEspecifica.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentaG.resx">
       <DependentUpon>VentaG.vb</DependentUpon>
