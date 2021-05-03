@@ -38,7 +38,6 @@ C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debu
 C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.Respaldo.resources
 C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.Usuario.resources
 C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.Empleados.resources
-C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.VentaEspecifica.resources
 C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.VentaG.resources
 C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.vbproj.GenerateResource.cache
 C:\Users\amazE\OneDrive\Escritorio\8avo semestre\HerreriaSW\HerreriaZar\obj\Debug\HerreriaZar.vbproj.CoreCompileInputs.cache
