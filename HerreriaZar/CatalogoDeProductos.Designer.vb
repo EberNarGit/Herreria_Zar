@@ -184,8 +184,9 @@ Partial Class CatalogoDeProductos
         'DGVCatalogo
         '
         Me.DGVCatalogo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGVCatalogo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGVCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVCatalogo.Location = New System.Drawing.Point(153, 104)
+        Me.DGVCatalogo.Location = New System.Drawing.Point(148, 104)
         Me.DGVCatalogo.Name = "DGVCatalogo"
         Me.DGVCatalogo.Size = New System.Drawing.Size(727, 327)
         Me.DGVCatalogo.TabIndex = 17

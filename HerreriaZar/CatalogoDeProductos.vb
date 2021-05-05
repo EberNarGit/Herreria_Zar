@@ -41,14 +41,14 @@ Public Class CatalogoDeProductos
 
     Private Sub CatalogoDeProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
-        Dim comman As New MySqlCommand("SELECT id,imagen, descripcion, categorias_fk FROM `catalogo_productos`", cnx)
+        Dim comman As New MySqlCommand("SELECT pc.id as ID, pc.imagen as Imagen, pc.descripcion as Descripción, c.descripcion as Categoria FROM `catalogo_productos` as pc JOIN  categoria as c ON (c.id=pc.categorias_fk)", cnx)
         Dim dt As DataTable = New DataTable
         Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
         Dim pic1 As New DataGridViewImageColumn
 
         da.Fill(dt)
         DGVCatalogo.DataSource = dt
-        DGVCatalogo.RowTemplate.Height = 90
+        DGVCatalogo.RowTemplate.Height = 10
         pic1 = DGVCatalogo.Columns(1)
         pic1.ImageLayout = DataGridViewImageCellLayout.Stretch
         cnx.Close()
