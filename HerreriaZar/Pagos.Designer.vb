@@ -31,7 +31,7 @@ Partial Class Pagos
         Me.ButtonPagos = New System.Windows.Forms.Button()
         Me.ButtonVentas = New System.Windows.Forms.Button()
         Me.ButtonUsuarios = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DGVPagos = New System.Windows.Forms.DataGridView()
         Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,13 +40,14 @@ Partial Class Pagos
         Me.LabelCliente = New System.Windows.Forms.Label()
         Me.LabelMonto = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBoxEmpleado = New System.Windows.Forms.TextBox()
-        Me.TextBoxCliente = New System.Windows.Forms.TextBox()
+        Me.TextBoxMonto = New System.Windows.Forms.TextBox()
         Me.BotonPagar = New System.Windows.Forms.Button()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.DTP = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ComboBoxCliente = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxEmpleado = New System.Windows.Forms.ComboBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        CType(Me.DGVPagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelVentaEspe
@@ -173,15 +174,15 @@ Partial Class Pagos
         Me.ButtonUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.ButtonUsuarios.UseVisualStyleBackColor = False
         '
-        'DataGridView2
+        'DGVPagos
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cliente, Me.Venta, Me.Monto, Me.Fecha, Me.Empleado})
-        Me.DataGridView2.GridColor = System.Drawing.Color.Black
-        Me.DataGridView2.Location = New System.Drawing.Point(122, 114)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(542, 267)
-        Me.DataGridView2.TabIndex = 26
+        Me.DGVPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVPagos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cliente, Me.Venta, Me.Monto, Me.Fecha, Me.Empleado})
+        Me.DGVPagos.GridColor = System.Drawing.Color.Black
+        Me.DGVPagos.Location = New System.Drawing.Point(122, 114)
+        Me.DGVPagos.Name = "DGVPagos"
+        Me.DGVPagos.Size = New System.Drawing.Size(542, 267)
+        Me.DGVPagos.TabIndex = 26
         '
         'Cliente
         '
@@ -239,25 +240,15 @@ Partial Class Pagos
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "Empleado"
         '
-        'TextBoxEmpleado
+        'TextBoxMonto
         '
-        Me.TextBoxEmpleado.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.TextBoxEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBoxEmpleado.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxEmpleado.Location = New System.Drawing.Point(784, 296)
-        Me.TextBoxEmpleado.Name = "TextBoxEmpleado"
-        Me.TextBoxEmpleado.Size = New System.Drawing.Size(215, 21)
-        Me.TextBoxEmpleado.TabIndex = 30
-        '
-        'TextBoxCliente
-        '
-        Me.TextBoxCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.TextBoxCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBoxCliente.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCliente.Location = New System.Drawing.Point(784, 205)
-        Me.TextBoxCliente.Name = "TextBoxCliente"
-        Me.TextBoxCliente.Size = New System.Drawing.Size(215, 21)
-        Me.TextBoxCliente.TabIndex = 32
+        Me.TextBoxMonto.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.TextBoxMonto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxMonto.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxMonto.Location = New System.Drawing.Point(787, 205)
+        Me.TextBoxMonto.Name = "TextBoxMonto"
+        Me.TextBoxMonto.Size = New System.Drawing.Size(212, 21)
+        Me.TextBoxMonto.TabIndex = 32
         '
         'BotonPagar
         '
@@ -272,22 +263,12 @@ Partial Class Pagos
         Me.BotonPagar.Text = "Pagar"
         Me.BotonPagar.UseVisualStyleBackColor = False
         '
-        'DateTimePicker1
+        'DTP
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(787, 251)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(212, 20)
-        Me.DateTimePicker1.TabIndex = 34
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(784, 166)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(215, 21)
-        Me.TextBox1.TabIndex = 36
+        Me.DTP.Location = New System.Drawing.Point(787, 251)
+        Me.DTP.Name = "DTP"
+        Me.DTP.Size = New System.Drawing.Size(212, 20)
+        Me.DTP.TabIndex = 34
         '
         'Label2
         '
@@ -299,22 +280,52 @@ Partial Class Pagos
         Me.Label2.TabIndex = 35
         Me.Label2.Text = "Cliente"
         '
+        'ComboBoxCliente
+        '
+        Me.ComboBoxCliente.FormattingEnabled = True
+        Me.ComboBoxCliente.Location = New System.Drawing.Point(787, 163)
+        Me.ComboBoxCliente.Name = "ComboBoxCliente"
+        Me.ComboBoxCliente.Size = New System.Drawing.Size(212, 21)
+        Me.ComboBoxCliente.TabIndex = 36
+        '
+        'ComboBoxEmpleado
+        '
+        Me.ComboBoxEmpleado.FormattingEnabled = True
+        Me.ComboBoxEmpleado.Location = New System.Drawing.Point(787, 296)
+        Me.ComboBoxEmpleado.Name = "ComboBoxEmpleado"
+        Me.ComboBoxEmpleado.Size = New System.Drawing.Size(212, 21)
+        Me.ComboBoxEmpleado.TabIndex = 37
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button2.Location = New System.Drawing.Point(715, 346)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(148, 45)
+        Me.Button2.TabIndex = 38
+        Me.Button2.Text = "Buscar por Cliente"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Pagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1026, 444)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.ComboBoxEmpleado)
+        Me.Controls.Add(Me.ComboBoxCliente)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.DTP)
         Me.Controls.Add(Me.BotonPagar)
-        Me.Controls.Add(Me.TextBoxCliente)
-        Me.Controls.Add(Me.TextBoxEmpleado)
+        Me.Controls.Add(Me.TextBoxMonto)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LabelMonto)
         Me.Controls.Add(Me.LabelCliente)
-        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.DGVPagos)
         Me.Controls.Add(Me.LabelVentaEspe)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button3)
@@ -326,7 +337,7 @@ Partial Class Pagos
         Me.Name = "Pagos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pagos"
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGVPagos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -340,19 +351,20 @@ Partial Class Pagos
     Friend WithEvents ButtonVentas As Button
     Friend WithEvents ButtonUsuarios As Button
     Friend WithEvents LabelVentaEspe As Label
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents DGVPagos As DataGridView
     Friend WithEvents LabelCliente As Label
     Friend WithEvents LabelMonto As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBoxEmpleado As TextBox
-    Friend WithEvents TextBoxCliente As TextBox
+    Friend WithEvents TextBoxMonto As TextBox
     Friend WithEvents BotonPagar As Button
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents DTP As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents Cliente As DataGridViewTextBoxColumn
     Friend WithEvents Venta As DataGridViewTextBoxColumn
     Friend WithEvents Monto As DataGridViewTextBoxColumn
     Friend WithEvents Fecha As DataGridViewTextBoxColumn
     Friend WithEvents Empleado As DataGridViewTextBoxColumn
+    Friend WithEvents ComboBoxCliente As ComboBox
+    Friend WithEvents ComboBoxEmpleado As ComboBox
+    Friend WithEvents Button2 As Button
 End Class

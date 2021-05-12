@@ -39,6 +39,7 @@ Partial Class Clientes
         Me.TextBoxNombre = New System.Windows.Forms.TextBox()
         Me.BotonAñadir = New System.Windows.Forms.Button()
         Me.ButtonEliminar = New System.Windows.Forms.Button()
+        Me.ButtonModificar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -205,19 +206,33 @@ Partial Class Clientes
         Me.ButtonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonEliminar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEliminar.ForeColor = System.Drawing.SystemColors.Control
-        Me.ButtonEliminar.Location = New System.Drawing.Point(882, 339)
+        Me.ButtonEliminar.Location = New System.Drawing.Point(928, 339)
         Me.ButtonEliminar.Name = "ButtonEliminar"
         Me.ButtonEliminar.Size = New System.Drawing.Size(112, 37)
         Me.ButtonEliminar.TabIndex = 19
         Me.ButtonEliminar.Text = "Eliminar"
         Me.ButtonEliminar.UseVisualStyleBackColor = False
         '
+        'ButtonModificar
+        '
+        Me.ButtonModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
+        Me.ButtonModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonModificar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonModificar.ForeColor = System.Drawing.SystemColors.Control
+        Me.ButtonModificar.Location = New System.Drawing.Point(806, 339)
+        Me.ButtonModificar.Name = "ButtonModificar"
+        Me.ButtonModificar.Size = New System.Drawing.Size(107, 37)
+        Me.ButtonModificar.TabIndex = 35
+        Me.ButtonModificar.Text = "Modificar"
+        Me.ButtonModificar.UseVisualStyleBackColor = False
+        '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1012, 450)
+        Me.ClientSize = New System.Drawing.Size(1038, 450)
+        Me.Controls.Add(Me.ButtonModificar)
         Me.Controls.Add(Me.ButtonEliminar)
         Me.Controls.Add(Me.BotonAñadir)
         Me.Controls.Add(Me.TextBoxNombre)
@@ -259,4 +274,5 @@ Partial Class Clientes
     Friend WithEvents TextBoxNombre As TextBox
     Friend WithEvents BotonAñadir As Button
     Friend WithEvents ButtonEliminar As Button
+    Friend WithEvents ButtonModificar As Button
 End Class

@@ -115,13 +115,18 @@ Public Class Empleados
     End Sub
 
     Private Sub ButtonModificar_Click(sender As Object, e As EventArgs) Handles ButtonModificar.Click
-        Dim command As New MySqlCommand("UPDATE `usuarios` SET  usuario=@usuario WHERE nombre=@nombre;", cnx)
-
+        cnx.Open()
+        Dim command As New MySqlCommand("UPDATE `usuarios` SET  paterno=@paterno, materno=@materno, usuario=@usuario, password=@password WHERE nombre=@nombre;", cnx)
+        'Poder modificar todo
         command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
+        command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
+        command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
         command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
         command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
 
-        cnx.Open()
+        command.CommandType = CommandType.Text
+        command.ExecuteNonQuery()
+
 
         Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, usuario FROM `usuarios`", cnx)
 
