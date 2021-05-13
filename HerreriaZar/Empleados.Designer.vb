@@ -27,7 +27,6 @@ Partial Class Empleados
         Me.DGVusuarios = New System.Windows.Forms.DataGridView()
         Me.LabelVentaEspe = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ButtonEliminar = New System.Windows.Forms.Button()
         Me.BotonAñadir = New System.Windows.Forms.Button()
         Me.TextBoxNombre = New System.Windows.Forms.TextBox()
         Me.TextBoxPaterno = New System.Windows.Forms.TextBox()
@@ -40,6 +39,7 @@ Partial Class Empleados
         Me.LabelUsuario = New System.Windows.Forms.Label()
         Me.LabelPass = New System.Windows.Forms.Label()
         Me.ButtonModificar = New System.Windows.Forms.Button()
+        Me.ButtonEliminar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVusuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,19 +87,6 @@ Partial Class Empleados
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
-        '
-        'ButtonEliminar
-        '
-        Me.ButtonEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
-        Me.ButtonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEliminar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEliminar.ForeColor = System.Drawing.SystemColors.Control
-        Me.ButtonEliminar.Location = New System.Drawing.Point(859, 339)
-        Me.ButtonEliminar.Name = "ButtonEliminar"
-        Me.ButtonEliminar.Size = New System.Drawing.Size(89, 37)
-        Me.ButtonEliminar.TabIndex = 33
-        Me.ButtonEliminar.Text = "Eliminar"
-        Me.ButtonEliminar.UseVisualStyleBackColor = False
         '
         'BotonAñadir
         '
@@ -228,6 +215,19 @@ Partial Class Empleados
         Me.ButtonModificar.Text = "Modificar"
         Me.ButtonModificar.UseVisualStyleBackColor = False
         '
+        'ButtonEliminar
+        '
+        Me.ButtonEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
+        Me.ButtonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonEliminar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonEliminar.ForeColor = System.Drawing.SystemColors.Control
+        Me.ButtonEliminar.Location = New System.Drawing.Point(859, 339)
+        Me.ButtonEliminar.Name = "ButtonEliminar"
+        Me.ButtonEliminar.Size = New System.Drawing.Size(89, 37)
+        Me.ButtonEliminar.TabIndex = 33
+        Me.ButtonEliminar.Text = "Eliminar"
+        Me.ButtonEliminar.UseVisualStyleBackColor = False
+        '
         'Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -263,7 +263,6 @@ Partial Class Empleados
     Friend WithEvents DGVusuarios As DataGridView
     Friend WithEvents LabelVentaEspe As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents ButtonEliminar As Button
     Friend WithEvents BotonAñadir As Button
     Friend WithEvents TextBoxNombre As TextBox
     Friend WithEvents TextBoxPaterno As TextBox
@@ -276,4 +275,5 @@ Partial Class Empleados
     Friend WithEvents LabelUsuario As Label
     Friend WithEvents LabelPass As Label
     Friend WithEvents ButtonModificar As Button
+    Friend WithEvents ButtonEliminar As Button
 End Class

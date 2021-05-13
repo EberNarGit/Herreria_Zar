@@ -98,15 +98,7 @@ Public Class Clientes
 
         cnx.Open()
 
-        If command.ExecuteNonQuery() = 1 Then
-
-            MessageBox.Show("Empleado Eliminado")
-
-        Else
-
-            MessageBox.Show("ERROR")
-
-        End If
+        command.ExecuteNonQuery()
 
         Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, telefono FROM `catalogo_clientes`", cnx)
 
