@@ -223,6 +223,7 @@ Partial Class ReporteVentas
         '
         'DGVreporte
         '
+        Me.DGVreporte.BackgroundColor = System.Drawing.Color.White
         Me.DGVreporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVreporte.Location = New System.Drawing.Point(243, 166)
         Me.DGVreporte.Name = "DGVreporte"
