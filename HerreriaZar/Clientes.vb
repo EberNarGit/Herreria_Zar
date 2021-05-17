@@ -12,12 +12,12 @@ Public Class Clientes
         TextBoxNombre.Text = DGVClientes.Rows(renglon).Cells(1).Value
         TextBoxPaterno.Text = DGVClientes.Rows(renglon).Cells(2).Value
         TextBoxMaterno.Text = DGVClientes.Rows(renglon).Cells(3).Value
-        TextBoxTelefono.Text = DGVClientes.Rows(renglon).Cells(4).Value
+        TextBoxRFC.Text = DGVClientes.Rows(renglon).Cells(4).Value
     End Sub
 
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
-        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, telefono FROM `catalogo_clientes`", cnx)
+        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, RFC FROM `catalogo_clientes`", cnx)
 
         Dim dt As DataTable = New DataTable
         Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
@@ -29,13 +29,14 @@ Public Class Clientes
 
     Private Sub BotonAñadir_Click(sender As Object, e As EventArgs) Handles BotonAñadir.Click
         Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
-        Dim command As New MySqlCommand("INSERT INTO `catalogo_clientes`(`nombre`, `paterno`, `materno`, `correo`, `telefono`) VALUES (@nombre,@paterno,@materno,@correo,@telefono)", cnx)
+        Dim command As New MySqlCommand("INSERT INTO `catalogo_clientes`(`nombre`, `paterno`, `materno`, `correo`, `telefono`, `RFC`) VALUES (@nombre,@paterno,@materno,@correo,@telefono,@RFC)", cnx)
 
         command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
         command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
         command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
         command.Parameters.Add("@correo", MySqlDbType.VarChar).Value = TextBoxCorreo.Text
         command.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = TextBoxTelefono.Text
+        command.Parameters.Add("@RFC", MySqlDbType.VarChar).Value = TextBoxRFC.Text
 
         cnx.Open()
 
@@ -50,7 +51,7 @@ Public Class Clientes
 
         End If
 
-        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, telefono FROM `catalogo_clientes`", cnx)
+        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, RFC FROM `catalogo_clientes`", cnx)
 
         Dim dt As DataTable = New DataTable
         Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
@@ -65,19 +66,20 @@ Public Class Clientes
     Private Sub ButtonModificar_Click(sender As Object, e As EventArgs) Handles ButtonModificar.Click
         Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
         cnx.Open()
-        Dim command As New MySqlCommand("UPDATE  `catalogo_clientes` SET  paterno=@paterno, materno=@materno, correo=@correo, telefono=@telefono WHERE nombre=@nombre;", cnx)
+        Dim command As New MySqlCommand("UPDATE  `catalogo_clientes` SET  paterno=@paterno, materno=@materno, correo=@correo, telefono=@telefono, RFC=@RFC WHERE nombre=@nombre;", cnx)
         'Poder modificar todo
         command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
         command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
         command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
         command.Parameters.Add("@correo", MySqlDbType.VarChar).Value = TextBoxCorreo.Text
         command.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = TextBoxTelefono.Text
+        command.Parameters.Add("@RFC", MySqlDbType.VarChar).Value = TextBoxRFC.Text
 
         command.CommandType = CommandType.Text
         command.ExecuteNonQuery()
 
 
-        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, telefono FROM `catalogo_clientes`", cnx)
+        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, RFC FROM `catalogo_clientes`", cnx)
 
         Dim dt As DataTable = New DataTable
         Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
@@ -88,31 +90,5 @@ Public Class Clientes
 
     End Sub
 
-    Private Sub ButtonEliminar_Click(sender As Object, e As EventArgs) Handles ButtonEliminar.Click
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
-        Dim command As New MySqlCommand("delete FROM  `catalogo_clientes` WHERE nombre=@nombre ", cnx)
 
-        command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
-        command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
-        command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
-
-        cnx.Open()
-
-        command.ExecuteNonQuery()
-
-        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, telefono FROM `catalogo_clientes`", cnx)
-
-        Dim dt As DataTable = New DataTable
-        Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
-
-        da.Fill(dt)
-        DGVClientes.DataSource = dt
-        cnx.Close()
-        TextBoxNombre.Text = ""
-        TextBoxPaterno.Text = ""
-        TextBoxMaterno.Text = ""
-        TextBoxCorreo.Text = ""
-        TextBoxTelefono.Text = ""
-
-    End Sub
 End Class

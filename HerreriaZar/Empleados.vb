@@ -14,7 +14,7 @@ Public Class Empleados
 
         'Declaracion de variables necesarias'
 
-        Dim command As New MySqlCommand("INSERT INTO `usuarios`(`nombre`, `paterno`, `materno`, `usuario`, `password`) VALUES (@nombre,@paterno,@materno,@usuario,@password)", cnx)
+        Dim command As New MySqlCommand("INSERT INTO `usuarios`(`nombre`, `paterno`, `materno`, `usuario`, `password`) VALUES (@nombre,@paterno,@materno,@usuario,@password) ON DUPLICATE KEY UPDATE usuario = @usuario", cnx)
 
         command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
         command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
@@ -30,7 +30,7 @@ Public Class Empleados
 
         Else
 
-            MessageBox.Show("ERROR")
+            MessageBox.Show("No se puede gurdar el empleado, intenta con otro nombre de usuario")
 
         End If
 

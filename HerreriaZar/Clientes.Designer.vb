@@ -38,8 +38,9 @@ Partial Class Clientes
         Me.TextBoxPaterno = New System.Windows.Forms.TextBox()
         Me.TextBoxNombre = New System.Windows.Forms.TextBox()
         Me.BotonAñadir = New System.Windows.Forms.Button()
-        Me.ButtonEliminar = New System.Windows.Forms.Button()
         Me.ButtonModificar = New System.Windows.Forms.Button()
+        Me.TextBoxRFC = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -193,25 +194,12 @@ Partial Class Clientes
         Me.BotonAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BotonAñadir.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BotonAñadir.ForeColor = System.Drawing.SystemColors.Control
-        Me.BotonAñadir.Location = New System.Drawing.Point(676, 339)
+        Me.BotonAñadir.Location = New System.Drawing.Point(741, 339)
         Me.BotonAñadir.Name = "BotonAñadir"
         Me.BotonAñadir.Size = New System.Drawing.Size(112, 37)
         Me.BotonAñadir.TabIndex = 18
         Me.BotonAñadir.Text = "Añadir"
         Me.BotonAñadir.UseVisualStyleBackColor = False
-        '
-        'ButtonEliminar
-        '
-        Me.ButtonEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
-        Me.ButtonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEliminar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEliminar.ForeColor = System.Drawing.SystemColors.Control
-        Me.ButtonEliminar.Location = New System.Drawing.Point(928, 339)
-        Me.ButtonEliminar.Name = "ButtonEliminar"
-        Me.ButtonEliminar.Size = New System.Drawing.Size(112, 37)
-        Me.ButtonEliminar.TabIndex = 19
-        Me.ButtonEliminar.Text = "Eliminar"
-        Me.ButtonEliminar.UseVisualStyleBackColor = False
         '
         'ButtonModificar
         '
@@ -219,12 +207,32 @@ Partial Class Clientes
         Me.ButtonModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonModificar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonModificar.ForeColor = System.Drawing.SystemColors.Control
-        Me.ButtonModificar.Location = New System.Drawing.Point(806, 339)
+        Me.ButtonModificar.Location = New System.Drawing.Point(887, 339)
         Me.ButtonModificar.Name = "ButtonModificar"
         Me.ButtonModificar.Size = New System.Drawing.Size(107, 37)
         Me.ButtonModificar.TabIndex = 35
         Me.ButtonModificar.Text = "Modificar"
         Me.ButtonModificar.UseVisualStyleBackColor = False
+        '
+        'TextBoxRFC
+        '
+        Me.TextBoxRFC.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.TextBoxRFC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxRFC.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxRFC.Location = New System.Drawing.Point(779, 291)
+        Me.TextBoxRFC.Name = "TextBoxRFC"
+        Me.TextBoxRFC.Size = New System.Drawing.Size(215, 21)
+        Me.TextBoxRFC.TabIndex = 37
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(672, 290)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(33, 19)
+        Me.Label1.TabIndex = 36
+        Me.Label1.Text = "RFC"
         '
         'Clientes
         '
@@ -232,8 +240,9 @@ Partial Class Clientes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1038, 450)
+        Me.Controls.Add(Me.TextBoxRFC)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ButtonModificar)
-        Me.Controls.Add(Me.ButtonEliminar)
         Me.Controls.Add(Me.BotonAñadir)
         Me.Controls.Add(Me.TextBoxNombre)
         Me.Controls.Add(Me.TextBoxPaterno)
@@ -273,6 +282,7 @@ Partial Class Clientes
     Friend WithEvents TextBoxPaterno As TextBox
     Friend WithEvents TextBoxNombre As TextBox
     Friend WithEvents BotonAñadir As Button
-    Friend WithEvents ButtonEliminar As Button
     Friend WithEvents ButtonModificar As Button
+    Friend WithEvents TextBoxRFC As TextBox
+    Friend WithEvents Label1 As Label
 End Class
