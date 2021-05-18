@@ -13,46 +13,51 @@ Public Class Empleados
         'capturado texto en las cajas de texto
 
         'Declaracion de variables necesarias'
+        If String.IsNullOrEmpty(TextBoxUsuario.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        Else
+            Try
+                Dim command As New MySqlCommand("INSERT INTO `usuarios`(`nombre`, `paterno`, `materno`, `usuario`, `password`) VALUES (@nombre,@paterno,@materno,@usuario,@password)", cnx)
 
-        Try
-            Dim command As New MySqlCommand("INSERT INTO `usuarios`(`nombre`, `paterno`, `materno`, `usuario`, `password`) VALUES (@nombre,@paterno,@materno,@usuario,@password)", cnx)
+                command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
+                command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
+                command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
+                command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
+                command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
 
-            command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
-            command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
-            command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
-            command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
-            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
+                cnx.Open()
 
-            cnx.Open()
+                If command.ExecuteNonQuery() = 1 Then
 
-            If command.ExecuteNonQuery() = 1 Then
+                    MessageBox.Show("Empleado Guardado")
 
-                MessageBox.Show("Empleado Guardado")
+                Else
 
-            Else
+                    MessageBox.Show("No se puede gurdar el empleado, intenta con otro nombre de usuario")
 
-                MessageBox.Show("No se puede gurdar el empleado, intenta con otro nombre de usuario")
-
-            End If
-        Catch ex As Exception
-            MsgBox("No se puede añadir, registro duplicado")
-        End Try
+                End If
+            Catch ex As Exception
+                MsgBox("No se puede añadir, usuario duplicado")
+            End Try
 
 
-        TextBoxNombre.Text = ""
-        TextBoxPaterno.Text = ""
-        TextBoxMaterno.Text = ""
-        TextBoxUsuario.Text = ""
-        TextBoxCon.Text = ""
+            TextBoxNombre.Text = ""
+            TextBoxPaterno.Text = ""
+            TextBoxMaterno.Text = ""
+            TextBoxUsuario.Text = ""
+            TextBoxCon.Text = ""
 
-        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, usuario FROM `usuarios`", cnx)
+            Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, usuario FROM `usuarios`", cnx)
 
-        Dim dt As DataTable = New DataTable
-        Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
+            Dim dt As DataTable = New DataTable
+            Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
 
-        da.Fill(dt)
-        DGVusuarios.DataSource = dt
-        cnx.Close()
+            da.Fill(dt)
+            DGVusuarios.DataSource = dt
+            cnx.Close()
+
+        End If
 
 
     End Sub
