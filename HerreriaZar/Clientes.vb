@@ -29,6 +29,8 @@ Public Class Clientes
 
     Private Sub BotonAñadir_Click(sender As Object, e As EventArgs) Handles BotonAñadir.Click
         Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+
+
         Dim command As New MySqlCommand("INSERT INTO `catalogo_clientes`(`nombre`, `paterno`, `materno`, `correo`, `telefono`, `RFC`) VALUES (@nombre,@paterno,@materno,@correo,@telefono,@RFC)", cnx)
 
         command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
@@ -59,6 +61,13 @@ Public Class Clientes
         da.Fill(dt)
         DGVClientes.DataSource = dt
         cnx.Close()
+        TextBoxNombre.Text = ""
+        TextBoxPaterno.Text = ""
+        TextBoxMaterno.Text = ""
+        TextBoxTelefono.Text = ""
+        TextBoxCorreo.Text = ""
+        TextBoxRFC.Text = ""
+
 
 
     End Sub
@@ -87,6 +96,13 @@ Public Class Clientes
         da.Fill(dt)
         DGVClientes.DataSource = dt
         cnx.Close()
+
+        TextBoxNombre.Text = ""
+        TextBoxPaterno.Text = ""
+        TextBoxMaterno.Text = ""
+        TextBoxTelefono.Text = ""
+        TextBoxCorreo.Text = ""
+        TextBoxRFC.Text = ""
 
     End Sub
 
