@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class VentaG
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
     Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -10,6 +11,8 @@ Public Class VentaG
 
     Private Sub VentaG_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label3.Text = "Hoy es " & Today
+        Call insertarnull()
+
 
         DGVventa.ReadOnly = True
 
@@ -61,6 +64,49 @@ Public Class VentaG
 
     End Sub
 
+    Private Sub CargarDatos()
+        Dim datos As New MySqlDataAdapter("SELECT cp.descripcion,ve.alto,ve.largo,ve.ancho,ve.color, ve.cantidad, ve.precio 
+        From venta_especifica As ve
+        Join venta_general As vg
+        On vg.id = ve.venta_general_fk
+        Join catalogo_productos As cp
+        On cp.id = ve.productos_fk
+        Where vg.id In(Select MAX(id) from venta_general)", cnx)
+        Dim ds As New DataSet()
+        datos.Fill(ds, "venta_especifica")
+
+        Me.DGVventa.DataSource = ds.Tables("venta_especifica")
+    End Sub
+
+    Private Sub insertar()
+        If cnx.state = ConnectionState.Closed Then
+            cnx.Open
+        End If
+
+        Dim cmd As New MySqlCommand("INSERT INTO venta_especifica(alto, ancho, largo, color, cantidad, precio, productos_fk,venta_general_fk) VALUES(" & Me.TextBoxAlto.Text & "," & Me.TextBoxAncho.Text & "," & Me.TextBoxLargo.Text & ",'" & TextBoxColor.Text & "'," & TextBoxCantidad.Text & "," & TextBoxPrecio.Text & "," & CBProducto.SelectedValue & ",(SELECT MAX(id) FROM venta_general))", cnx)
+        cmd.ExecuteNonQuery()
+        MsgBox("Prudocto Añadido", MsgBoxStyle.Information, "Confirmacion")
+
+        If cnx.State = ConnectionState.Open Then
+            cnx.Close
+        End If
+    End Sub
+
+    Private Sub insertarnull()
+        If cnx.State = ConnectionState.Closed Then
+            cnx.Open()
+        End If
+
+        Dim cmd As New MySqlCommand("INSERT INTO venta_general(fecha, fecha_b, total, anticipo, clientes_fk, usuarios_fk) VALUES(NULL,NULL,NULL,NULL,NULL,NULL)", cnx)
+        cmd.ExecuteNonQuery()
+
+
+        If cnx.State = ConnectionState.Open Then
+            cnx.Close()
+        End If
+    End Sub
+
+
     Private Sub CBProducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBProducto.SelectedIndexChanged
         Dim L As String = CBProducto.SelectedValue.ToString
     End Sub
@@ -73,7 +119,10 @@ Public Class VentaG
         Dim G As String = CBEmpleado.SelectedValue.ToString
     End Sub
 
-
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
+        Call insertar()
+        Call CargarDatos()
+    End Sub
 End Class
 
 
