@@ -55,7 +55,7 @@ Public Class Pagos
 
         ComboBoxCliente.DataSource = table
 
-        ComboBoxCliente.ValueMember = "nombre"
+        ComboBoxCliente.ValueMember = "id"
         ComboBoxCliente.DisplayMember = "nombre"
 
         Dim adapter1 As New MySqlDataAdapter("SELECT `id`, `usuario` FROM usuarios", cnx)

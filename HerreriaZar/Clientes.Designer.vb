@@ -41,6 +41,8 @@ Partial Class Clientes
         Me.ButtonModificar = New System.Windows.Forms.Button()
         Me.TextBoxRFC = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ComboBoxEmpleado = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,7 +94,7 @@ Partial Class Clientes
         '
         Me.LabelTelefono.AutoSize = True
         Me.LabelTelefono.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTelefono.Location = New System.Drawing.Point(672, 254)
+        Me.LabelTelefono.Location = New System.Drawing.Point(663, 198)
         Me.LabelTelefono.Name = "LabelTelefono"
         Me.LabelTelefono.Size = New System.Drawing.Size(62, 19)
         Me.LabelTelefono.TabIndex = 5
@@ -102,7 +104,7 @@ Partial Class Clientes
         '
         Me.LabelCorreo.AutoSize = True
         Me.LabelCorreo.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCorreo.Location = New System.Drawing.Point(672, 220)
+        Me.LabelCorreo.Location = New System.Drawing.Point(663, 164)
         Me.LabelCorreo.Name = "LabelCorreo"
         Me.LabelCorreo.Size = New System.Drawing.Size(51, 19)
         Me.LabelCorreo.TabIndex = 6
@@ -112,7 +114,7 @@ Partial Class Clientes
         '
         Me.LabelMaterno.AutoSize = True
         Me.LabelMaterno.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMaterno.Location = New System.Drawing.Point(672, 186)
+        Me.LabelMaterno.Location = New System.Drawing.Point(663, 130)
         Me.LabelMaterno.Name = "LabelMaterno"
         Me.LabelMaterno.Size = New System.Drawing.Size(62, 19)
         Me.LabelMaterno.TabIndex = 7
@@ -122,7 +124,7 @@ Partial Class Clientes
         '
         Me.LabelPaterno.AutoSize = True
         Me.LabelPaterno.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelPaterno.Location = New System.Drawing.Point(672, 155)
+        Me.LabelPaterno.Location = New System.Drawing.Point(663, 99)
         Me.LabelPaterno.Name = "LabelPaterno"
         Me.LabelPaterno.Size = New System.Drawing.Size(57, 19)
         Me.LabelPaterno.TabIndex = 8
@@ -132,7 +134,7 @@ Partial Class Clientes
         '
         Me.LabelNombre.AutoSize = True
         Me.LabelNombre.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelNombre.Location = New System.Drawing.Point(672, 123)
+        Me.LabelNombre.Location = New System.Drawing.Point(663, 67)
         Me.LabelNombre.Name = "LabelNombre"
         Me.LabelNombre.Size = New System.Drawing.Size(60, 19)
         Me.LabelNombre.TabIndex = 9
@@ -143,7 +145,7 @@ Partial Class Clientes
         Me.TextBoxTelefono.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxTelefono.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxTelefono.Location = New System.Drawing.Point(779, 255)
+        Me.TextBoxTelefono.Location = New System.Drawing.Point(770, 199)
         Me.TextBoxTelefono.Name = "TextBoxTelefono"
         Me.TextBoxTelefono.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxTelefono.TabIndex = 13
@@ -153,7 +155,7 @@ Partial Class Clientes
         Me.TextBoxCorreo.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxCorreo.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCorreo.Location = New System.Drawing.Point(779, 221)
+        Me.TextBoxCorreo.Location = New System.Drawing.Point(770, 165)
         Me.TextBoxCorreo.Name = "TextBoxCorreo"
         Me.TextBoxCorreo.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxCorreo.TabIndex = 14
@@ -163,7 +165,7 @@ Partial Class Clientes
         Me.TextBoxMaterno.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxMaterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxMaterno.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxMaterno.Location = New System.Drawing.Point(779, 187)
+        Me.TextBoxMaterno.Location = New System.Drawing.Point(770, 131)
         Me.TextBoxMaterno.Name = "TextBoxMaterno"
         Me.TextBoxMaterno.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxMaterno.TabIndex = 15
@@ -173,7 +175,7 @@ Partial Class Clientes
         Me.TextBoxPaterno.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxPaterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxPaterno.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxPaterno.Location = New System.Drawing.Point(779, 156)
+        Me.TextBoxPaterno.Location = New System.Drawing.Point(770, 100)
         Me.TextBoxPaterno.Name = "TextBoxPaterno"
         Me.TextBoxPaterno.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxPaterno.TabIndex = 16
@@ -183,7 +185,7 @@ Partial Class Clientes
         Me.TextBoxNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxNombre.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxNombre.Location = New System.Drawing.Point(779, 124)
+        Me.TextBoxNombre.Location = New System.Drawing.Point(770, 68)
         Me.TextBoxNombre.Name = "TextBoxNombre"
         Me.TextBoxNombre.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxNombre.TabIndex = 17
@@ -219,7 +221,7 @@ Partial Class Clientes
         Me.TextBoxRFC.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxRFC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxRFC.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxRFC.Location = New System.Drawing.Point(779, 291)
+        Me.TextBoxRFC.Location = New System.Drawing.Point(770, 235)
         Me.TextBoxRFC.Name = "TextBoxRFC"
         Me.TextBoxRFC.Size = New System.Drawing.Size(215, 21)
         Me.TextBoxRFC.TabIndex = 37
@@ -228,11 +230,29 @@ Partial Class Clientes
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(672, 290)
+        Me.Label1.Location = New System.Drawing.Point(663, 234)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 19)
         Me.Label1.TabIndex = 36
         Me.Label1.Text = "RFC"
+        '
+        'ComboBoxEmpleado
+        '
+        Me.ComboBoxEmpleado.FormattingEnabled = True
+        Me.ComboBoxEmpleado.Location = New System.Drawing.Point(769, 276)
+        Me.ComboBoxEmpleado.Name = "ComboBoxEmpleado"
+        Me.ComboBoxEmpleado.Size = New System.Drawing.Size(216, 21)
+        Me.ComboBoxEmpleado.TabIndex = 39
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(663, 278)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(69, 19)
+        Me.Label2.TabIndex = 38
+        Me.Label2.Text = "Empleado"
         '
         'Clientes
         '
@@ -240,6 +260,8 @@ Partial Class Clientes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1038, 450)
+        Me.Controls.Add(Me.ComboBoxEmpleado)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBoxRFC)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ButtonModificar)
@@ -285,4 +307,6 @@ Partial Class Clientes
     Friend WithEvents ButtonModificar As Button
     Friend WithEvents TextBoxRFC As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBoxEmpleado As ComboBox
+    Friend WithEvents Label2 As Label
 End Class

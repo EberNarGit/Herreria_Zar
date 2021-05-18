@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5F0EE373-730C-4C97-B25A-46951D325113}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>HerreriaZar.My.MyApplication</StartupObject>
+    <StartupObject>HerreriaZar.Pedidos</StartupObject>
     <RootNamespace>HerreriaZar</RootNamespace>
     <AssemblyName>HerreriaZar</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>

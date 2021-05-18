@@ -14,25 +14,30 @@ Public Class Empleados
 
         'Declaracion de variables necesarias'
 
-        Dim command As New MySqlCommand("INSERT INTO `usuarios`(`nombre`, `paterno`, `materno`, `usuario`, `password`) VALUES (@nombre,@paterno,@materno,@usuario,@password) ON DUPLICATE KEY UPDATE usuario = @usuario", cnx)
+        Try
+            Dim command As New MySqlCommand("INSERT INTO `usuarios`(`nombre`, `paterno`, `materno`, `usuario`, `password`) VALUES (@nombre,@paterno,@materno,@usuario,@password)", cnx)
 
-        command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
-        command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
-        command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
-        command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
-        command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
+            command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
+            command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
+            command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
+            command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
 
-        cnx.Open()
+            cnx.Open()
 
-        If command.ExecuteNonQuery() = 1 Then
+            If command.ExecuteNonQuery() = 1 Then
 
-            MessageBox.Show("Empleado Guardado")
+                MessageBox.Show("Empleado Guardado")
 
-        Else
+            Else
 
-            MessageBox.Show("No se puede gurdar el empleado, intenta con otro nombre de usuario")
+                MessageBox.Show("No se puede gurdar el empleado, intenta con otro nombre de usuario")
 
-        End If
+            End If
+        Catch ex As Exception
+            MsgBox("No se puede añadir, registro duplicado")
+        End Try
+
 
         TextBoxNombre.Text = ""
         TextBoxPaterno.Text = ""
