@@ -119,9 +119,32 @@ Public Class VentaG
         Dim G As String = CBEmpleado.SelectedValue.ToString
     End Sub
 
+    Private Sub updateVG()
+        Dim F As String = DTPFechaVenta.Value.Date.ToString("yyyy/MM/dd")
+        Dim L As String = DTPFecha_Entrega.Value.Date.ToString("yyyy/MM/dd")
+
+        If cnx.State = ConnectionState.Closed Then
+            cnx.Open()
+        End If
+
+        Dim cmd As New MySqlCommand("UPDATE venta_general set fecha ='" & DTPFechaVenta.Value.Date.ToString("yyyy/MM/dd") & "',fecha_b = '" & DTPFecha_Entrega.Value.Date.ToString("yyyy/MM/dd") & "', total = '" & Me.TextBoxTotal.Text & "', anticipo ='" & TextBoxAnticipo.Text & "', clientes_fk ='" & CBCliente.SelectedValue & "', usuarios_fk ='" & CBEmpleado.SelectedValue & "'ORDER BY id DESC LIMIT 1;", cnx)
+        cmd.ExecuteNonQuery()
+        MsgBox("Venta Realizada", MsgBoxStyle.Information, "Confirmacion")
+
+        If cnx.State = ConnectionState.Open Then
+            cnx.Close()
+        End If
+    End Sub
+
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
         Call insertar()
         Call CargarDatos()
+    End Sub
+
+    Private Sub BotonSiguiente_Click(sender As Object, e As EventArgs) Handles BotonSiguiente.Click
+        Call updateVG()
+        Me.Hide()
+
     End Sub
 End Class
 
