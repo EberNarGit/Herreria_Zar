@@ -39,51 +39,55 @@ Public Class Clientes
     Private Sub BotonAñadir_Click(sender As Object, e As EventArgs) Handles BotonAñadir.Click
         Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
 
-        Try
-            Dim command As New MySqlCommand("INSERT INTO `catalogo_clientes`(`nombre`, `paterno`, `materno`, `correo`, `telefono`, `RFC`, `usuarios_fk`) VALUES (@nombre,@paterno,@materno,@correo,@telefono,@RFC, @fkusuario)", cnx)
+        If String.IsNullOrEmpty(TextBoxRFC.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        Else
+            Try
+                Dim command As New MySqlCommand("INSERT INTO `catalogo_clientes`(`nombre`, `paterno`, `materno`, `correo`, `telefono`, `RFC`, `usuarios_fk`) VALUES (@nombre,@paterno,@materno,@correo,@telefono,@RFC, @fkusuario)", cnx)
 
-            command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
-            command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
-            command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
-            command.Parameters.Add("@correo", MySqlDbType.VarChar).Value = TextBoxCorreo.Text
-            command.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = TextBoxTelefono.Text
-            command.Parameters.Add("@RFC", MySqlDbType.VarChar).Value = TextBoxRFC.Text
-            command.Parameters.Add("@fkusuario", MySqlDbType.VarChar).Value = ComboBoxEmpleado.SelectedValue
+                command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
+                command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
+                command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
+                command.Parameters.Add("@correo", MySqlDbType.VarChar).Value = TextBoxCorreo.Text
+                command.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = TextBoxTelefono.Text
+                command.Parameters.Add("@RFC", MySqlDbType.VarChar).Value = TextBoxRFC.Text
+                command.Parameters.Add("@fkusuario", MySqlDbType.VarChar).Value = ComboBoxEmpleado.SelectedValue
 
-            cnx.Open()
+                cnx.Open()
 
-            If command.ExecuteNonQuery() = 1 Then  ''Field 'usuarios_fk' doesn't have a default value'
-                '
+                If command.ExecuteNonQuery() = 1 Then  ''Field 'usuarios_fk' doesn't have a default value'
+                    '
 
-                MessageBox.Show("Cliente Añadido")
+                    MessageBox.Show("Cliente Añadido")
 
-            Else
+                Else
 
-                MessageBox.Show("ERROR")
+                    MessageBox.Show("ERROR")
 
-            End If
-        Catch ex As Exception
-            MsgBox("No se puede añadir, registro duplicado")
-        End Try
-
-
-        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, RFC FROM `catalogo_clientes`", cnx)
-
-        Dim dt As DataTable = New DataTable
-        Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
-
-        da.Fill(dt)
-        DGVClientes.DataSource = dt
-        cnx.Close()
-        TextBoxNombre.Text = ""
-        TextBoxPaterno.Text = ""
-        TextBoxMaterno.Text = ""
-        TextBoxTelefono.Text = ""
-        TextBoxCorreo.Text = ""
-        TextBoxRFC.Text = ""
+                End If
+            Catch ex As Exception
+                MsgBox("No se puede añadir, RFC duplicado")
+            End Try
 
 
+            Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, RFC FROM `catalogo_clientes`", cnx)
 
+            Dim dt As DataTable = New DataTable
+            Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
+
+            da.Fill(dt)
+            DGVClientes.DataSource = dt
+            cnx.Close()
+            TextBoxNombre.Text = ""
+            TextBoxPaterno.Text = ""
+            TextBoxMaterno.Text = ""
+            TextBoxTelefono.Text = ""
+            TextBoxCorreo.Text = ""
+            TextBoxRFC.Text = ""
+
+
+        End If
     End Sub
 
     Private Sub ButtonModificar_Click(sender As Object, e As EventArgs) Handles ButtonModificar.Click
