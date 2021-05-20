@@ -333,9 +333,9 @@ Partial Class VentaG
         Me.LabelAncho.Location = New System.Drawing.Point(18, 218)
         Me.LabelAncho.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelAncho.Name = "LabelAncho"
-        Me.LabelAncho.Size = New System.Drawing.Size(62, 23)
+        Me.LabelAncho.Size = New System.Drawing.Size(92, 23)
         Me.LabelAncho.TabIndex = 22
-        Me.LabelAncho.Text = "Ancho"
+        Me.LabelAncho.Text = "Ancho cm"
         '
         'LabelLargo
         '
@@ -346,9 +346,9 @@ Partial Class VentaG
         Me.LabelLargo.Location = New System.Drawing.Point(18, 185)
         Me.LabelLargo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelLargo.Name = "LabelLargo"
-        Me.LabelLargo.Size = New System.Drawing.Size(56, 23)
+        Me.LabelLargo.Size = New System.Drawing.Size(91, 23)
         Me.LabelLargo.TabIndex = 21
-        Me.LabelLargo.Text = "Largo"
+        Me.LabelLargo.Text = "Largo  cm"
         '
         'LabelAlto
         '
@@ -359,9 +359,9 @@ Partial Class VentaG
         Me.LabelAlto.Location = New System.Drawing.Point(18, 152)
         Me.LabelAlto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelAlto.Name = "LabelAlto"
-        Me.LabelAlto.Size = New System.Drawing.Size(44, 23)
+        Me.LabelAlto.Size = New System.Drawing.Size(94, 23)
         Me.LabelAlto.TabIndex = 20
-        Me.LabelAlto.Text = "Alto"
+        Me.LabelAlto.Text = "Alto     cm"
         '
         'DTPFecha_Entrega
         '
