@@ -146,12 +146,15 @@ Public Class VentaG
         TextBoxPrecio.Text = ""
         TextBoxLargo.Text = ""
         TextBoxCantidad.Text = ""
+        CBProducto.Items.Clear()
     End Sub
 
     Private Sub BotonSiguiente_Click(sender As Object, e As EventArgs) Handles BotonSiguiente.Click
         Call updateVG()
         TextBoxTotal.Text = ""
         TextBoxAnticipo.Text = ""
+
+        DGVventa.DataSource = Nothing
         Me.Hide()
 
     End Sub
