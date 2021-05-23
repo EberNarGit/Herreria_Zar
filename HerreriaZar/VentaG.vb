@@ -139,10 +139,19 @@ Public Class VentaG
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
         Call insertar()
         Call CargarDatos()
+
+        TextBoxAlto.Text = ""
+        TextBoxAncho.Text = ""
+        TextBoxColor.Text = ""
+        TextBoxPrecio.Text = ""
+        TextBoxLargo.Text = ""
+        TextBoxCantidad.Text = ""
     End Sub
 
     Private Sub BotonSiguiente_Click(sender As Object, e As EventArgs) Handles BotonSiguiente.Click
         Call updateVG()
+        TextBoxTotal.Text = ""
+        TextBoxAnticipo.Text = ""
         Me.Hide()
 
     End Sub
