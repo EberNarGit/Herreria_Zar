@@ -78,6 +78,18 @@ Public Class VentaG
         Me.DGVventa.DataSource = ds.Tables("venta_especifica")
     End Sub
 
+    Private Sub CargarDatosTotal()
+        Dim lista As Byte
+        Dim datos As New MySqlDataAdapter("select sum(precio) as total
+                                           from venta_especifica
+                                            where venta_general_fk = (SELECT MAX(id) AS id FROM venta_general)", cnx)
+        Dim ds As New DataSet()
+        datos.Fill(ds, "venta_especifica")
+
+        lista = ds.Tables("venta_especifica").Rows.Count
+        TextBoxTotal.Text = ds.Tables("venta_especifica").Rows(0).Item("total")
+    End Sub
+
     Private Sub insertar()
         If cnx.state = ConnectionState.Closed Then
             cnx.Open
@@ -139,6 +151,8 @@ Public Class VentaG
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
         Call insertar()
         Call CargarDatos()
+        Call CargarDatosTotal()
+
 
         TextBoxAlto.Text = ""
         TextBoxAncho.Text = ""
@@ -146,7 +160,7 @@ Public Class VentaG
         TextBoxPrecio.Text = ""
         TextBoxLargo.Text = ""
         TextBoxCantidad.Text = ""
-        CBProducto.Items.Clear()
+
     End Sub
 
     Private Sub BotonSiguiente_Click(sender As Object, e As EventArgs) Handles BotonSiguiente.Click
