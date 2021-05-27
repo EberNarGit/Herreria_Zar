@@ -172,6 +172,32 @@ Public Class VentaG
         Me.Hide()
 
     End Sub
+
+    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
+        Call Eliminar()
+        Call CargarDatos()
+
+        TextBoxAlto.Text = ""
+        TextBoxAncho.Text = ""
+        TextBoxColor.Text = ""
+        TextBoxPrecio.Text = ""
+        TextBoxLargo.Text = ""
+        TextBoxCantidad.Text = ""
+
+
+    End Sub
+
+    Private Sub Eliminar()
+        If cnx.State = ConnectionState.Closed Then
+            cnx.Open()
+        End If
+        Dim cmd As New MySqlCommand("DELETE FROM venta_especifica WHERE alto =" & Me.TextBoxAlto.Text & " and ancho =" & Me.TextBoxAncho.Text & " and largo =" & Me.TextBoxLargo.Text & " and color ='" & TextBoxColor.Text & "' and cantidad = " & TextBoxCantidad.Text & " and precio = " & TextBoxPrecio.Text & " and productos_fk =" & CBProducto.SelectedValue & " and venta_general_fk = (SELECT MAX(id) FROM venta_general)", cnx)
+        cmd.ExecuteNonQuery()
+        MsgBox("Producto eliminado", MsgBoxStyle.Information, "Confirmar")
+        If cnx.State = ConnectionState.Open Then
+            cnx.Close()
+        End If
+    End Sub
 End Class
 
 
