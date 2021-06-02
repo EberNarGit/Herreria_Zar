@@ -52,16 +52,11 @@ Public Class Pagos
 
     End Sub
 
-    Private Sub CargarDatos()
-        Dim datos As New MySqlDataAdapter("SELECT cp.descripcion,ve.alto,ve.largo,ve.ancho, cc.telefono ,ve.color, ve.cantidad, vg.anticipo, vg.total, vg.fecha as fecha_compra, vg.fecha_b as fecha_entrega
-			FROM venta_especifica As ve
-			JOIN venta_general As vg
-			ON vg.id = ve.venta_general_fk
-			JOIN catalogo_clientes as cc 
-			ON (cc.id = vg.clientes_fk)
-			JOIN catalogo_productos As cp
-			ON cp.id = ve.productos_fk
-			WHERE cc.telefono = '" & TextBoxCliente.Text & "'", cnx)
+    Private Sub BuscarCliente()
+        Dim datos As New MySqlDataAdapter("select cc.nombre, cc.paterno, cc.materno , vg.anticipo, vg.total, vg.fecha, vg.fecha_b from venta_general as vg
+JOIN catalogo_clientes As cc
+ON cc.id = vg.clientes_fk
+where cc.nombre LIKE '" & TextBoxCliente.Text & "%'", cnx)
         Dim ds As New DataSet()
         datos.Fill(ds, "venta_especifica")
 
@@ -75,7 +70,7 @@ Public Class Pagos
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Call CargarDatos()
+        Call BuscarCliente()
 
 
     End Sub
