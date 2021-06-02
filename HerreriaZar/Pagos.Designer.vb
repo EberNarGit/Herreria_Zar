@@ -42,6 +42,8 @@ Partial Class Pagos
         Me.Button2 = New System.Windows.Forms.Button()
         Me.DGVpagos = New System.Windows.Forms.DataGridView()
         Me.TextBoxCliente = New System.Windows.Forms.TextBox()
+        Me.TextBoxid = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.DGVpagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -51,7 +53,7 @@ Partial Class Pagos
         Me.LabelVentaEspe.BackColor = System.Drawing.Color.White
         Me.LabelVentaEspe.Font = New System.Drawing.Font("Microsoft YaHei UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelVentaEspe.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.LabelVentaEspe.Location = New System.Drawing.Point(179, 23)
+        Me.LabelVentaEspe.Location = New System.Drawing.Point(179, -2)
         Me.LabelVentaEspe.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelVentaEspe.Name = "LabelVentaEspe"
         Me.LabelVentaEspe.Size = New System.Drawing.Size(159, 58)
@@ -181,7 +183,7 @@ Partial Class Pagos
         '
         Me.LabelCliente.AutoSize = True
         Me.LabelCliente.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCliente.Location = New System.Drawing.Point(948, 255)
+        Me.LabelCliente.Location = New System.Drawing.Point(948, 367)
         Me.LabelCliente.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelCliente.Name = "LabelCliente"
         Me.LabelCliente.Size = New System.Drawing.Size(65, 23)
@@ -192,7 +194,7 @@ Partial Class Pagos
         '
         Me.LabelMonto.AutoSize = True
         Me.LabelMonto.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMonto.Location = New System.Drawing.Point(952, 311)
+        Me.LabelMonto.Location = New System.Drawing.Point(948, 402)
         Me.LabelMonto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelMonto.Name = "LabelMonto"
         Me.LabelMonto.Size = New System.Drawing.Size(57, 23)
@@ -203,7 +205,7 @@ Partial Class Pagos
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(948, 363)
+        Me.Label1.Location = New System.Drawing.Point(948, 432)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(92, 23)
@@ -215,10 +217,10 @@ Partial Class Pagos
         Me.TextBoxMonto.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxMonto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxMonto.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxMonto.Location = New System.Drawing.Point(1049, 252)
+        Me.TextBoxMonto.Location = New System.Drawing.Point(1049, 370)
         Me.TextBoxMonto.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxMonto.Name = "TextBoxMonto"
-        Me.TextBoxMonto.Size = New System.Drawing.Size(282, 25)
+        Me.TextBoxMonto.Size = New System.Drawing.Size(131, 25)
         Me.TextBoxMonto.TabIndex = 32
         '
         'BotonPagar
@@ -227,7 +229,7 @@ Partial Class Pagos
         Me.BotonPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BotonPagar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BotonPagar.ForeColor = System.Drawing.SystemColors.Control
-        Me.BotonPagar.Location = New System.Drawing.Point(1116, 413)
+        Me.BotonPagar.Location = New System.Drawing.Point(1184, 465)
         Me.BotonPagar.Margin = New System.Windows.Forms.Padding(4)
         Me.BotonPagar.Name = "BotonPagar"
         Me.BotonPagar.Size = New System.Drawing.Size(147, 55)
@@ -237,7 +239,7 @@ Partial Class Pagos
         '
         'DTP
         '
-        Me.DTP.Location = New System.Drawing.Point(1049, 309)
+        Me.DTP.Location = New System.Drawing.Point(1048, 403)
         Me.DTP.Margin = New System.Windows.Forms.Padding(4)
         Me.DTP.Name = "DTP"
         Me.DTP.Size = New System.Drawing.Size(281, 22)
@@ -247,7 +249,7 @@ Partial Class Pagos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(952, 100)
+        Me.Label2.Location = New System.Drawing.Point(948, 185)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(67, 23)
@@ -257,7 +259,7 @@ Partial Class Pagos
         'ComboBoxEmpleado
         '
         Me.ComboBoxEmpleado.FormattingEnabled = True
-        Me.ComboBoxEmpleado.Location = New System.Drawing.Point(1049, 364)
+        Me.ComboBoxEmpleado.Location = New System.Drawing.Point(1048, 433)
         Me.ComboBoxEmpleado.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBoxEmpleado.Name = "ComboBoxEmpleado"
         Me.ComboBoxEmpleado.Size = New System.Drawing.Size(281, 24)
@@ -269,19 +271,19 @@ Partial Class Pagos
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button2.Location = New System.Drawing.Point(1085, 143)
+        Me.Button2.Location = New System.Drawing.Point(1134, 220)
         Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(197, 55)
         Me.Button2.TabIndex = 38
-        Me.Button2.Text = "Buscar por Cliente"
+        Me.Button2.Text = "Buscar"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'DGVpagos
         '
         Me.DGVpagos.BackgroundColor = System.Drawing.Color.White
         Me.DGVpagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVpagos.Location = New System.Drawing.Point(189, 100)
+        Me.DGVpagos.Location = New System.Drawing.Point(189, 63)
         Me.DGVpagos.Name = "DGVpagos"
         Me.DGVpagos.RowHeadersWidth = 51
         Me.DGVpagos.RowTemplate.Height = 24
@@ -293,11 +295,36 @@ Partial Class Pagos
         Me.TextBoxCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxCliente.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCliente.Location = New System.Drawing.Point(1048, 100)
+        Me.TextBoxCliente.Location = New System.Drawing.Point(1047, 183)
         Me.TextBoxCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxCliente.Name = "TextBoxCliente"
         Me.TextBoxCliente.Size = New System.Drawing.Size(282, 25)
         Me.TextBoxCliente.TabIndex = 40
+        '
+        'TextBoxid
+        '
+        Me.TextBoxid.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.TextBoxid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxid.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxid.Location = New System.Drawing.Point(740, 400)
+        Me.TextBoxid.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBoxid.Name = "TextBoxid"
+        Me.TextBoxid.Size = New System.Drawing.Size(95, 25)
+        Me.TextBoxid.TabIndex = 41
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button4.Location = New System.Drawing.Point(189, 479)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(197, 55)
+        Me.Button4.TabIndex = 42
+        Me.Button4.Text = "Seleccionar"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Pagos
         '
@@ -305,6 +332,7 @@ Partial Class Pagos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1368, 546)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.TextBoxCliente)
         Me.Controls.Add(Me.DGVpagos)
         Me.Controls.Add(Me.Button2)
@@ -324,6 +352,7 @@ Partial Class Pagos
         Me.Controls.Add(Me.ButtonPagos)
         Me.Controls.Add(Me.ButtonVentas)
         Me.Controls.Add(Me.ButtonUsuarios)
+        Me.Controls.Add(Me.TextBoxid)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pagos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -353,4 +382,6 @@ Partial Class Pagos
     Friend WithEvents Button2 As Button
     Friend WithEvents DGVpagos As DataGridView
     Friend WithEvents TextBoxCliente As TextBox
+    Friend WithEvents TextBoxid As TextBox
+    Friend WithEvents Button4 As Button
 End Class
