@@ -27,7 +27,7 @@
 
     Private Sub ButtonPagos_Click(sender As Object, e As EventArgs) Handles ButtonPagos.Click
         Pagos.Show()
-        Me.Hide()
+
     End Sub
 
     Private Sub ButtonPedidos_Click(sender As Object, e As EventArgs) Handles ButtonPedidos.Click

@@ -6,7 +6,20 @@ Public Class Pagos
 
     End Sub
 
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DTP.ValueChanged
+    Public Sub cargarcomboempleado()
+        Dim dt As New DataTable
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim consulta As String = "SELECT id, nombre FROM usuarios"
+        Dim comando As New MySqlDataAdapter(consulta, con)
+        comando.Fill(dt)
+
+        ComboBoxEmpleado.DataSource = dt
+        ComboBoxEmpleado.DisplayMember = "nombre"
+        ComboBoxEmpleado.ValueMember = "id"
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DTPfecha.ValueChanged
 
     End Sub
 
@@ -48,34 +61,133 @@ Public Class Pagos
     End Sub
 
     Private Sub Pagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DGVpagos.ReadOnly = True
 
+        Try
+
+            cargarcomboempleado()
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
-    Private Sub CargarDatos()
-        Dim datos As New MySqlDataAdapter("SELECT cp.descripcion,ve.alto,ve.largo,ve.ancho, cc.telefono ,ve.color, ve.cantidad, vg.anticipo, vg.total, vg.fecha as fecha_compra, vg.fecha_b as fecha_entrega
-			FROM venta_especifica As ve
-			JOIN venta_general As vg
-			ON vg.id = ve.venta_general_fk
-			JOIN catalogo_clientes as cc 
-			ON (cc.id = vg.clientes_fk)
-			JOIN catalogo_productos As cp
-			ON cp.id = ve.productos_fk
-			WHERE cc.telefono = '" & TextBoxCliente.Text & "'", cnx)
+    Private Sub BuscarCliente()
+        Dim datos As New MySqlDataAdapter("select vg.id, cc.nombre, cc.paterno, cc.materno , vg.anticipo, vg.total, vg.status, vg.fecha, vg.fecha_b from venta_general as vg
+JOIN catalogo_clientes As cc
+ON cc.id = vg.clientes_fk
+where cc.nombre LIKE '" & TextBoxCliente.Text & "%'", cnx)
         Dim ds As New DataSet()
         datos.Fill(ds, "venta_especifica")
 
         Me.DGVpagos.DataSource = ds.Tables("venta_especifica")
     End Sub
 
+    Private Sub CargarVentas()
+        Dim datos As New MySqlDataAdapter("SELECT cp.descripcion,ve.alto,ve.largo,ve.ancho,ve.color, ve.cantidad, ve.precio 
+FROM venta_especifica As ve
+JOIN venta_general As vg
+ON vg.id = ve.venta_general_fk
+JOIN catalogo_productos As cp
+ON cp.id = ve.productos_fk
+WHERE vg.id = " & TextBoxid.Text & "", cnx)
+        Dim ds As New DataSet()
+        datos.Fill(ds, "venta_especifica")
+
+        Me.DGVpagos.DataSource = ds.Tables("venta_especifica")
+    End Sub
+
+    Private Sub insertarnull()
+        If cnx.State = ConnectionState.Closed Then
+            cnx.Open()
+        End If
+
+        Dim cmd As New MySqlCommand("INSERT INTO pagos(pago, fecha, venta_general_fk, usuarios_fk) VALUES(NULL,NULL,NULL,NULL)", cnx)
+        cmd.ExecuteNonQuery()
+
+
+        If cnx.State = ConnectionState.Open Then
+            cnx.Close()
+        End If
+    End Sub
+
+    Private Sub updateVenta_General()
+
+
+        If cnx.State = ConnectionState.Closed Then
+            cnx.Open()
+        End If
+
+        Dim cmd As New MySqlCommand("UPDATE venta_general set status = 'pagado' where id =" & TextBoxid.Text & "", cnx)
+        cmd.ExecuteNonQuery()
+        MsgBox("Pago exitoso", MsgBoxStyle.Information, "Confirmacion")
+
+        If cnx.State = ConnectionState.Open Then
+            cnx.Close()
+        End If
+    End Sub
+
+    Private Sub insertarPago()
+        Dim F As String = DTPfecha.Value.Date.ToString("yyyy/MM/dd")
+
+
+        If cnx.State = ConnectionState.Closed Then
+            cnx.Open()
+        End If
+
+        Dim cmd As New MySqlCommand("UPDATE pagos set pago ='" & TextBoxMonto.Text & "',fecha = '" & DTPfecha.Value.Date.ToString("yyyy/MM/dd") & "', venta_general_fk = '" & Me.TextBoxid.Text & "', usuarios_fk ='" & ComboBoxEmpleado.SelectedValue & "'ORDER BY id DESC LIMIT 1;", cnx)
+        cmd.ExecuteNonQuery()
+
+
+        If cnx.State = ConnectionState.Open Then
+            cnx.Close()
+        End If
+    End Sub
+
     Private Sub BotonPagar_Click(sender As Object, e As EventArgs) Handles BotonPagar.Click
+        Call insertarPago()
+        Call updateVenta_General()
+
+        TextBoxMonto.Text = ""
+
+        DGVpagos.DataSource = Nothing
+        Me.Hide()
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Call BuscarCliente()
+        DGVpagos.Columns("id").Visible = False
+
+        TextBoxCliente.Text = ""
 
 
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Call CargarDatos()
+    Private Sub CargarDatosTotal()
+        Dim lista As Byte
+        Dim datos As New MySqlDataAdapter("select sum(total) - sum(anticipo) as monto
+from venta_general
+where id =  " & TextBoxid.Text & "", cnx)
+        Dim ds As New DataSet()
+        datos.Fill(ds, "venta_general")
+
+        lista = ds.Tables("venta_general").Rows.Count
+        TextBoxMonto.Text = ds.Tables("venta_general").Rows(0).Item("monto")
+    End Sub
+
+    Private Sub DGVpagos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVpagos.CellContentClick
+        Dim renglon As Integer
+        'Al darle clic al renglón mostramos los datos en las cajas de texto
+        renglon = DGVpagos.CurrentCellAddress.Y
+        TextBoxid.Text = DGVpagos.Rows(renglon).Cells(0).Value
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Call CargarVentas()
+        Call CargarDatosTotal()
+
 
 
     End Sub
