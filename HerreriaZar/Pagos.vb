@@ -6,7 +6,20 @@ Public Class Pagos
 
     End Sub
 
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DTP.ValueChanged
+    Public Sub cargarcomboempleado()
+        Dim dt As New DataTable
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim consulta As String = "SELECT id, nombre FROM usuarios"
+        Dim comando As New MySqlDataAdapter(consulta, con)
+        comando.Fill(dt)
+
+        ComboBoxEmpleado.DataSource = dt
+        ComboBoxEmpleado.DisplayMember = "nombre"
+        ComboBoxEmpleado.ValueMember = "id"
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DTPfecha.ValueChanged
 
     End Sub
 
@@ -48,7 +61,14 @@ Public Class Pagos
     End Sub
 
     Private Sub Pagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DGVpagos.ReadOnly = True
 
+        Try
+
+            cargarcomboempleado()
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -77,9 +97,61 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
         Me.DGVpagos.DataSource = ds.Tables("venta_especifica")
     End Sub
 
+    Private Sub insertarnull()
+        If cnx.State = ConnectionState.Closed Then
+            cnx.Open()
+        End If
+
+        Dim cmd As New MySqlCommand("INSERT INTO pagos(pago, fecha, venta_general_fk, usuarios_fk) VALUES(NULL,NULL,NULL,NULL)", cnx)
+        cmd.ExecuteNonQuery()
+
+
+        If cnx.State = ConnectionState.Open Then
+            cnx.Close()
+        End If
+    End Sub
+
+    Private Sub updateVenta_General()
+
+
+        If cnx.State = ConnectionState.Closed Then
+            cnx.Open()
+        End If
+
+        Dim cmd As New MySqlCommand("UPDATE venta_general set status = 'pagado' where id =" & TextBoxid.Text & "", cnx)
+        cmd.ExecuteNonQuery()
+        MsgBox("Pago exitoso", MsgBoxStyle.Information, "Confirmacion")
+
+        If cnx.State = ConnectionState.Open Then
+            cnx.Close()
+        End If
+    End Sub
+
+    Private Sub insertarPago()
+        Dim F As String = DTPfecha.Value.Date.ToString("yyyy/MM/dd")
+
+
+        If cnx.State = ConnectionState.Closed Then
+            cnx.Open()
+        End If
+
+        Dim cmd As New MySqlCommand("UPDATE pagos set pago ='" & TextBoxMonto.Text & "',fecha = '" & DTPfecha.Value.Date.ToString("yyyy/MM/dd") & "', venta_general_fk = '" & Me.TextBoxid.Text & "', usuarios_fk ='" & ComboBoxEmpleado.SelectedValue & "'ORDER BY id DESC LIMIT 1;", cnx)
+        cmd.ExecuteNonQuery()
+
+
+        If cnx.State = ConnectionState.Open Then
+            cnx.Close()
+        End If
+    End Sub
+
     Private Sub BotonPagar_Click(sender As Object, e As EventArgs) Handles BotonPagar.Click
+        Call insertarPago()
+        Call updateVenta_General()
 
+        TextBoxMonto.Text = ""
 
+        DGVpagos.DataSource = Nothing
+        Me.Hide()
 
     End Sub
 
@@ -87,7 +159,22 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
         Call BuscarCliente()
         DGVpagos.Columns("id").Visible = False
 
+        TextBoxCliente.Text = ""
 
+
+
+    End Sub
+
+    Private Sub CargarDatosTotal()
+        Dim lista As Byte
+        Dim datos As New MySqlDataAdapter("select sum(total) - sum(anticipo) as monto
+from venta_general
+where id =  " & TextBoxid.Text & "", cnx)
+        Dim ds As New DataSet()
+        datos.Fill(ds, "venta_general")
+
+        lista = ds.Tables("venta_general").Rows.Count
+        TextBoxMonto.Text = ds.Tables("venta_general").Rows(0).Item("monto")
     End Sub
 
     Private Sub DGVpagos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVpagos.CellContentClick
@@ -99,6 +186,9 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Call CargarVentas()
+        Call CargarDatosTotal()
+
+
 
     End Sub
 End Class

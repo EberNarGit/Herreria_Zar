@@ -36,7 +36,7 @@ Partial Class Pagos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxMonto = New System.Windows.Forms.TextBox()
         Me.BotonPagar = New System.Windows.Forms.Button()
-        Me.DTP = New System.Windows.Forms.DateTimePicker()
+        Me.DTPfecha = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBoxEmpleado = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -237,13 +237,13 @@ Partial Class Pagos
         Me.BotonPagar.Text = "Pagar"
         Me.BotonPagar.UseVisualStyleBackColor = False
         '
-        'DTP
+        'DTPfecha
         '
-        Me.DTP.Location = New System.Drawing.Point(1048, 403)
-        Me.DTP.Margin = New System.Windows.Forms.Padding(4)
-        Me.DTP.Name = "DTP"
-        Me.DTP.Size = New System.Drawing.Size(281, 22)
-        Me.DTP.TabIndex = 34
+        Me.DTPfecha.Location = New System.Drawing.Point(1048, 403)
+        Me.DTPfecha.Margin = New System.Windows.Forms.Padding(4)
+        Me.DTPfecha.Name = "DTPfecha"
+        Me.DTPfecha.Size = New System.Drawing.Size(281, 22)
+        Me.DTPfecha.TabIndex = 34
         '
         'Label2
         '
@@ -295,7 +295,7 @@ Partial Class Pagos
         Me.TextBoxCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxCliente.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCliente.Location = New System.Drawing.Point(1047, 183)
+        Me.TextBoxCliente.Location = New System.Drawing.Point(1047, 187)
         Me.TextBoxCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxCliente.Name = "TextBoxCliente"
         Me.TextBoxCliente.Size = New System.Drawing.Size(282, 25)
@@ -338,7 +338,7 @@ Partial Class Pagos
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ComboBoxEmpleado)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.DTP)
+        Me.Controls.Add(Me.DTPfecha)
         Me.Controls.Add(Me.BotonPagar)
         Me.Controls.Add(Me.TextBoxMonto)
         Me.Controls.Add(Me.Label1)
@@ -376,7 +376,7 @@ Partial Class Pagos
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBoxMonto As TextBox
     Friend WithEvents BotonPagar As Button
-    Friend WithEvents DTP As DateTimePicker
+    Friend WithEvents DTPfecha As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents ComboBoxEmpleado As ComboBox
     Friend WithEvents Button2 As Button
