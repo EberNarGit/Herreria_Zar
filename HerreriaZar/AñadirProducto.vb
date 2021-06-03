@@ -28,13 +28,17 @@ Public Class AñadirProducto
 
         cnx.Open()
 
-        If command.ExecuteNonQuery() = 1 Then
-            MessageBox.Show("Producto Añadido")
+        Try
+            If command.ExecuteNonQuery() = 1 Then
+                MessageBox.Show("Producto Añadido")
 
-        Else
-            MessageBox.Show("No se pudo agregar el producto, intenta de nuevo")
-        End If
-
+            Else
+                MessageBox.Show("No se pudo agregar el producto, intenta de nuevo")
+            End If
+        Catch ex As MySQL.Data.MySqlClient.MySqlException
+            MsgBox("Error, uno de los campos excede el límite de caracteres")
+            TextBoxDescripción.Text = ""
+        End Try
         cnx.Close()
 
     End Sub

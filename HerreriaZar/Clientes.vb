@@ -66,9 +66,18 @@ Public Class Clientes
                     MessageBox.Show("ERROR")
 
                 End If
-            Catch ex As Exception
-                MsgBox("No se puede añadir, RFC duplicado")
+            Catch ex As MySql.Data.MySqlClient.MySqlException
+                Select Case ex.Number
+                    Case 1406
+                        MsgBox("Error, uno de los campos excede el límite de caracteres")
+                    Case 1062
+                        MsgBox("No se puede añadir, RFC duplicado")
+                End Select
+
             End Try
+            'Catch ex As Exception
+            '   MsgBox("No se puede añadir, RFC duplicado")
+            ' End Try
 
 
             Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, RFC FROM `catalogo_clientes`", cnx)

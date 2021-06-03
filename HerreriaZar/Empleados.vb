@@ -37,8 +37,14 @@ Public Class Empleados
                     MessageBox.Show("No se puede gurdar el empleado, intenta con otro nombre de usuario")
 
                 End If
-            Catch ex As Exception
-                MsgBox("No se puede añadir, usuario duplicado")
+            Catch ex As MySql.Data.MySqlClient.MySqlException
+                Select Case ex.Number
+                    Case 1406
+                        MsgBox("Error, uno de los campos excede el límite de caracteres")
+                    Case 1062
+                        MsgBox("No se puede añadir, usuario duplicado")
+                End Select
+
             End Try
 
 
