@@ -52,7 +52,7 @@ Partial Class AñadirProducto
         Me.Panel1.Controls.Add(Me.LabelDescripcion)
         Me.Panel1.Location = New System.Drawing.Point(40, 59)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(733, 323)
+        Me.Panel1.Size = New System.Drawing.Size(866, 429)
         Me.Panel1.TabIndex = 0
         '
         'ComboBoxCategoria
@@ -60,7 +60,7 @@ Partial Class AñadirProducto
         Me.ComboBoxCategoria.FormattingEnabled = True
         Me.ComboBoxCategoria.Location = New System.Drawing.Point(180, 128)
         Me.ComboBoxCategoria.Name = "ComboBoxCategoria"
-        Me.ComboBoxCategoria.Size = New System.Drawing.Size(215, 21)
+        Me.ComboBoxCategoria.Size = New System.Drawing.Size(391, 21)
         Me.ComboBoxCategoria.TabIndex = 36
         '
         'ComboBoxUsuario
@@ -68,7 +68,7 @@ Partial Class AñadirProducto
         Me.ComboBoxUsuario.FormattingEnabled = True
         Me.ComboBoxUsuario.Location = New System.Drawing.Point(180, 86)
         Me.ComboBoxUsuario.Name = "ComboBoxUsuario"
-        Me.ComboBoxUsuario.Size = New System.Drawing.Size(215, 21)
+        Me.ComboBoxUsuario.Size = New System.Drawing.Size(391, 21)
         Me.ComboBoxUsuario.TabIndex = 35
         '
         'LabelUsuario
@@ -83,7 +83,7 @@ Partial Class AñadirProducto
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(511, 56)
+        Me.PictureBox1.Location = New System.Drawing.Point(637, 54)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(196, 147)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -96,9 +96,9 @@ Partial Class AñadirProducto
         Me.ButtonSelect_img.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonSelect_img.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSelect_img.ForeColor = System.Drawing.SystemColors.Control
-        Me.ButtonSelect_img.Location = New System.Drawing.Point(531, 231)
+        Me.ButtonSelect_img.Location = New System.Drawing.Point(657, 334)
         Me.ButtonSelect_img.Name = "ButtonSelect_img"
-        Me.ButtonSelect_img.Size = New System.Drawing.Size(176, 40)
+        Me.ButtonSelect_img.Size = New System.Drawing.Size(176, 54)
         Me.ButtonSelect_img.TabIndex = 32
         Me.ButtonSelect_img.Text = "Seleccionar Imagen"
         Me.ButtonSelect_img.UseVisualStyleBackColor = False
@@ -109,9 +109,9 @@ Partial Class AñadirProducto
         Me.ButtonAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonAñadir.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonAñadir.ForeColor = System.Drawing.SystemColors.Control
-        Me.ButtonAñadir.Location = New System.Drawing.Point(281, 231)
+        Me.ButtonAñadir.Location = New System.Drawing.Point(436, 334)
         Me.ButtonAñadir.Name = "ButtonAñadir"
-        Me.ButtonAñadir.Size = New System.Drawing.Size(176, 40)
+        Me.ButtonAñadir.Size = New System.Drawing.Size(176, 54)
         Me.ButtonAñadir.TabIndex = 31
         Me.ButtonAñadir.Text = "Añadir"
         Me.ButtonAñadir.UseVisualStyleBackColor = False
@@ -132,8 +132,9 @@ Partial Class AñadirProducto
         Me.TextBoxDescripción.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxDescripción.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxDescripción.Location = New System.Drawing.Point(180, 164)
+        Me.TextBoxDescripción.Multiline = True
         Me.TextBoxDescripción.Name = "TextBoxDescripción"
-        Me.TextBoxDescripción.Size = New System.Drawing.Size(215, 21)
+        Me.TextBoxDescripción.Size = New System.Drawing.Size(391, 134)
         Me.TextBoxDescripción.TabIndex = 27
         '
         'LabelCategoria
@@ -161,7 +162,7 @@ Partial Class AñadirProducto
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(948, 500)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "AñadirProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

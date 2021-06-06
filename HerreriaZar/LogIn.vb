@@ -17,7 +17,9 @@ Public Class LogIn
             MsgBox(ex.Message)
         End Try
 
-        comando.CommandText = "SELECT * FROM usuarios WHERE usuario='" + user.Text + "' AND password='" + Contraseña.Text + "'"
+        comando.CommandText = "SELECT * FROM usuarios WHERE usuario=@usuario AND password=@password" '"
+        comando.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = user.Text
+        comando.Parameters.Add("@password", MySqlDbType.VarChar).Value = Contraseña.Text
 
         Dim r As MySqlDataReader
 
