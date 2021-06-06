@@ -170,6 +170,8 @@ Public Class VentaG
 
         DGVventa.DataSource = Nothing
         Me.Hide()
+        cnx.Close()
+
 
     End Sub
 
