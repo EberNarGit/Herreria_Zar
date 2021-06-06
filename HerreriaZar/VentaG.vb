@@ -65,7 +65,7 @@ Public Class VentaG
     End Sub
 
     Private Sub CargarDatos()
-        Dim datos As New MySqlDataAdapter("SELECT cp.descripcion,ve.alto,ve.largo,ve.ancho,ve.color, ve.cantidad, ve.precio 
+        Dim datos As New MySqlDataAdapter("SELECT ve.id, cp.descripcion,ve.alto,ve.largo,ve.ancho,ve.color, ve.cantidad, ve.precio 
         From venta_especifica As ve
         Join venta_general As vg
         On vg.id = ve.venta_general_fk
@@ -91,16 +91,24 @@ Public Class VentaG
     End Sub
 
     Private Sub insertar()
-        If cnx.state = ConnectionState.Closed Then
-            cnx.Open
+        If cnx.State = ConnectionState.Closed Then
+            cnx.Open()
         End If
 
-        Dim cmd As New MySqlCommand("INSERT INTO venta_especifica(alto, ancho, largo, color, cantidad, precio, productos_fk,venta_general_fk) VALUES(" & Me.TextBoxAlto.Text & "," & Me.TextBoxAncho.Text & "," & Me.TextBoxLargo.Text & ",'" & TextBoxColor.Text & "'," & TextBoxCantidad.Text & "," & TextBoxPrecio.Text & "," & CBProducto.SelectedValue & ",(SELECT MAX(id) FROM venta_general))", cnx)
-        cmd.ExecuteNonQuery()
+        Dim command As New MySqlCommand("INSERT INTO venta_especifica(alto, ancho, largo, color, cantidad, precio, productos_fk,venta_general_fk) VALUES(@alto,@ancho,@largo,@color,@cantidad,@precio, @productos_fk,(SELECT MAX(id) FROM venta_general))", cnx)
+
+            command.Parameters.Add("@alto", MySqlDbType.VarChar).Value = TextBoxAlto.Text
+                command.Parameters.Add("@ancho", MySqlDbType.VarChar).Value = TextBoxAncho.Text
+                command.Parameters.Add("@largo", MySqlDbType.VarChar).Value = TextBoxLargo.Text
+                command.Parameters.Add("@color", MySqlDbType.VarChar).Value = TextBoxColor.Text
+                command.Parameters.Add("@cantidad", MySqlDbType.VarChar).Value = TextBoxCantidad.Text
+                command.Parameters.Add("@precio", MySqlDbType.VarChar).Value = TextBoxPrecio.Text
+                command.Parameters.Add("@productos_fk", MySqlDbType.VarChar).Value = CBProducto.SelectedValue
+        command.ExecuteNonQuery()
         MsgBox("Prudocto Añadido", MsgBoxStyle.Information, "Confirmacion")
 
         If cnx.State = ConnectionState.Open Then
-            cnx.Close
+            cnx.Close()
         End If
     End Sub
 
@@ -132,15 +140,21 @@ Public Class VentaG
     End Sub
 
     Private Sub updateVG()
-        Dim F As String = DTPFechaVenta.Value.Date.ToString("yyyy/MM/dd")
-        Dim L As String = DTPFecha_Entrega.Value.Date.ToString("yyyy/MM/dd")
+
 
         If cnx.State = ConnectionState.Closed Then
             cnx.Open()
         End If
 
-        Dim cmd As New MySqlCommand("UPDATE venta_general set fecha ='" & DTPFechaVenta.Value.Date.ToString("yyyy/MM/dd") & "',fecha_b = '" & DTPFecha_Entrega.Value.Date.ToString("yyyy/MM/dd") & "', total = '" & Me.TextBoxTotal.Text & "', anticipo ='" & TextBoxAnticipo.Text & "', clientes_fk ='" & CBCliente.SelectedValue & "', usuarios_fk ='" & CBEmpleado.SelectedValue & "'ORDER BY id DESC LIMIT 1;", cnx)
-        cmd.ExecuteNonQuery()
+        Dim command As New MySqlCommand("UPDATE venta_general set fecha = @fecha, fecha_b = @fecha_b, total = @total, anticipo = @anticipo, clientes_fk = @clientes_fk, usuarios_fk = @usuarios_fk ORDER BY id DESC LIMIT 1 ", cnx)
+
+        command.Parameters.Add("@fecha", MySqlDbType.VarChar).Value = DTPFechaVenta.Value.Date.ToString("yyyy/MM/dd")
+        command.Parameters.Add("@fecha_b", MySqlDbType.VarChar).Value = DTPFecha_Entrega.Value.Date.ToString("yyyy/MM/dd")
+            command.Parameters.Add("@total", MySqlDbType.VarChar).Value = TextBoxTotal.Text
+            command.Parameters.Add("@anticipo", MySqlDbType.VarChar).Value = TextBoxAnticipo.Text
+            command.Parameters.Add("@clientes_fk", MySqlDbType.VarChar).Value = CBCliente.SelectedValue
+            command.Parameters.Add("@usuarios_fk", MySqlDbType.VarChar).Value = CBEmpleado.SelectedValue
+        command.ExecuteNonQuery()
         MsgBox("Venta Realizada", MsgBoxStyle.Information, "Confirmacion")
 
         If cnx.State = ConnectionState.Open Then
@@ -152,7 +166,7 @@ Public Class VentaG
         Call insertar()
         Call CargarDatos()
         Call CargarDatosTotal()
-
+        DGVventa.Columns("id").Visible = False
 
         TextBoxAlto.Text = ""
         TextBoxAncho.Text = ""
@@ -193,12 +207,20 @@ Public Class VentaG
         If cnx.State = ConnectionState.Closed Then
             cnx.Open()
         End If
-        Dim cmd As New MySqlCommand("DELETE FROM venta_especifica WHERE alto =" & Me.TextBoxAlto.Text & " and ancho =" & Me.TextBoxAncho.Text & " and largo =" & Me.TextBoxLargo.Text & " and color ='" & TextBoxColor.Text & "' and cantidad = " & TextBoxCantidad.Text & " and precio = " & TextBoxPrecio.Text & " and productos_fk =" & CBProducto.SelectedValue & " and venta_general_fk = (SELECT MAX(id) FROM venta_general)", cnx)
-        cmd.ExecuteNonQuery()
+        Dim command As New MySqlCommand("DELETE FROM venta_especifica WHERE id = @id", cnx)
+
+        command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
+
         MsgBox("Producto eliminado", MsgBoxStyle.Information, "Confirmar")
         If cnx.State = ConnectionState.Open Then
             cnx.Close()
         End If
+    End Sub
+
+    Private Sub DGVventa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVventa.CellContentClick
+        Dim renglon As Integer
+        renglon = DGVventa.CurrentCellAddress.Y
+        TextBoxid.Text = DGVventa.Rows(renglon).Cells(0).Value
     End Sub
 End Class
 

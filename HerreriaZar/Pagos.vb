@@ -77,6 +77,7 @@ Public Class Pagos
 JOIN catalogo_clientes As cc
 ON cc.id = vg.clientes_fk
 where cc.nombre LIKE '" & TextBoxCliente.Text & "%'", cnx)
+
         Dim ds As New DataSet()
         datos.Fill(ds, "venta_especifica")
 
@@ -118,7 +119,8 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
             cnx.Open()
         End If
 
-        Dim cmd As New MySqlCommand("UPDATE venta_general set status = 'pagado' where id =" & TextBoxid.Text & "", cnx)
+        Dim cmd As New MySqlCommand("UPDATE venta_general set status = 'pagado' where id = @id", cnx)
+        cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
         cmd.ExecuteNonQuery()
         MsgBox("Pago exitoso", MsgBoxStyle.Information, "Confirmacion")
 
@@ -128,15 +130,20 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
     End Sub
 
     Private Sub insertarPago()
-        Dim F As String = DTPfecha.Value.Date.ToString("yyyy/MM/dd")
+
 
 
         If cnx.State = ConnectionState.Closed Then
             cnx.Open()
         End If
 
-        Dim cmd As New MySqlCommand("UPDATE pagos set pago ='" & TextBoxMonto.Text & "',fecha = '" & DTPfecha.Value.Date.ToString("yyyy/MM/dd") & "', venta_general_fk = '" & Me.TextBoxid.Text & "', usuarios_fk ='" & ComboBoxEmpleado.SelectedValue & "'ORDER BY id DESC LIMIT 1;", cnx)
-        cmd.ExecuteNonQuery()
+
+        Dim command As New MySqlCommand("UPDATE pagos set pago = @pago, fecha = @fecha, venta_general_fk = @id , usuarios_fk = @usuarios_fk ORDER BY id DESC LIMIT 1 ", cnx)
+        command.Parameters.Add("@pago", MySqlDbType.VarChar).Value = TextBoxMonto.Text
+        command.Parameters.Add("@fecha", MySqlDbType.VarChar).Value = DTPfecha.Value.Date.ToString("yyyy/MM/dd")
+        command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
+        command.Parameters.Add("@usuarios_fk", MySqlDbType.VarChar).Value = ComboBoxEmpleado.SelectedValue
+        command.ExecuteNonQuery()
 
 
         If cnx.State = ConnectionState.Open Then
