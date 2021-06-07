@@ -137,6 +137,9 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
             cnx.Open()
         End If
 
+        'If "@pago" < 0 Then
+        'MsgBox("Por favor, ingresa un número valido")
+        'End If
 
         Dim command As New MySqlCommand("UPDATE pagos set pago = @pago, fecha = @fecha, venta_general_fk = @id , usuarios_fk = @usuarios_fk ORDER BY id DESC LIMIT 1 ", cnx)
         command.Parameters.Add("@pago", MySqlDbType.VarChar).Value = TextBoxMonto.Text

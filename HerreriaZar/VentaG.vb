@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class VentaG
-    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
     Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -27,7 +27,7 @@ Public Class VentaG
 
     Public Sub cargarcomboproducto()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
         Dim consulta As String = "SELECT id, descripcion FROM catalogo_productos"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -40,7 +40,7 @@ Public Class VentaG
 
     Public Sub cargarcombocliente()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
         Dim consulta As String = "SELECT id, nombre FROM catalogo_clientes"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -53,7 +53,7 @@ Public Class VentaG
 
     Public Sub cargarcomboempleado()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
         Dim consulta As String = "SELECT id, nombre FROM usuarios"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -87,7 +87,12 @@ Public Class VentaG
         datos.Fill(ds, "venta_especifica")
 
         lista = ds.Tables("venta_especifica").Rows.Count
-        TextBoxTotal.Text = ds.Tables("venta_especifica").Rows(0).Item("total")
+        Try
+            TextBoxTotal.Text = ds.Tables("venta_especifica").Rows(0).Item("total")
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub insertar()
@@ -95,17 +100,23 @@ Public Class VentaG
             cnx.Open()
         End If
 
-        Dim command As New MySqlCommand("INSERT INTO venta_especifica(alto, ancho, largo, color, cantidad, precio, productos_fk,venta_general_fk) VALUES(@alto,@ancho,@largo,@color,@cantidad,@precio, @productos_fk,(SELECT MAX(id) FROM venta_general))", cnx)
+        'probar con ese if, en caso de que falle, borrarlo y solo dejar lo del else
+        If TextBoxAlto.Text < 0 Or TextBoxAncho.Text < 0 Or TextBoxLargo.Text < 0 Or TextBoxCantidad.Text < 0 Or TextBoxPrecio.Text < 0 Then
+            MsgBox("Por favor, ingresa un número valido")
+
+        Else
+            Dim command As New MySqlCommand("INSERT INTO venta_especifica(alto, ancho, largo, color, cantidad, precio, productos_fk,venta_general_fk) VALUES(@alto,@ancho,@largo,@color,@cantidad,@precio, @productos_fk,(SELECT MAX(id) FROM venta_general))", cnx)
 
             command.Parameters.Add("@alto", MySqlDbType.VarChar).Value = TextBoxAlto.Text
-                command.Parameters.Add("@ancho", MySqlDbType.VarChar).Value = TextBoxAncho.Text
-                command.Parameters.Add("@largo", MySqlDbType.VarChar).Value = TextBoxLargo.Text
-                command.Parameters.Add("@color", MySqlDbType.VarChar).Value = TextBoxColor.Text
-                command.Parameters.Add("@cantidad", MySqlDbType.VarChar).Value = TextBoxCantidad.Text
-                command.Parameters.Add("@precio", MySqlDbType.VarChar).Value = TextBoxPrecio.Text
-                command.Parameters.Add("@productos_fk", MySqlDbType.VarChar).Value = CBProducto.SelectedValue
-        command.ExecuteNonQuery()
-        MsgBox("Prudocto Añadido", MsgBoxStyle.Information, "Confirmacion")
+            command.Parameters.Add("@ancho", MySqlDbType.VarChar).Value = TextBoxAncho.Text
+            command.Parameters.Add("@largo", MySqlDbType.VarChar).Value = TextBoxLargo.Text
+            command.Parameters.Add("@color", MySqlDbType.VarChar).Value = TextBoxColor.Text
+            command.Parameters.Add("@cantidad", MySqlDbType.VarChar).Value = TextBoxCantidad.Text
+            command.Parameters.Add("@precio", MySqlDbType.VarChar).Value = TextBoxPrecio.Text
+            command.Parameters.Add("@productos_fk", MySqlDbType.VarChar).Value = CBProducto.SelectedValue
+            command.ExecuteNonQuery()
+            MsgBox("Prudocto Añadido", MsgBoxStyle.Information, "Confirmacion")
+        End If
 
         If cnx.State = ConnectionState.Open Then
             cnx.Close()
@@ -146,16 +157,21 @@ Public Class VentaG
             cnx.Open()
         End If
 
-        Dim command As New MySqlCommand("UPDATE venta_general set fecha = @fecha, fecha_b = @fecha_b, total = @total, anticipo = @anticipo, clientes_fk = @clientes_fk, usuarios_fk = @usuarios_fk ORDER BY id DESC LIMIT 1 ", cnx)
+        If TextBoxTotal.Text < 0 Or TextBoxAnticipo.Text < 0 Then
+            MsgBox("Por favor, ingresa un número valido")
+        Else
+            Dim command As New MySqlCommand("UPDATE venta_general set fecha = @fecha, fecha_b = @fecha_b, total = @total, anticipo = @anticipo, clientes_fk = @clientes_fk, usuarios_fk = @usuarios_fk ORDER BY id DESC LIMIT 1 ", cnx)
 
-        command.Parameters.Add("@fecha", MySqlDbType.VarChar).Value = DTPFechaVenta.Value.Date.ToString("yyyy/MM/dd")
-        command.Parameters.Add("@fecha_b", MySqlDbType.VarChar).Value = DTPFecha_Entrega.Value.Date.ToString("yyyy/MM/dd")
+            command.Parameters.Add("@fecha", MySqlDbType.VarChar).Value = DTPFechaVenta.Value.Date.ToString("yyyy/MM/dd")
+            command.Parameters.Add("@fecha_b", MySqlDbType.VarChar).Value = DTPFecha_Entrega.Value.Date.ToString("yyyy/MM/dd")
             command.Parameters.Add("@total", MySqlDbType.VarChar).Value = TextBoxTotal.Text
             command.Parameters.Add("@anticipo", MySqlDbType.VarChar).Value = TextBoxAnticipo.Text
             command.Parameters.Add("@clientes_fk", MySqlDbType.VarChar).Value = CBCliente.SelectedValue
             command.Parameters.Add("@usuarios_fk", MySqlDbType.VarChar).Value = CBEmpleado.SelectedValue
-        command.ExecuteNonQuery()
-        MsgBox("Venta Realizada", MsgBoxStyle.Information, "Confirmacion")
+            command.ExecuteNonQuery()
+            MsgBox("Venta Realizada", MsgBoxStyle.Information, "Confirmacion")
+        End If
+
 
         If cnx.State = ConnectionState.Open Then
             cnx.Close()
