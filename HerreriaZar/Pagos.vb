@@ -137,17 +137,17 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
             cnx.Open()
         End If
 
-        'If "@pago" < 0 Then
-        'MsgBox("Por favor, ingresa un número valido")
-        'End If
+        If TextBoxMonto.Text < 0 Then
+            MsgBox("Por favor, ingresa un número valido")
 
-        Dim command As New MySqlCommand("UPDATE pagos set pago = @pago, fecha = @fecha, venta_general_fk = @id , usuarios_fk = @usuarios_fk ORDER BY id DESC LIMIT 1 ", cnx)
-        command.Parameters.Add("@pago", MySqlDbType.VarChar).Value = TextBoxMonto.Text
-        command.Parameters.Add("@fecha", MySqlDbType.VarChar).Value = DTPfecha.Value.Date.ToString("yyyy/MM/dd")
-        command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
-        command.Parameters.Add("@usuarios_fk", MySqlDbType.VarChar).Value = ComboBoxEmpleado.SelectedValue
-        command.ExecuteNonQuery()
-
+        Else
+            Dim command As New MySqlCommand("UPDATE pagos set pago = @pago, fecha = @fecha, venta_general_fk = @id , usuarios_fk = @usuarios_fk ORDER BY id DESC LIMIT 1 ", cnx)
+            command.Parameters.Add("@pago", MySqlDbType.VarChar).Value = TextBoxMonto.Text
+            command.Parameters.Add("@fecha", MySqlDbType.VarChar).Value = DTPfecha.Value.Date.ToString("yyyy/MM/dd")
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
+            command.Parameters.Add("@usuarios_fk", MySqlDbType.VarChar).Value = ComboBoxEmpleado.SelectedValue
+            command.ExecuteNonQuery()
+        End If
 
         If cnx.State = ConnectionState.Open Then
             cnx.Close()
