@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class VentaG
-    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
     Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -27,7 +27,7 @@ Public Class VentaG
 
     Public Sub cargarcomboproducto()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         Dim consulta As String = "SELECT id, descripcion FROM catalogo_productos"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -40,7 +40,7 @@ Public Class VentaG
 
     Public Sub cargarcombocliente()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         Dim consulta As String = "SELECT id, nombre FROM catalogo_clientes"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -53,7 +53,7 @@ Public Class VentaG
 
     Public Sub cargarcomboempleado()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         Dim consulta As String = "SELECT id, nombre FROM usuarios"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -170,6 +170,11 @@ Public Class VentaG
             command.Parameters.Add("@usuarios_fk", MySqlDbType.VarChar).Value = CBEmpleado.SelectedValue
             command.ExecuteNonQuery()
             MsgBox("Venta Realizada", MsgBoxStyle.Information, "Confirmacion")
+            TextBoxTotal.Text = ""
+            TextBoxAnticipo.Text = ""
+
+            DGVventa.DataSource = Nothing
+            Me.Hide()
         End If
 
 
@@ -195,12 +200,8 @@ Public Class VentaG
 
     Private Sub BotonSiguiente_Click(sender As Object, e As EventArgs) Handles BotonSiguiente.Click
         Call updateVG()
-        TextBoxTotal.Text = ""
-        TextBoxAnticipo.Text = ""
 
-        DGVventa.DataSource = Nothing
-        Me.Hide()
-        cnx.Close()
+
 
 
     End Sub
