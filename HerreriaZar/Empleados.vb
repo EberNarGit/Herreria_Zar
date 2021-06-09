@@ -16,6 +16,22 @@ Public Class Empleados
         If String.IsNullOrEmpty(TextBoxUsuario.Text) Then
             ' "Contains Empty value or Null Value" 
             MessageBox.Show("Los campos están vacios, verificar información")
+
+        ElseIf String.IsNullOrEmpty(TextBoxNombre.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxPaterno.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxMaterno.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+
+        ElseIf String.IsNullOrEmpty(TextBoxCon.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+
+
         Else
             Try
                 Dim command As New MySqlCommand("INSERT INTO `usuarios`(`nombre`, `paterno`, `materno`, `usuario`, `password`) VALUES (@nombre,@paterno,@materno,@usuario,@password)", cnx)
@@ -132,16 +148,36 @@ Public Class Empleados
 
     Private Sub ButtonModificar_Click(sender As Object, e As EventArgs) Handles ButtonModificar.Click
         cnx.Open()
-        Dim command As New MySqlCommand("UPDATE `usuarios` SET  paterno=@paterno, materno=@materno, usuario=@usuario, password=@password WHERE nombre=@nombre;", cnx)
-        'Poder modificar todo
-        command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
-        command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
-        command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
-        command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
-        command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
 
-        command.CommandType = CommandType.Text
-        command.ExecuteNonQuery()
+        If String.IsNullOrEmpty(TextBoxUsuario.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+
+        ElseIf String.IsNullOrEmpty(TextBoxNombre.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxPaterno.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxMaterno.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+
+        ElseIf String.IsNullOrEmpty(TextBoxCon.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        Else
+            Dim command As New MySqlCommand("UPDATE `usuarios` SET  paterno=@paterno, materno=@materno, usuario=@usuario, password=@password WHERE nombre=@nombre;", cnx)
+            'Poder modificar todo
+            command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
+            command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
+            command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
+            command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
+
+            command.CommandType = CommandType.Text
+            command.ExecuteNonQuery()
+        End If
 
 
         Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, usuario FROM `usuarios`", cnx)

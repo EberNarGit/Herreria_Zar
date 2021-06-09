@@ -42,6 +42,27 @@ Public Class Clientes
         If String.IsNullOrEmpty(TextBoxRFC.Text) Then
             ' "Contains Empty value or Null Value" 
             MessageBox.Show("Los campos están vacios, verificar información")
+
+
+        ElseIf String.IsNullOrEmpty(TextBoxNombre.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxPaterno.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxMaterno.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+
+        ElseIf String.IsNullOrEmpty(TextBoxCorreo.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxTelefono.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(ComboBoxEmpleado.SelectedValue) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
         Else
             Try
                 Dim command As New MySqlCommand("INSERT INTO `catalogo_clientes`(`nombre`, `paterno`, `materno`, `correo`, `telefono`, `RFC`, `usuarios_fk`) VALUES (@nombre,@paterno,@materno,@correo,@telefono,@RFC, @fkusuario)", cnx)
@@ -102,17 +123,41 @@ Public Class Clientes
     Private Sub ButtonModificar_Click(sender As Object, e As EventArgs) Handles ButtonModificar.Click
         Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
         cnx.Open()
-        Dim command As New MySqlCommand("UPDATE  `catalogo_clientes` SET  paterno=@paterno, materno=@materno, correo=@correo, telefono=@telefono, RFC=@RFC WHERE nombre=@nombre;", cnx)
-        'Poder modificar todo
-        command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
-        command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
-        command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
-        command.Parameters.Add("@correo", MySqlDbType.VarChar).Value = TextBoxCorreo.Text
-        command.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = TextBoxTelefono.Text
-        command.Parameters.Add("@RFC", MySqlDbType.VarChar).Value = TextBoxRFC.Text
 
-        command.CommandType = CommandType.Text
-        command.ExecuteNonQuery()
+        If String.IsNullOrEmpty(TextBoxRFC.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+
+        ElseIf String.IsNullOrEmpty(TextBoxPaterno.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxMaterno.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+
+        ElseIf String.IsNullOrEmpty(TextBoxCorreo.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxTelefono.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(ComboBoxEmpleado.SelectedValue) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        Else
+            Dim command As New MySqlCommand("UPDATE  `catalogo_clientes` SET  paterno=@paterno, materno=@materno, correo=@correo, telefono=@telefono, RFC=@RFC WHERE nombre=@nombre;", cnx)
+            'Poder modificar todo
+            command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
+            command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
+            command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
+            command.Parameters.Add("@correo", MySqlDbType.VarChar).Value = TextBoxCorreo.Text
+            command.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = TextBoxTelefono.Text
+            command.Parameters.Add("@RFC", MySqlDbType.VarChar).Value = TextBoxRFC.Text
+
+            command.CommandType = CommandType.Text
+            command.ExecuteNonQuery()
+        End If
+
 
 
         Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, RFC FROM `catalogo_clientes`", cnx)
