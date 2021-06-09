@@ -60,7 +60,7 @@ Public Class Clientes
         ElseIf String.IsNullOrEmpty(TextBoxTelefono.Text) Then
             ' "Contains Empty value or Null Value" 
             MessageBox.Show("Los campos están vacios, verificar información")
-        ElseIf String.IsNullOrEmpty(ComboBoxEmpleado.SelectedValue) Then
+        ElseIf String.IsNullOrEmpty(ComboBoxEmpleado.SelectedValue.ToString()) Then
             ' "Contains Empty value or Null Value" 
             MessageBox.Show("Los campos están vacios, verificar información")
         Else

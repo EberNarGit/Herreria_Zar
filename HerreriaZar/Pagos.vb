@@ -1,14 +1,16 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Pagos
-    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+    'contra jp zP8HlxqCBwCFHcHz
+    'contra eber Eber844@
     Private Sub LabelVentaEspe_Click(sender As Object, e As EventArgs) Handles LabelVentaEspe.Click
 
     End Sub
 
     Public Sub cargarcomboempleado()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
         Dim consulta As String = "SELECT id, nombre FROM usuarios"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -73,15 +75,20 @@ Public Class Pagos
     End Sub
 
     Private Sub BuscarCliente()
+        'If String.IsNullOrEmpty(TextBoCliente.Text) Then
+        'MessageBox.Show("Los campos están vacios, verificar información")
+        ' else 
         Dim datos As New MySqlDataAdapter("select vg.id, cc.nombre, cc.paterno, cc.materno , vg.anticipo, vg.total, vg.status, vg.fecha, vg.fecha_b from venta_general as vg
 JOIN catalogo_clientes As cc
 ON cc.id = vg.clientes_fk
 where cc.nombre LIKE '" & TextBoxCliente.Text & "%'", cnx)
 
-        Dim ds As New DataSet()
-        datos.Fill(ds, "venta_especifica")
+            Dim ds As New DataSet()
+            datos.Fill(ds, "venta_especifica")
 
-        Me.DGVpagos.DataSource = ds.Tables("venta_especifica")
+            Me.DGVpagos.DataSource = ds.Tables("venta_especifica")
+        'End If
+
     End Sub
 
     Private Sub CargarVentas()

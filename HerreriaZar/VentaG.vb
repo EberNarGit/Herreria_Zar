@@ -103,7 +103,25 @@ Public Class VentaG
         'probar con ese if, en caso de que falle, borrarlo y solo dejar lo del else
         If TextBoxAlto.Text < 0 Or TextBoxAncho.Text < 0 Or TextBoxLargo.Text < 0 Or TextBoxCantidad.Text < 0 Or TextBoxPrecio.Text < 0 Then
             MsgBox("Por favor, ingresa un número valido")
+        ElseIf String.IsNullOrEmpty(TextBoxAlto.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxAncho.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
 
+        ElseIf String.IsNullOrEmpty(TextBoxLargo.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxColor.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxCantidad.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxPrecio.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
         Else
             Dim command As New MySqlCommand("INSERT INTO venta_especifica(alto, ancho, largo, color, cantidad, precio, productos_fk,venta_general_fk) VALUES(@alto,@ancho,@largo,@color,@cantidad,@precio, @productos_fk,(SELECT MAX(id) FROM venta_general))", cnx)
 
@@ -115,7 +133,7 @@ Public Class VentaG
             command.Parameters.Add("@precio", MySqlDbType.VarChar).Value = TextBoxPrecio.Text
             command.Parameters.Add("@productos_fk", MySqlDbType.VarChar).Value = CBProducto.SelectedValue
             command.ExecuteNonQuery()
-            MsgBox("Prudocto Añadido", MsgBoxStyle.Information, "Confirmacion")
+            MsgBox("Pruducto Añadido", MsgBoxStyle.Information, "Confirmacion")
         End If
 
         If cnx.State = ConnectionState.Open Then
@@ -159,6 +177,13 @@ Public Class VentaG
 
         If TextBoxTotal.Text < 0 Or TextBoxAnticipo.Text < 0 Then
             MsgBox("Por favor, ingresa un número valido")
+        ElseIf String.IsNullOrEmpty(TextBoxTotal.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+        ElseIf String.IsNullOrEmpty(TextBoxAnticipo.Text) Then
+            ' "Contains Empty value or Null Value" 
+            MessageBox.Show("Los campos están vacios, verificar información")
+
         Else
             Dim command As New MySqlCommand("UPDATE venta_general set fecha = @fecha, fecha_b = @fecha_b, total = @total, anticipo = @anticipo, clientes_fk = @clientes_fk, usuarios_fk = @usuarios_fk ORDER BY id DESC LIMIT 1 ", cnx)
 

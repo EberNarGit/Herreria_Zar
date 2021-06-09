@@ -108,25 +108,34 @@ Public Class Empleados
     End Sub
 
     Private Sub ButtonEliminar_Click(sender As Object, e As EventArgs) Handles ButtonEliminar.Click
-        Dim command As New MySqlCommand("delete FROM `usuarios` WHERE usuario=@usuario ", cnx)
+        Try
+            Dim command As New MySqlCommand("delete FROM `usuarios` WHERE usuario=@usuario ", cnx)
 
-        command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
-        command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
-        command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
-        command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
-        command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
+            command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
+            command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
+            command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
+            command.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = TextBoxUsuario.Text
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = TextBoxCon.Text
 
-        cnx.Open()
+            cnx.Open()
 
-        If command.ExecuteNonQuery() = 1 Then
+            If command.ExecuteNonQuery() = 1 Then
 
-            MessageBox.Show("Empleado Eliminado")
+                MessageBox.Show("Empleado Eliminado")
 
-        Else
+            Else
 
-            MessageBox.Show("ERROR")
+                MessageBox.Show("ERROR")
 
-        End If
+            End If
+        Catch ex As MySql.Data.MySqlClient.MySqlException
+            Select Case ex.Number
+                Case 1451
+                    MsgBox("Error, selecciona un empleado a eliminar")
+
+            End Select
+
+        End Try
 
         Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, usuario FROM `usuarios`", cnx)
 
