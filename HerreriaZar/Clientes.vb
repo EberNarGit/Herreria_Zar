@@ -38,11 +38,22 @@ Public Class Clientes
 
     Private Sub BotonAñadir_Click(sender As Object, e As EventArgs) Handles BotonAñadir.Click
         Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim lines() As String
+        lines = TextBoxTelefono.Lines
+        For Each line As String In TextBoxTelefono.Lines
+            ' Protect against strings that do not have a first letter to check
+            If line.Length >= 1 Then
+                Dim firstLetter As Char = line.Substring(0, 1)
+
+                If firstLetter = "-" Then
+                    MessageBox.Show("No se acepta ese caracter al principio")
+                End If
+            End If
+        Next
 
         If String.IsNullOrEmpty(TextBoxRFC.Text) Then
             ' "Contains Empty value or Null Value" 
             MessageBox.Show("Los campos están vacios, verificar información")
-
 
         ElseIf String.IsNullOrEmpty(TextBoxNombre.Text) Then
             ' "Contains Empty value or Null Value" 
