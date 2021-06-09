@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Pagos
-    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
     'contra jp zP8HlxqCBwCFHcHz
     'contra eber Eber844@
     Private Sub LabelVentaEspe_Click(sender As Object, e As EventArgs) Handles LabelVentaEspe.Click
@@ -10,7 +10,7 @@ Public Class Pagos
 
     Public Sub cargarcomboempleado()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         Dim consulta As String = "SELECT id, nombre FROM usuarios"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -75,10 +75,10 @@ Public Class Pagos
     End Sub
 
     Private Sub BuscarCliente()
-        'If String.IsNullOrEmpty(TextBoCliente.Text) Then
-        'MessageBox.Show("Los campos están vacios, verificar información")
-        ' else 
-        Dim datos As New MySqlDataAdapter("select vg.id, cc.nombre, cc.paterno, cc.materno , vg.anticipo, vg.total, vg.status, vg.fecha, vg.fecha_b from venta_general as vg
+        If String.IsNullOrEmpty(TextBoxCliente.Text) Then
+            MessageBox.Show("Los campos están vacios, verificar información")
+        Else
+            Dim datos As New MySqlDataAdapter("select vg.id, cc.nombre, cc.paterno, cc.materno , vg.anticipo, vg.total, vg.status, vg.fecha, vg.fecha_b from venta_general as vg
 JOIN catalogo_clientes As cc
 ON cc.id = vg.clientes_fk
 where cc.nombre LIKE '" & TextBoxCliente.Text & "%'", cnx)
@@ -87,7 +87,9 @@ where cc.nombre LIKE '" & TextBoxCliente.Text & "%'", cnx)
             datos.Fill(ds, "venta_especifica")
 
             Me.DGVpagos.DataSource = ds.Tables("venta_especifica")
-        'End If
+
+            DGVpagos.Columns("id").Visible = False
+        End If
 
     End Sub
 
@@ -174,10 +176,10 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Call BuscarCliente()
-        DGVpagos.Columns("id").Visible = False
+
+
 
         TextBoxCliente.Text = ""
-
 
 
     End Sub
