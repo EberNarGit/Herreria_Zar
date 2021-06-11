@@ -40,7 +40,7 @@ Public Class CatalogoDeProductos
 
 
     Private Sub CatalogoDeProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         Dim comman As New MySqlCommand("SELECT pc.id as ID, pc.imagen as Imagen, pc.descripcion as Descripción, c.descripcion as Categoria FROM `catalogo_productos` as pc JOIN  categoria as c ON (c.id=pc.categorias_fk)", cnx)
         Dim dt As DataTable = New DataTable
         Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)

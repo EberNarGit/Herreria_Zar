@@ -1,15 +1,23 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class LogIn
+
     Private Sub BotonDeIngreso_Click(sender As Object, e As EventArgs) Handles BotonDeIngreso.Click
         'Declaracion de variables necesarias'
-        Dim cnx As MySqlConnection = New MySqlConnection
+
         Dim comando As MySqlCommand = New MySqlCommand
 
+
+        Module1.usuario = user.Text
+
+        Dim fcc As New Clientes()
+        Dim fap As New Clientes()
+
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         comando.Connection = cnx
 
         'Probar conexion'
         Try
-            cnx.ConnectionString = "Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz"
+
             'zP8HlxqCBwCFHcHz password JP'
             cnx.Open()
 
@@ -39,6 +47,8 @@ Public Class LogIn
         user.Focus()
         cnx.Close()
     End Sub
+
+
 
     Private Sub user_TextChanged(sender As Object, e As EventArgs) Handles user.TextChanged
 
