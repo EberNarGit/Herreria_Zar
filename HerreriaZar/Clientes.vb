@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Clientes
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
@@ -15,29 +16,33 @@ Public Class Clientes
         TextBoxRFC.Text = DGVClientes.Rows(renglon).Cells(4).Value
     End Sub
 
+    Private Sub CargarDatos()
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+
+
+        Dim lista As Byte
+        Dim datos As New MySqlDataAdapter("select id 
+from usuarios 
+where usuario = '" & TextBoxid.Text & "'", cnx)
+        Dim ds As New DataSet()
+        datos.Fill(ds, "usuarios")
+
+        lista = ds.Tables("usuarios").Rows.Count
+        Try
+            ejemplo.Text = ds.Tables("usuarios").Rows(0).Item("id")
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
-        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, RFC FROM `catalogo_clientes`", cnx)
+        TextBoxid.Text = Module1.usuario
 
-        Dim adapter As New MySqlDataAdapter("SELECT `id`, `usuario` FROM usuarios", cnx)
-        Dim table As New DataTable()
-
-        adapter.Fill(table)
-
-        ComboBoxEmpleado.DataSource = table
-
-        ComboBoxEmpleado.ValueMember = "id"
-        ComboBoxEmpleado.DisplayMember = "usuario"
-        Dim dt As DataTable = New DataTable
-        Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
-
-        da.Fill(dt)
-        DGVClientes.DataSource = dt
-        cnx.Close()
     End Sub
 
     Private Sub BotonAñadir_Click(sender As Object, e As EventArgs) Handles BotonAñadir.Click
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        CargarDatos()
+
         Dim lines() As String
         lines = TextBoxTelefono.Lines
         For Each line As String In TextBoxTelefono.Lines
@@ -71,12 +76,11 @@ Public Class Clientes
         ElseIf String.IsNullOrEmpty(TextBoxTelefono.Text) Then
             ' "Contains Empty value or Null Value" 
             MessageBox.Show("Los campos están vacios, verificar información")
-        ElseIf String.IsNullOrEmpty(ComboBoxEmpleado.SelectedValue.ToString()) Then
-            ' "Contains Empty value or Null Value" 
-            MessageBox.Show("Los campos están vacios, verificar información")
         Else
             Try
                 Dim command As New MySqlCommand("INSERT INTO `catalogo_clientes`(`nombre`, `paterno`, `materno`, `correo`, `telefono`, `RFC`, `usuarios_fk`) VALUES (@nombre,@paterno,@materno,@correo,@telefono,@RFC, @fkusuario)", cnx)
+
+
 
                 command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
                 command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
@@ -84,7 +88,7 @@ Public Class Clientes
                 command.Parameters.Add("@correo", MySqlDbType.VarChar).Value = TextBoxCorreo.Text
                 command.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = TextBoxTelefono.Text
                 command.Parameters.Add("@RFC", MySqlDbType.VarChar).Value = TextBoxRFC.Text
-                command.Parameters.Add("@fkusuario", MySqlDbType.VarChar).Value = ComboBoxEmpleado.SelectedValue
+                command.Parameters.Add("@fkusuario", MySqlDbType.VarChar).Value = ejemplo.Text
 
                 cnx.Open()
 
@@ -132,7 +136,7 @@ Public Class Clientes
     End Sub
 
     Private Sub ButtonModificar_Click(sender As Object, e As EventArgs) Handles ButtonModificar.Click
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         cnx.Open()
 
         If String.IsNullOrEmpty(TextBoxRFC.Text) Then
@@ -150,9 +154,6 @@ Public Class Clientes
             ' "Contains Empty value or Null Value" 
             MessageBox.Show("Los campos están vacios, verificar información")
         ElseIf String.IsNullOrEmpty(TextBoxTelefono.Text) Then
-            ' "Contains Empty value or Null Value" 
-            MessageBox.Show("Los campos están vacios, verificar información")
-        ElseIf String.IsNullOrEmpty(ComboBoxEmpleado.SelectedValue) Then
             ' "Contains Empty value or Null Value" 
             MessageBox.Show("Los campos están vacios, verificar información")
         Else
@@ -189,7 +190,7 @@ Public Class Clientes
 
     End Sub
 
-    Private Sub ComboBoxCliente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEmpleado.SelectedIndexChanged
+    Private Sub ComboBoxCliente_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
 End Class

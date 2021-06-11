@@ -1,25 +1,14 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Pagos
-    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
     'contra jp zP8HlxqCBwCFHcHz
     'contra eber Eber844@
     Private Sub LabelVentaEspe_Click(sender As Object, e As EventArgs) Handles LabelVentaEspe.Click
 
     End Sub
 
-    Public Sub cargarcomboempleado()
-        Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
-        Dim consulta As String = "SELECT id, nombre FROM usuarios"
-        Dim comando As New MySqlDataAdapter(consulta, con)
-        comando.Fill(dt)
 
-        ComboBoxEmpleado.DataSource = dt
-        ComboBoxEmpleado.DisplayMember = "nombre"
-        ComboBoxEmpleado.ValueMember = "id"
-
-    End Sub
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DTPfecha.ValueChanged
 
@@ -62,23 +51,39 @@ Public Class Pagos
         Me.Hide()
     End Sub
 
-    Private Sub Pagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DGVpagos.ReadOnly = True
+    Private Sub CargarDatos()
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
 
+
+        Dim lista As Byte
+        Dim datos As New MySqlDataAdapter("select id 
+from usuarios 
+where usuario = '" & TextBox1.Text & "'", cnx)
+        Dim ds As New DataSet()
+        datos.Fill(ds, "usuarios")
+
+        lista = ds.Tables("usuarios").Rows.Count
         Try
-
-            cargarcomboempleado()
+            ejemplo.Text = ds.Tables("usuarios").Rows(0).Item("id")
         Catch ex As Exception
 
         End Try
 
     End Sub
 
+    Private Sub Pagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DGVpagos.ReadOnly = True
+        TextBox1.Text = Module1.usuario
+
+
+
+    End Sub
+
     Private Sub BuscarCliente()
-        'If String.IsNullOrEmpty(TextBoCliente.Text) Then
-        'MessageBox.Show("Los campos están vacios, verificar información")
-        ' else 
-        Dim datos As New MySqlDataAdapter("select vg.id, cc.nombre, cc.paterno, cc.materno , vg.anticipo, vg.total, vg.status, vg.fecha, vg.fecha_b from venta_general as vg
+        If String.IsNullOrEmpty(TextBoxCliente.Text) Then
+            MessageBox.Show("Los campos están vacios, verificar información")
+        Else
+            Dim datos As New MySqlDataAdapter("select vg.id, cc.nombre, cc.paterno, cc.materno , vg.anticipo, vg.total, vg.status, vg.fecha, vg.fecha_b from venta_general as vg
 JOIN catalogo_clientes As cc
 ON cc.id = vg.clientes_fk
 where cc.nombre LIKE '" & TextBoxCliente.Text & "%'", cnx)
@@ -87,7 +92,9 @@ where cc.nombre LIKE '" & TextBoxCliente.Text & "%'", cnx)
             datos.Fill(ds, "venta_especifica")
 
             Me.DGVpagos.DataSource = ds.Tables("venta_especifica")
-        'End If
+
+            DGVpagos.Columns("id").Visible = False
+        End If
 
     End Sub
 
@@ -139,7 +146,6 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
     Private Sub insertarPago()
 
 
-
         If cnx.State = ConnectionState.Closed Then
             cnx.Open()
         End If
@@ -148,11 +154,12 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
             MsgBox("Por favor, ingresa un número valido")
 
         Else
+
             Dim command As New MySqlCommand("UPDATE pagos set pago = @pago, fecha = @fecha, venta_general_fk = @id , usuarios_fk = @usuarios_fk ORDER BY id DESC LIMIT 1 ", cnx)
             command.Parameters.Add("@pago", MySqlDbType.VarChar).Value = TextBoxMonto.Text
             command.Parameters.Add("@fecha", MySqlDbType.VarChar).Value = DTPfecha.Value.Date.ToString("yyyy/MM/dd")
             command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
-            command.Parameters.Add("@usuarios_fk", MySqlDbType.VarChar).Value = ComboBoxEmpleado.SelectedValue
+            command.Parameters.Add("@usuarios_fk", MySqlDbType.VarChar).Value = ejemplo.Text
             command.ExecuteNonQuery()
         End If
 
@@ -162,6 +169,8 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
     End Sub
 
     Private Sub BotonPagar_Click(sender As Object, e As EventArgs) Handles BotonPagar.Click
+        CargarDatos()
+
         Call insertarPago()
         Call updateVenta_General()
 
@@ -174,10 +183,10 @@ WHERE vg.id = " & TextBoxid.Text & "", cnx)
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Call BuscarCliente()
-        DGVpagos.Columns("id").Visible = False
+
+
 
         TextBoxCliente.Text = ""
-
 
 
     End Sub
@@ -206,6 +215,10 @@ where id =  " & TextBoxid.Text & "", cnx)
         Call CargarDatosTotal()
 
 
+
+    End Sub
+
+    Private Sub ejemplo_TextChanged(sender As Object, e As EventArgs) Handles ejemplo.TextChanged
 
     End Sub
 End Class

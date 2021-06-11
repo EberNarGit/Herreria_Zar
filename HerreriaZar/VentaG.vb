@@ -9,17 +9,37 @@ Public Class VentaG
 
     End Sub
 
+    Private Sub CargarDatosc()
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+
+
+        Dim lista As Byte
+        Dim datos As New MySqlDataAdapter("select id 
+from usuarios 
+where usuario = '" & TextBox1.Text & "'", cnx)
+        Dim ds As New DataSet()
+        datos.Fill(ds, "usuarios")
+
+        lista = ds.Tables("usuarios").Rows.Count
+        Try
+            ejemplo.Text = ds.Tables("usuarios").Rows(0).Item("id")
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
     Private Sub VentaG_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label3.Text = "Hoy es " & Today
         Call insertarnull()
-
+        TextBox1.Text = Module1.usuario
 
         DGVventa.ReadOnly = True
 
         Try
             cargarcomboproducto()
             cargarcombocliente()
-            cargarcomboempleado()
+
         Catch ex As Exception
 
         End Try
@@ -51,18 +71,7 @@ Public Class VentaG
 
     End Sub
 
-    Public Sub cargarcomboempleado()
-        Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
-        Dim consulta As String = "SELECT id, nombre FROM usuarios"
-        Dim comando As New MySqlDataAdapter(consulta, con)
-        comando.Fill(dt)
 
-        CBEmpleado.DataSource = dt
-        CBEmpleado.DisplayMember = "nombre"
-        CBEmpleado.ValueMember = "id"
-
-    End Sub
 
     Private Sub CargarDatos()
         Dim datos As New MySqlDataAdapter("SELECT ve.id, cp.descripcion,ve.alto,ve.largo,ve.ancho,ve.color, ve.cantidad, ve.precio 
@@ -164,9 +173,7 @@ Public Class VentaG
         Dim H As String = CBCliente.SelectedValue.ToString
     End Sub
 
-    Private Sub CBEmpleado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBEmpleado.SelectedIndexChanged
-        Dim G As String = CBEmpleado.SelectedValue.ToString
-    End Sub
+
 
     Private Sub updateVG()
 
@@ -192,7 +199,7 @@ Public Class VentaG
             command.Parameters.Add("@total", MySqlDbType.VarChar).Value = TextBoxTotal.Text
             command.Parameters.Add("@anticipo", MySqlDbType.VarChar).Value = TextBoxAnticipo.Text
             command.Parameters.Add("@clientes_fk", MySqlDbType.VarChar).Value = CBCliente.SelectedValue
-            command.Parameters.Add("@usuarios_fk", MySqlDbType.VarChar).Value = CBEmpleado.SelectedValue
+            command.Parameters.Add("@usuarios_fk", MySqlDbType.VarChar).Value = ejemplo.Text
             command.ExecuteNonQuery()
             MsgBox("Venta Realizada", MsgBoxStyle.Information, "Confirmacion")
             TextBoxTotal.Text = ""
@@ -209,6 +216,7 @@ Public Class VentaG
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
+        Call CargarDatosc()
         Call insertar()
         Call CargarDatos()
         Call CargarDatosTotal()
