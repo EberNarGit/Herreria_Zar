@@ -9,8 +9,7 @@ Public Class LogIn
 
         Module1.usuario = user.Text
 
-        Dim fcc As New Clientes()
-        Dim fap As New Clientes()
+
 
         Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         comando.Connection = cnx

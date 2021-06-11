@@ -24,6 +24,7 @@ Partial Class VentaG
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DGVventa = New System.Windows.Forms.DataGridView()
+        Me.TextBoxid = New System.Windows.Forms.TextBox()
         Me.BtnAgregar = New System.Windows.Forms.Button()
         Me.BotonSiguiente = New System.Windows.Forms.Button()
         Me.LabelVentaG = New System.Windows.Forms.Label()
@@ -34,7 +35,6 @@ Partial Class VentaG
         Me.TextBoxAnticipo = New System.Windows.Forms.TextBox()
         Me.TextBoxTotal = New System.Windows.Forms.TextBox()
         Me.DTPFechaVenta = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxAlto = New System.Windows.Forms.TextBox()
         Me.TextBoxLargo = New System.Windows.Forms.TextBox()
         Me.TextBoxAncho = New System.Windows.Forms.TextBox()
@@ -50,12 +50,12 @@ Partial Class VentaG
         Me.LabelAlto = New System.Windows.Forms.Label()
         Me.DTPFecha_Entrega = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.CBEmpleado = New System.Windows.Forms.ComboBox()
         Me.CBCliente = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.CBProducto = New System.Windows.Forms.ComboBox()
         Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.TextBoxid = New System.Windows.Forms.TextBox()
+        Me.ejemplo = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVventa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -81,6 +81,17 @@ Partial Class VentaG
         Me.DGVventa.RowTemplate.Height = 24
         Me.DGVventa.Size = New System.Drawing.Size(843, 557)
         Me.DGVventa.TabIndex = 14
+        '
+        'TextBoxid
+        '
+        Me.TextBoxid.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.TextBoxid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxid.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxid.Location = New System.Drawing.Point(90, 522)
+        Me.TextBoxid.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBoxid.Name = "TextBoxid"
+        Me.TextBoxid.Size = New System.Drawing.Size(101, 25)
+        Me.TextBoxid.TabIndex = 39
         '
         'BtnAgregar
         '
@@ -196,17 +207,6 @@ Partial Class VentaG
         Me.DTPFechaVenta.Name = "DTPFechaVenta"
         Me.DTPFechaVenta.Size = New System.Drawing.Size(285, 25)
         Me.DTPFechaVenta.TabIndex = 11
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(18, 503)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(92, 23)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Empleado"
         '
         'TextBoxAlto
         '
@@ -369,7 +369,7 @@ Partial Class VentaG
         '
         Me.DTPFecha_Entrega.CalendarFont = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTPFecha_Entrega.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DTPFecha_Entrega.Location = New System.Drawing.Point(174, 534)
+        Me.DTPFecha_Entrega.Location = New System.Drawing.Point(174, 506)
         Me.DTPFecha_Entrega.Margin = New System.Windows.Forms.Padding(4)
         Me.DTPFecha_Entrega.Name = "DTPFecha_Entrega"
         Me.DTPFecha_Entrega.Size = New System.Drawing.Size(285, 25)
@@ -379,21 +379,12 @@ Partial Class VentaG
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(18, 534)
+        Me.Label2.Location = New System.Drawing.Point(18, 506)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(149, 23)
         Me.Label2.TabIndex = 34
         Me.Label2.Text = "Fecha de Entrega"
-        '
-        'CBEmpleado
-        '
-        Me.CBEmpleado.FormattingEnabled = True
-        Me.CBEmpleado.Location = New System.Drawing.Point(172, 502)
-        Me.CBEmpleado.Margin = New System.Windows.Forms.Padding(4)
-        Me.CBEmpleado.Name = "CBEmpleado"
-        Me.CBEmpleado.Size = New System.Drawing.Size(285, 24)
-        Me.CBEmpleado.TabIndex = 15
         '
         'CBCliente
         '
@@ -439,16 +430,27 @@ Partial Class VentaG
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = False
         '
-        'TextBoxid
+        'ejemplo
         '
-        Me.TextBoxid.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.TextBoxid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBoxid.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxid.Location = New System.Drawing.Point(101, 516)
-        Me.TextBoxid.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBoxid.Name = "TextBoxid"
-        Me.TextBoxid.Size = New System.Drawing.Size(101, 25)
-        Me.TextBoxid.TabIndex = 39
+        Me.ejemplo.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.ejemplo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ejemplo.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ejemplo.Location = New System.Drawing.Point(641, 325)
+        Me.ejemplo.Margin = New System.Windows.Forms.Padding(4)
+        Me.ejemplo.Name = "ejemplo"
+        Me.ejemplo.Size = New System.Drawing.Size(103, 25)
+        Me.ejemplo.TabIndex = 46
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(641, 292)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(103, 25)
+        Me.TextBox1.TabIndex = 45
         '
         'VentaG
         '
@@ -462,11 +464,9 @@ Partial Class VentaG
         Me.Controls.Add(Me.BtnAgregar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CBCliente)
-        Me.Controls.Add(Me.CBEmpleado)
         Me.Controls.Add(Me.DTPFecha_Entrega)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBoxAlto)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DTPFechaVenta)
         Me.Controls.Add(Me.TextBoxLargo)
         Me.Controls.Add(Me.LabelAlto)
@@ -485,9 +485,11 @@ Partial Class VentaG
         Me.Controls.Add(Me.LabelPrecio)
         Me.Controls.Add(Me.LabelVentaG)
         Me.Controls.Add(Me.LabelProductos)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TextBoxPrecio)
         Me.Controls.Add(Me.TextBoxCantidad)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.ejemplo)
+        Me.Controls.Add(Me.TextBox1)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "VentaG"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -510,7 +512,6 @@ Partial Class VentaG
     Friend WithEvents TextBoxTotal As TextBox
     Friend WithEvents DTPFechaVenta As DateTimePicker
     Friend WithEvents BotonSiguiente As Button
-    Friend WithEvents Label1 As Label
     Friend WithEvents TextBoxAlto As TextBox
     Friend WithEvents TextBoxLargo As TextBox
     Friend WithEvents TextBoxAncho As TextBox
@@ -527,11 +528,12 @@ Partial Class VentaG
     Friend WithEvents BtnAgregar As Button
     Friend WithEvents DTPFecha_Entrega As DateTimePicker
     Friend WithEvents Label2 As Label
-    Friend WithEvents CBEmpleado As ComboBox
     Friend WithEvents CBCliente As ComboBox
     Friend WithEvents DGVventa As DataGridView
     Friend WithEvents Label3 As Label
     Friend WithEvents CBProducto As ComboBox
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents TextBoxid As TextBox
+    Friend WithEvents ejemplo As TextBox
+    Friend WithEvents TextBox1 As TextBox
 End Class
