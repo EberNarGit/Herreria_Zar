@@ -193,4 +193,8 @@ where usuario = '" & TextBoxid.Text & "'", cnx)
     Private Sub ComboBoxCliente_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub TextBoxid_TextChanged(sender As Object, e As EventArgs) Handles TextBoxid.TextChanged
+
+    End Sub
 End Class

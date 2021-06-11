@@ -34,6 +34,7 @@ Partial Class CatalogoDeProductos
         Me.MensajeDeBienvenida = New System.Windows.Forms.Label()
         Me.ButtonAddProduct = New System.Windows.Forms.Button()
         Me.DGVCatalogo = New System.Windows.Forms.DataGridView()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DGVCatalogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -191,12 +192,26 @@ Partial Class CatalogoDeProductos
         Me.DGVCatalogo.Size = New System.Drawing.Size(727, 327)
         Me.DGVCatalogo.TabIndex = 17
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button2.Location = New System.Drawing.Point(495, 25)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(185, 45)
+        Me.Button2.TabIndex = 18
+        Me.Button2.Text = "Actualizar"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'CatalogoDeProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(938, 443)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.DGVCatalogo)
         Me.Controls.Add(Me.ButtonAddProduct)
         Me.Controls.Add(Me.Button5)
@@ -226,4 +241,5 @@ Partial Class CatalogoDeProductos
     Friend WithEvents MensajeDeBienvenida As Label
     Friend WithEvents ButtonAddProduct As Button
     Friend WithEvents DGVCatalogo As DataGridView
+    Friend WithEvents Button2 As Button
 End Class

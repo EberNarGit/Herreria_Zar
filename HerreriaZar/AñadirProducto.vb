@@ -2,7 +2,7 @@
 Imports MySql.Data.MySqlClient
 
 Public Class AñadirProducto
-    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
 
     Private Sub ButtonSelect_img_Click(sender As Object, e As EventArgs) Handles ButtonSelect_img.Click
         Dim opf As New OpenFileDialog
@@ -14,7 +14,7 @@ Public Class AñadirProducto
     End Sub
 
     Private Sub CargarDatos()
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
 
 
         Dim lista As Byte
@@ -38,7 +38,6 @@ where usuario = '" & TextBoxid.Text & "'", cnx)
 
         Dim ms As New MemoryStream
         PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat)
-
         TextBoxid.Text = Module1.usuario
 
         Dim command As New MySqlCommand("INSERT INTO `catalogo_productos`(`imagen`, `descripcion`, `usuarios_fk`, `categorias_fk`) VALUES (@img,@ds,@us,@ct)", cnx)
@@ -71,7 +70,7 @@ where usuario = '" & TextBoxid.Text & "'", cnx)
     End Sub
 
     Private Sub AñadirProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        TextBoxid.Text = Module1.usuario
 
 
 
@@ -85,4 +84,13 @@ where usuario = '" & TextBoxid.Text & "'", cnx)
         ComboBoxCategoria.ValueMember = "id"
         ComboBoxCategoria.DisplayMember = "descripcion"
     End Sub
+
+    Private Sub TextBoxid_TextChanged(sender As Object, e As EventArgs) Handles TextBoxid.TextChanged
+
+    End Sub
+
+    Private Sub ejemplo_TextChanged(sender As Object, e As EventArgs) Handles ejemplo.TextChanged
+
+    End Sub
+
 End Class
