@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Clientes
-    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
@@ -9,15 +9,19 @@ Public Class Clientes
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVClientes.CellContentClick
         Dim renglon As Integer
         'Al darle clic al renglón mostramos los datos en las cajas de texto
-        renglon = DGVClientes.CurrentCellAddress.Y
-        TextBoxNombre.Text = DGVClientes.Rows(renglon).Cells(1).Value
-        TextBoxPaterno.Text = DGVClientes.Rows(renglon).Cells(2).Value
-        TextBoxMaterno.Text = DGVClientes.Rows(renglon).Cells(3).Value
-        TextBoxRFC.Text = DGVClientes.Rows(renglon).Cells(4).Value
+        Try
+            renglon = DGVClientes.CurrentCellAddress.Y
+            TextBoxNombre.Text = DGVClientes.Rows(renglon).Cells(1).Value
+            TextBoxPaterno.Text = DGVClientes.Rows(renglon).Cells(2).Value
+            TextBoxMaterno.Text = DGVClientes.Rows(renglon).Cells(3).Value
+            TextBoxRFC.Text = DGVClientes.Rows(renglon).Cells(4).Value
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub CargarDatos()
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
 
 
         Dim lista As Byte
@@ -37,6 +41,21 @@ where usuario = '" & TextBoxid.Text & "'", cnx)
     End Sub
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBoxid.Text = Module1.usuario
+        Dim comman As New MySqlCommand("SELECT id,nombre, paterno, materno, RFC FROM `catalogo_clientes`", cnx)
+
+        Dim dt As DataTable = New DataTable
+        Dim da As MySqlDataAdapter = New MySqlDataAdapter(comman)
+
+        da.Fill(dt)
+        DGVClientes.DataSource = dt
+        cnx.Close()
+
+        TextBoxNombre.Text = ""
+        TextBoxPaterno.Text = ""
+        TextBoxMaterno.Text = ""
+        TextBoxTelefono.Text = ""
+        TextBoxCorreo.Text = ""
+        TextBoxRFC.Text = ""
 
     End Sub
 
@@ -136,7 +155,7 @@ where usuario = '" & TextBoxid.Text & "'", cnx)
     End Sub
 
     Private Sub ButtonModificar_Click(sender As Object, e As EventArgs) Handles ButtonModificar.Click
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
         cnx.Open()
 
         If String.IsNullOrEmpty(TextBoxRFC.Text) Then
@@ -157,17 +176,28 @@ where usuario = '" & TextBoxid.Text & "'", cnx)
             ' "Contains Empty value or Null Value" 
             MessageBox.Show("Los campos están vacios, verificar información")
         Else
-            Dim command As New MySqlCommand("UPDATE  `catalogo_clientes` SET  paterno=@paterno, materno=@materno, correo=@correo, telefono=@telefono, RFC=@RFC WHERE nombre=@nombre;", cnx)
-            'Poder modificar todo
-            command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
-            command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
-            command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
-            command.Parameters.Add("@correo", MySqlDbType.VarChar).Value = TextBoxCorreo.Text
-            command.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = TextBoxTelefono.Text
-            command.Parameters.Add("@RFC", MySqlDbType.VarChar).Value = TextBoxRFC.Text
 
-            command.CommandType = CommandType.Text
-            command.ExecuteNonQuery()
+            Try
+                Dim command As New MySqlCommand("UPDATE  `catalogo_clientes` SET  paterno=@paterno, materno=@materno, correo=@correo, telefono=@telefono, RFC=@RFC WHERE nombre=@nombre;", cnx)
+                'Poder modificar todo
+                command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = TextBoxNombre.Text
+                command.Parameters.Add("@paterno", MySqlDbType.VarChar).Value = TextBoxPaterno.Text
+                command.Parameters.Add("@materno", MySqlDbType.VarChar).Value = TextBoxMaterno.Text
+                command.Parameters.Add("@correo", MySqlDbType.VarChar).Value = TextBoxCorreo.Text
+                command.Parameters.Add("@telefono", MySqlDbType.VarChar).Value = TextBoxTelefono.Text
+                command.Parameters.Add("@RFC", MySqlDbType.VarChar).Value = TextBoxRFC.Text
+
+                command.CommandType = CommandType.Text
+                command.ExecuteNonQuery()
+            Catch ex As MySql.Data.MySqlClient.MySqlException
+                Select Case ex.Number
+                    Case 1406
+                        MsgBox("Error, uno de los campos excede el límite de caracteres")
+                    Case 1062
+                        MsgBox("No se puede modificar, RFC duplicado")
+                End Select
+
+            End Try
         End If
 
 
@@ -195,6 +225,10 @@ where usuario = '" & TextBoxid.Text & "'", cnx)
     End Sub
 
     Private Sub TextBoxid_TextChanged(sender As Object, e As EventArgs) Handles TextBoxid.TextChanged
+
+    End Sub
+
+    Private Sub TextBoxNombre_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNombre.TextChanged
 
     End Sub
 End Class

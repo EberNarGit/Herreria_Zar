@@ -31,8 +31,8 @@ Partial Class MenuPrincipal
         Me.ButtonVentas = New System.Windows.Forms.Button()
         Me.ButtonUsuarios = New System.Windows.Forms.Button()
         Me.LabelVentaEspe = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonProfile = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'VScrollBar1
@@ -150,16 +150,6 @@ Partial Class MenuPrincipal
         Me.LabelVentaEspe.TabIndex = 17
         Me.LabelVentaEspe.Text = "Bienvenido a Herrería Zar!"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(628, 24)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(31, 16)
-        Me.Label1.TabIndex = 18
-        Me.Label1.Text = "User"
-        '
         'ButtonProfile
         '
         Me.ButtonProfile.FlatAppearance.BorderSize = 0
@@ -172,13 +162,22 @@ Partial Class MenuPrincipal
         Me.ButtonProfile.TabIndex = 2
         Me.ButtonProfile.UseVisualStyleBackColor = True
         '
+        'TextBox1
+        '
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.Black
+        Me.TextBox1.Location = New System.Drawing.Point(587, 24)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 14)
+        Me.TextBox1.TabIndex = 19
+        '
         'MenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 401)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LabelVentaEspe)
         Me.Controls.Add(Me.ButtonReporte)
         Me.Controls.Add(Me.ButtonPedidos)
@@ -188,6 +187,7 @@ Partial Class MenuPrincipal
         Me.Controls.Add(Me.ButtonUsuarios)
         Me.Controls.Add(Me.VScrollBar1)
         Me.Controls.Add(Me.ButtonProfile)
+        Me.Controls.Add(Me.TextBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "MenuPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -204,6 +204,6 @@ Partial Class MenuPrincipal
     Friend WithEvents ButtonVentas As Button
     Friend WithEvents ButtonUsuarios As Button
     Friend WithEvents LabelVentaEspe As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents ButtonProfile As Button
+    Friend WithEvents TextBox1 As TextBox
 End Class

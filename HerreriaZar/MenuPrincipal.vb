@@ -1,6 +1,6 @@
 ﻿Public Class MenuPrincipal
     Private Sub MenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        TextBox1.Text = Module1.usuario
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) 
@@ -48,4 +48,6 @@
     Private Sub ButtonProfile_Click(sender As Object, e As EventArgs) Handles ButtonProfile.Click
         Respaldo.Show()
     End Sub
+
+
 End Class

@@ -11,12 +11,14 @@ Public Class Respaldo
 
     Private Sub ButtonCerrarSesion_Click(sender As Object, e As EventArgs) Handles ButtonCerrarSesion.Click
         LogIn.Show()
+        MsgBox("Nos vemos pronto :)")
         Me.Hide()
+
     End Sub
 
-    Private Sub BotonRespaldo_Click(sender As Object, e As EventArgs) Handles BotonRespaldo.Click
-        Dim OpenCMD
-        OpenCMD = CreateObject("wscript.shell")
-        OpenCMD.run("mysqldump herreriazar > C:\MySQLBackup\herreriazar.sql")
+
+
+    Private Sub Respaldo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TextBox2.Text = Module1.usuario
     End Sub
 End Class

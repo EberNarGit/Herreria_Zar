@@ -1,6 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class VentaG
-    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+    'zP8HlxqCBwCFHcHz
+    'Eber844@
     Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -10,7 +12,7 @@ Public Class VentaG
     End Sub
 
     Private Sub CargarDatosc()
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
 
 
         Dim lista As Byte
@@ -47,7 +49,7 @@ where usuario = '" & TextBox1.Text & "'", cnx)
 
     Public Sub cargarcomboproducto()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
         Dim consulta As String = "SELECT id, descripcion FROM catalogo_productos"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -60,7 +62,7 @@ where usuario = '" & TextBox1.Text & "'", cnx)
 
     Public Sub cargarcombocliente()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
         Dim consulta As String = "SELECT id, nombre FROM catalogo_clientes"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)

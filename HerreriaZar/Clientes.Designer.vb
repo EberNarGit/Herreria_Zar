@@ -54,6 +54,8 @@ Partial Class Clientes
         Me.Panel1.Controls.Add(Me.LabelVentaEspe)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.DGVClientes)
+        Me.Panel1.Controls.Add(Me.TextBoxid)
+        Me.Panel1.Controls.Add(Me.ejemplo)
         Me.Panel1.Location = New System.Drawing.Point(-5, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(636, 453)
@@ -85,7 +87,7 @@ Partial Class Clientes
         'DGVClientes
         '
         Me.DGVClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVClientes.Location = New System.Drawing.Point(39, 67)
+        Me.DGVClientes.Location = New System.Drawing.Point(38, 88)
         Me.DGVClientes.Name = "DGVClientes"
         Me.DGVClientes.RowHeadersWidth = 51
         Me.DGVClientes.Size = New System.Drawing.Size(543, 268)
@@ -96,7 +98,7 @@ Partial Class Clientes
         Me.ejemplo.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.ejemplo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ejemplo.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ejemplo.Location = New System.Drawing.Point(659, 314)
+        Me.ejemplo.Location = New System.Drawing.Point(503, 302)
         Me.ejemplo.Name = "ejemplo"
         Me.ejemplo.Size = New System.Drawing.Size(78, 21)
         Me.ejemplo.TabIndex = 41
@@ -106,7 +108,7 @@ Partial Class Clientes
         Me.TextBoxid.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxid.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxid.Location = New System.Drawing.Point(659, 288)
+        Me.TextBoxid.Location = New System.Drawing.Point(503, 255)
         Me.TextBoxid.Name = "TextBoxid"
         Me.TextBoxid.Size = New System.Drawing.Size(78, 21)
         Me.TextBoxid.TabIndex = 40
@@ -265,8 +267,6 @@ Partial Class Clientes
         Me.ClientSize = New System.Drawing.Size(1028, 368)
         Me.Controls.Add(Me.TextBoxRFC)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBoxid)
-        Me.Controls.Add(Me.ejemplo)
         Me.Controls.Add(Me.ButtonModificar)
         Me.Controls.Add(Me.BotonAñadir)
         Me.Controls.Add(Me.TextBoxNombre)
