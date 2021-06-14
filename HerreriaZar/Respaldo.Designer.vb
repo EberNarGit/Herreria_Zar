@@ -35,9 +35,10 @@ Partial Class Respaldo
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(164, 34)
+        Me.PictureBox1.Location = New System.Drawing.Point(219, 42)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(113, 107)
+        Me.PictureBox1.Size = New System.Drawing.Size(151, 132)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -47,9 +48,10 @@ Partial Class Respaldo
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(324, 80)
+        Me.Label2.Location = New System.Drawing.Point(432, 98)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 19)
+        Me.Label2.Size = New System.Drawing.Size(0, 23)
         Me.Label2.TabIndex = 21
         '
         'ButtonCerrarSesion
@@ -58,9 +60,10 @@ Partial Class Respaldo
         Me.ButtonCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonCerrarSesion.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
-        Me.ButtonCerrarSesion.Location = New System.Drawing.Point(155, 204)
+        Me.ButtonCerrarSesion.Location = New System.Drawing.Point(207, 251)
+        Me.ButtonCerrarSesion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonCerrarSesion.Name = "ButtonCerrarSesion"
-        Me.ButtonCerrarSesion.Size = New System.Drawing.Size(140, 52)
+        Me.ButtonCerrarSesion.Size = New System.Drawing.Size(187, 64)
         Me.ButtonCerrarSesion.TabIndex = 22
         Me.ButtonCerrarSesion.Text = "Cerrar Sesión"
         Me.ButtonCerrarSesion.UseVisualStyleBackColor = False
@@ -72,9 +75,10 @@ Partial Class Respaldo
         Me.Panel1.Controls.Add(Me.ButtonCerrarSesion)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Location = New System.Drawing.Point(47, 12)
+        Me.Panel1.Location = New System.Drawing.Point(63, 15)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(425, 300)
+        Me.Panel1.Size = New System.Drawing.Size(567, 369)
         Me.Panel1.TabIndex = 0
         '
         'TextBox2
@@ -83,18 +87,21 @@ Partial Class Respaldo
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.ForeColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(177, 147)
+        Me.TextBox2.Location = New System.Drawing.Point(236, 181)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 21)
+        Me.TextBox2.Size = New System.Drawing.Size(133, 26)
         Me.TextBox2.TabIndex = 24
         '
         'Respaldo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(543, 332)
+        Me.ClientSize = New System.Drawing.Size(724, 409)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Respaldo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Respaldo"

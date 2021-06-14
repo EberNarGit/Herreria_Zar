@@ -22,6 +22,7 @@ Partial Class VentaG
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VentaG))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DGVventa = New System.Windows.Forms.DataGridView()
         Me.TextBoxid = New System.Windows.Forms.TextBox()
@@ -64,7 +65,6 @@ Partial Class VentaG
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
         Me.Panel1.Controls.Add(Me.DGVventa)
-        Me.Panel1.Controls.Add(Me.TextBoxid)
         Me.Panel1.Location = New System.Drawing.Point(527, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
@@ -87,7 +87,7 @@ Partial Class VentaG
         Me.TextBoxid.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.TextBoxid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxid.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxid.Location = New System.Drawing.Point(90, 522)
+        Me.TextBoxid.Location = New System.Drawing.Point(402, 539)
         Me.TextBoxid.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxid.Name = "TextBoxid"
         Me.TextBoxid.Size = New System.Drawing.Size(101, 25)
@@ -458,6 +458,7 @@ Partial Class VentaG
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1385, 643)
+        Me.Controls.Add(Me.TextBoxid)
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.BotonSiguiente)
         Me.Controls.Add(Me.CBProducto)
@@ -490,12 +491,12 @@ Partial Class VentaG
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ejemplo)
         Me.Controls.Add(Me.TextBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "VentaG"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VentaG"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.DGVventa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

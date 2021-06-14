@@ -19,7 +19,7 @@ Public Class Pedidos
 
         'Probar conexion'
         Try
-            cnx.ConnectionString = "Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz"
+            cnx.ConnectionString = "Server = localhost; Database = herreriazar; Uid = root; Pwd = Eber844@"
             cnx.Open()
 
         Catch ex As Exception
@@ -96,7 +96,7 @@ JOIN catalogo_productos as cp ON(cp.id = ve.productos_fk) "
 
         'Probar conexion'
         Try
-            cnx.ConnectionString = "Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz"
+            cnx.ConnectionString = "Server = localhost; Database = herreriazar; Uid = root; Pwd = Eber844@"
             cnx.Open()
 
         Catch ex As Exception

@@ -40,9 +40,9 @@ Partial Class CatalogoDeProductos
         '
         'VScrollBar1
         '
-        Me.VScrollBar1.Location = New System.Drawing.Point(919, 93)
+        Me.VScrollBar1.Location = New System.Drawing.Point(1225, 114)
         Me.VScrollBar1.Name = "VScrollBar1"
-        Me.VScrollBar1.Size = New System.Drawing.Size(19, 443)
+        Me.VScrollBar1.Size = New System.Drawing.Size(19, 545)
         Me.VScrollBar1.TabIndex = 7
         '
         'Button5
@@ -53,9 +53,10 @@ Partial Class CatalogoDeProductos
         Me.Button5.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.SystemColors.Control
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(0, 379)
+        Me.Button5.Location = New System.Drawing.Point(0, 466)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(104, 67)
+        Me.Button5.Size = New System.Drawing.Size(139, 82)
         Me.Button5.TabIndex = 14
         Me.Button5.Text = "  Reporte "
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -69,9 +70,10 @@ Partial Class CatalogoDeProductos
         Me.Button3.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.Control
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(0, 251)
+        Me.Button3.Location = New System.Drawing.Point(0, 309)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(104, 67)
+        Me.Button3.Size = New System.Drawing.Size(139, 82)
         Me.Button3.TabIndex = 16
         Me.Button3.Text = "Pedidos"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -85,9 +87,10 @@ Partial Class CatalogoDeProductos
         Me.ButtonCatálogo.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonCatálogo.ForeColor = System.Drawing.SystemColors.Control
         Me.ButtonCatálogo.Image = CType(resources.GetObject("ButtonCatálogo.Image"), System.Drawing.Image)
-        Me.ButtonCatálogo.Location = New System.Drawing.Point(0, 315)
+        Me.ButtonCatálogo.Location = New System.Drawing.Point(0, 388)
+        Me.ButtonCatálogo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonCatálogo.Name = "ButtonCatálogo"
-        Me.ButtonCatálogo.Size = New System.Drawing.Size(104, 67)
+        Me.ButtonCatálogo.Size = New System.Drawing.Size(139, 82)
         Me.ButtonCatálogo.TabIndex = 13
         Me.ButtonCatálogo.Text = " Catálogo"
         Me.ButtonCatálogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -102,8 +105,9 @@ Partial Class CatalogoDeProductos
         Me.Button1.ForeColor = System.Drawing.SystemColors.Control
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.Location = New System.Drawing.Point(0, -1)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(104, 67)
+        Me.Button1.Size = New System.Drawing.Size(139, 82)
         Me.Button1.TabIndex = 15
         Me.Button1.Text = "Menu"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -117,9 +121,10 @@ Partial Class CatalogoDeProductos
         Me.ButtonPagos.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonPagos.ForeColor = System.Drawing.SystemColors.Control
         Me.ButtonPagos.Image = CType(resources.GetObject("ButtonPagos.Image"), System.Drawing.Image)
-        Me.ButtonPagos.Location = New System.Drawing.Point(0, 189)
+        Me.ButtonPagos.Location = New System.Drawing.Point(0, 233)
+        Me.ButtonPagos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonPagos.Name = "ButtonPagos"
-        Me.ButtonPagos.Size = New System.Drawing.Size(104, 67)
+        Me.ButtonPagos.Size = New System.Drawing.Size(139, 82)
         Me.ButtonPagos.TabIndex = 12
         Me.ButtonPagos.Text = "Pagos"
         Me.ButtonPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -133,9 +138,10 @@ Partial Class CatalogoDeProductos
         Me.ButtonVentas.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonVentas.ForeColor = System.Drawing.SystemColors.Control
         Me.ButtonVentas.Image = CType(resources.GetObject("ButtonVentas.Image"), System.Drawing.Image)
-        Me.ButtonVentas.Location = New System.Drawing.Point(0, 62)
+        Me.ButtonVentas.Location = New System.Drawing.Point(0, 76)
+        Me.ButtonVentas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonVentas.Name = "ButtonVentas"
-        Me.ButtonVentas.Size = New System.Drawing.Size(104, 67)
+        Me.ButtonVentas.Size = New System.Drawing.Size(139, 82)
         Me.ButtonVentas.TabIndex = 10
         Me.ButtonVentas.Text = "Ventas"
         Me.ButtonVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -149,9 +155,10 @@ Partial Class CatalogoDeProductos
         Me.ButtonUsuarios.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonUsuarios.ForeColor = System.Drawing.SystemColors.Control
         Me.ButtonUsuarios.Image = CType(resources.GetObject("ButtonUsuarios.Image"), System.Drawing.Image)
-        Me.ButtonUsuarios.Location = New System.Drawing.Point(0, 126)
+        Me.ButtonUsuarios.Location = New System.Drawing.Point(0, 155)
+        Me.ButtonUsuarios.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonUsuarios.Name = "ButtonUsuarios"
-        Me.ButtonUsuarios.Size = New System.Drawing.Size(104, 67)
+        Me.ButtonUsuarios.Size = New System.Drawing.Size(139, 82)
         Me.ButtonUsuarios.TabIndex = 11
         Me.ButtonUsuarios.Text = "Usuarios"
         Me.ButtonUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -163,9 +170,10 @@ Partial Class CatalogoDeProductos
         Me.MensajeDeBienvenida.Font = New System.Drawing.Font("Microsoft YaHei UI", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MensajeDeBienvenida.ForeColor = System.Drawing.SystemColors.ControlText
         Me.MensajeDeBienvenida.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.MensajeDeBienvenida.Location = New System.Drawing.Point(165, 25)
+        Me.MensajeDeBienvenida.Location = New System.Drawing.Point(220, 31)
+        Me.MensajeDeBienvenida.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MensajeDeBienvenida.Name = "MensajeDeBienvenida"
-        Me.MensajeDeBienvenida.Size = New System.Drawing.Size(502, 56)
+        Me.MensajeDeBienvenida.Size = New System.Drawing.Size(669, 69)
         Me.MensajeDeBienvenida.TabIndex = 2
         Me.MensajeDeBienvenida.Text = "Catálogo Zar"
         '
@@ -175,9 +183,10 @@ Partial Class CatalogoDeProductos
         Me.ButtonAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonAddProduct.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonAddProduct.ForeColor = System.Drawing.SystemColors.Control
-        Me.ButtonAddProduct.Location = New System.Drawing.Point(695, 25)
+        Me.ButtonAddProduct.Location = New System.Drawing.Point(927, 31)
+        Me.ButtonAddProduct.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonAddProduct.Name = "ButtonAddProduct"
-        Me.ButtonAddProduct.Size = New System.Drawing.Size(185, 45)
+        Me.ButtonAddProduct.Size = New System.Drawing.Size(247, 55)
         Me.ButtonAddProduct.TabIndex = 8
         Me.ButtonAddProduct.Text = "Añadir Producto"
         Me.ButtonAddProduct.UseVisualStyleBackColor = False
@@ -187,9 +196,11 @@ Partial Class CatalogoDeProductos
         Me.DGVCatalogo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVCatalogo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGVCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVCatalogo.Location = New System.Drawing.Point(148, 104)
+        Me.DGVCatalogo.Location = New System.Drawing.Point(197, 128)
+        Me.DGVCatalogo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DGVCatalogo.Name = "DGVCatalogo"
-        Me.DGVCatalogo.Size = New System.Drawing.Size(727, 327)
+        Me.DGVCatalogo.RowHeadersWidth = 51
+        Me.DGVCatalogo.Size = New System.Drawing.Size(969, 402)
         Me.DGVCatalogo.TabIndex = 17
         '
         'Button2
@@ -198,19 +209,20 @@ Partial Class CatalogoDeProductos
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Location = New System.Drawing.Point(495, 25)
+        Me.Button2.Location = New System.Drawing.Point(660, 31)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(185, 45)
+        Me.Button2.Size = New System.Drawing.Size(247, 55)
         Me.Button2.TabIndex = 18
         Me.Button2.Text = "Actualizar"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'CatalogoDeProductos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(938, 443)
+        Me.ClientSize = New System.Drawing.Size(1251, 545)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.DGVCatalogo)
         Me.Controls.Add(Me.ButtonAddProduct)
@@ -223,6 +235,8 @@ Partial Class CatalogoDeProductos
         Me.Controls.Add(Me.ButtonVentas)
         Me.Controls.Add(Me.ButtonUsuarios)
         Me.Controls.Add(Me.VScrollBar1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "CatalogoDeProductos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Catalogo De Productos"

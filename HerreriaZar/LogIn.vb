@@ -11,7 +11,7 @@ Public Class LogIn
 
 
 
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         comando.Connection = cnx
 
         'Probar conexion'

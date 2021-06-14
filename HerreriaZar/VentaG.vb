@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class VentaG
-    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+    Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
     'zP8HlxqCBwCFHcHz
     'Eber844@
     Private Sub Label1_Click(sender As Object, e As EventArgs)
@@ -12,7 +12,7 @@ Public Class VentaG
     End Sub
 
     Private Sub CargarDatosc()
-        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim cnx As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
 
 
         Dim lista As Byte
@@ -49,7 +49,7 @@ where usuario = '" & TextBox1.Text & "'", cnx)
 
     Public Sub cargarcomboproducto()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         Dim consulta As String = "SELECT id, descripcion FROM catalogo_productos"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -62,7 +62,7 @@ where usuario = '" & TextBox1.Text & "'", cnx)
 
     Public Sub cargarcombocliente()
         Dim dt As New DataTable
-        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =zP8HlxqCBwCFHcHz")
+        Dim con As New MySqlConnection("Server = localhost; Database = herreriazar; Uid = root; Pwd =Eber844@")
         Dim consulta As String = "SELECT id, nombre FROM catalogo_clientes"
         Dim comando As New MySqlDataAdapter(consulta, con)
         comando.Fill(dt)
@@ -242,7 +242,7 @@ where usuario = '" & TextBox1.Text & "'", cnx)
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        Call Eliminar()
+        Dim command As New MySqlCommand("DELETE FROM venta_especifica WHERE id = " & TextBoxid.Text & "", cnx)
         Call CargarDatos()
 
         TextBoxAlto.Text = ""
@@ -255,19 +255,7 @@ where usuario = '" & TextBox1.Text & "'", cnx)
 
     End Sub
 
-    Private Sub Eliminar()
-        If cnx.State = ConnectionState.Closed Then
-            cnx.Open()
-        End If
-        Dim command As New MySqlCommand("DELETE FROM venta_especifica WHERE id = @id", cnx)
 
-        command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
-
-        MsgBox("Producto eliminado", MsgBoxStyle.Information, "Confirmar")
-        If cnx.State = ConnectionState.Open Then
-            cnx.Close()
-        End If
-    End Sub
 
     Private Sub DGVventa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVventa.CellContentClick
         Dim renglon As Integer

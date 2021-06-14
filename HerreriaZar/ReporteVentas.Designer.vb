@@ -252,6 +252,7 @@ Partial Class ReporteVentas
         Me.Controls.Add(Me.ButtonPagos)
         Me.Controls.Add(Me.ButtonVentas)
         Me.Controls.Add(Me.ButtonUsuarios)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ReporteVentas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

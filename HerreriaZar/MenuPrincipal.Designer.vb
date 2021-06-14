@@ -37,9 +37,9 @@ Partial Class MenuPrincipal
         '
         'VScrollBar1
         '
-        Me.VScrollBar1.Location = New System.Drawing.Point(911, 55)
+        Me.VScrollBar1.Location = New System.Drawing.Point(1215, 68)
         Me.VScrollBar1.Name = "VScrollBar1"
-        Me.VScrollBar1.Size = New System.Drawing.Size(22, 432)
+        Me.VScrollBar1.Size = New System.Drawing.Size(22, 532)
         Me.VScrollBar1.TabIndex = 4
         '
         'ButtonReporte
@@ -50,9 +50,10 @@ Partial Class MenuPrincipal
         Me.ButtonReporte.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonReporte.ForeColor = System.Drawing.SystemColors.ControlText
         Me.ButtonReporte.Image = CType(resources.GetObject("ButtonReporte.Image"), System.Drawing.Image)
-        Me.ButtonReporte.Location = New System.Drawing.Point(529, 279)
+        Me.ButtonReporte.Location = New System.Drawing.Point(705, 343)
+        Me.ButtonReporte.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonReporte.Name = "ButtonReporte"
-        Me.ButtonReporte.Size = New System.Drawing.Size(122, 108)
+        Me.ButtonReporte.Size = New System.Drawing.Size(163, 133)
         Me.ButtonReporte.TabIndex = 14
         Me.ButtonReporte.Text = "  Reporte "
         Me.ButtonReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -66,9 +67,10 @@ Partial Class MenuPrincipal
         Me.ButtonPedidos.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonPedidos.ForeColor = System.Drawing.SystemColors.ControlText
         Me.ButtonPedidos.Image = CType(resources.GetObject("ButtonPedidos.Image"), System.Drawing.Image)
-        Me.ButtonPedidos.Location = New System.Drawing.Point(60, 279)
+        Me.ButtonPedidos.Location = New System.Drawing.Point(80, 343)
+        Me.ButtonPedidos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonPedidos.Name = "ButtonPedidos"
-        Me.ButtonPedidos.Size = New System.Drawing.Size(122, 108)
+        Me.ButtonPedidos.Size = New System.Drawing.Size(163, 133)
         Me.ButtonPedidos.TabIndex = 16
         Me.ButtonPedidos.Text = "Pedidos"
         Me.ButtonPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -82,9 +84,10 @@ Partial Class MenuPrincipal
         Me.ButtonCatálogo.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonCatálogo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.ButtonCatálogo.Image = CType(resources.GetObject("ButtonCatálogo.Image"), System.Drawing.Image)
-        Me.ButtonCatálogo.Location = New System.Drawing.Point(291, 279)
+        Me.ButtonCatálogo.Location = New System.Drawing.Point(388, 343)
+        Me.ButtonCatálogo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonCatálogo.Name = "ButtonCatálogo"
-        Me.ButtonCatálogo.Size = New System.Drawing.Size(122, 108)
+        Me.ButtonCatálogo.Size = New System.Drawing.Size(163, 133)
         Me.ButtonCatálogo.TabIndex = 13
         Me.ButtonCatálogo.Text = " Catálogo"
         Me.ButtonCatálogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -98,9 +101,10 @@ Partial Class MenuPrincipal
         Me.ButtonPagos.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonPagos.ForeColor = System.Drawing.SystemColors.ControlText
         Me.ButtonPagos.Image = CType(resources.GetObject("ButtonPagos.Image"), System.Drawing.Image)
-        Me.ButtonPagos.Location = New System.Drawing.Point(529, 137)
+        Me.ButtonPagos.Location = New System.Drawing.Point(705, 169)
+        Me.ButtonPagos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonPagos.Name = "ButtonPagos"
-        Me.ButtonPagos.Size = New System.Drawing.Size(122, 108)
+        Me.ButtonPagos.Size = New System.Drawing.Size(163, 133)
         Me.ButtonPagos.TabIndex = 12
         Me.ButtonPagos.Text = "Pagos"
         Me.ButtonPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -114,9 +118,10 @@ Partial Class MenuPrincipal
         Me.ButtonVentas.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonVentas.ForeColor = System.Drawing.SystemColors.ControlText
         Me.ButtonVentas.Image = CType(resources.GetObject("ButtonVentas.Image"), System.Drawing.Image)
-        Me.ButtonVentas.Location = New System.Drawing.Point(60, 137)
+        Me.ButtonVentas.Location = New System.Drawing.Point(80, 169)
+        Me.ButtonVentas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonVentas.Name = "ButtonVentas"
-        Me.ButtonVentas.Size = New System.Drawing.Size(122, 108)
+        Me.ButtonVentas.Size = New System.Drawing.Size(163, 133)
         Me.ButtonVentas.TabIndex = 10
         Me.ButtonVentas.Text = "Ventas"
         Me.ButtonVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -130,9 +135,10 @@ Partial Class MenuPrincipal
         Me.ButtonUsuarios.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonUsuarios.ForeColor = System.Drawing.SystemColors.ControlText
         Me.ButtonUsuarios.Image = CType(resources.GetObject("ButtonUsuarios.Image"), System.Drawing.Image)
-        Me.ButtonUsuarios.Location = New System.Drawing.Point(291, 137)
+        Me.ButtonUsuarios.Location = New System.Drawing.Point(388, 169)
+        Me.ButtonUsuarios.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonUsuarios.Name = "ButtonUsuarios"
-        Me.ButtonUsuarios.Size = New System.Drawing.Size(122, 108)
+        Me.ButtonUsuarios.Size = New System.Drawing.Size(163, 133)
         Me.ButtonUsuarios.TabIndex = 11
         Me.ButtonUsuarios.Text = "Usuarios"
         Me.ButtonUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -144,9 +150,10 @@ Partial Class MenuPrincipal
         Me.LabelVentaEspe.BackColor = System.Drawing.Color.White
         Me.LabelVentaEspe.Font = New System.Drawing.Font("Microsoft YaHei UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelVentaEspe.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(93, Byte), Integer))
-        Me.LabelVentaEspe.Location = New System.Drawing.Point(117, 51)
+        Me.LabelVentaEspe.Location = New System.Drawing.Point(156, 63)
+        Me.LabelVentaEspe.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelVentaEspe.Name = "LabelVentaEspe"
-        Me.LabelVentaEspe.Size = New System.Drawing.Size(480, 46)
+        Me.LabelVentaEspe.Size = New System.Drawing.Size(609, 58)
         Me.LabelVentaEspe.TabIndex = 17
         Me.LabelVentaEspe.Text = "Bienvenido a Herrería Zar!"
         '
@@ -156,9 +163,10 @@ Partial Class MenuPrincipal
         Me.ButtonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonProfile.ForeColor = System.Drawing.SystemColors.Control
         Me.ButtonProfile.Image = CType(resources.GetObject("ButtonProfile.Image"), System.Drawing.Image)
-        Me.ButtonProfile.Location = New System.Drawing.Point(665, 12)
+        Me.ButtonProfile.Location = New System.Drawing.Point(887, 15)
+        Me.ButtonProfile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ButtonProfile.Name = "ButtonProfile"
-        Me.ButtonProfile.Size = New System.Drawing.Size(41, 39)
+        Me.ButtonProfile.Size = New System.Drawing.Size(55, 48)
         Me.ButtonProfile.TabIndex = 2
         Me.ButtonProfile.UseVisualStyleBackColor = True
         '
@@ -167,17 +175,18 @@ Partial Class MenuPrincipal
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.TextBox1.Location = New System.Drawing.Point(587, 24)
+        Me.TextBox1.Location = New System.Drawing.Point(783, 30)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 14)
+        Me.TextBox1.Size = New System.Drawing.Size(133, 18)
         Me.TextBox1.TabIndex = 19
         '
         'MenuPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 401)
+        Me.ClientSize = New System.Drawing.Size(957, 494)
         Me.Controls.Add(Me.LabelVentaEspe)
         Me.Controls.Add(Me.ButtonReporte)
         Me.Controls.Add(Me.ButtonPedidos)
@@ -189,6 +198,8 @@ Partial Class MenuPrincipal
         Me.Controls.Add(Me.ButtonProfile)
         Me.Controls.Add(Me.TextBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "MenuPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Herreria Zar"
