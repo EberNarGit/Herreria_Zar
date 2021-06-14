@@ -242,7 +242,7 @@ where usuario = '" & TextBox1.Text & "'", cnx)
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        Dim command As New MySqlCommand("DELETE FROM venta_especifica WHERE id = " & TextBoxid.Text & "", cnx)
+
         Call CargarDatos()
 
         TextBoxAlto.Text = ""
@@ -255,6 +255,20 @@ where usuario = '" & TextBox1.Text & "'", cnx)
 
     End Sub
 
+    Private Sub Eliminar()
+
+
+        cnx.Open()
+
+        Dim command As New MySqlCommand("DELETE FROM venta_especifica WHERE id = " & TextBoxid.Text & "", cnx)
+
+        command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
+
+        MsgBox("Producto eliminado", MsgBoxStyle.Information, "Confirmar")
+
+        cnx.Close()
+
+    End Sub
 
 
     Private Sub DGVventa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVventa.CellContentClick
