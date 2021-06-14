@@ -242,12 +242,10 @@ where usuario = '" & TextBox1.Text & "'", cnx)
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-<<<<<<< HEAD
+
 
         Call CargarDatos()
-=======
-        'Call Eliminar()
-        'Call CargarDatos()
+
         Try
             Dim command As New MySqlCommand(" delete FROM `venta_especifica` WHERE id=@id", cnx)
 
@@ -260,7 +258,7 @@ where usuario = '" & TextBox1.Text & "'", cnx)
                 MessageBox.Show("Producto Eliminado")
 
             Else
->>>>>>> 61815bc44924f38c6cf64bce94bb83c2f8bba230
+
 
                 MessageBox.Show("ERROR")
 
@@ -296,35 +294,7 @@ where usuario = '" & TextBox1.Text & "'", cnx)
 
     End Sub
 
-    Private Sub Eliminar()
-<<<<<<< HEAD
 
-
-        cnx.Open()
-
-        Dim command As New MySqlCommand("DELETE FROM venta_especifica WHERE id = " & TextBoxid.Text & "", cnx)
-=======
->>>>>>> 61815bc44924f38c6cf64bce94bb83c2f8bba230
-
-        ' If cnx.State = ConnectionState.Closed Then
-        'cnx.Open()
-        'End If
-        'Dim command As New MySqlCommand(" delete FROM `venta_especifica` WHERE id=@id", cnx)
-
-<<<<<<< HEAD
-        MsgBox("Producto eliminado", MsgBoxStyle.Information, "Confirmar")
-
-        cnx.Close()
-
-=======
-        'Command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
-
-        'MsgBox("Producto eliminado", MsgBoxStyle.Information, "Confirmar")
-        'If cnx.State = ConnectionState.Open Then
-        'cnx.Close()
-        'End If
->>>>>>> 61815bc44924f38c6cf64bce94bb83c2f8bba230
-    End Sub
 
 
     Private Sub DGVventa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVventa.CellContentClick
