@@ -242,9 +242,45 @@ where usuario = '" & TextBox1.Text & "'", cnx)
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        Call Eliminar()
-        Call CargarDatos()
+        'Call Eliminar()
+        'Call CargarDatos()
+        Try
+            Dim command As New MySqlCommand(" delete FROM `venta_especifica` WHERE id=@id", cnx)
 
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
+
+            cnx.Open()
+
+            If command.ExecuteNonQuery() = 1 Then
+
+                MessageBox.Show("Producto Eliminado")
+
+            Else
+
+                MessageBox.Show("ERROR")
+
+            End If
+        Catch ex As MySql.Data.MySqlClient.MySqlException
+            Select Case ex.Number
+                Case 1451
+                    MsgBox("Error, selecciona un empleado a eliminar")
+
+            End Select
+
+        End Try
+
+        Dim datos As New MySqlDataAdapter("SELECT ve.id, cp.descripcion,ve.alto,ve.largo,ve.ancho,ve.color, ve.cantidad, ve.precio 
+        From venta_especifica As ve
+        Join venta_general As vg
+        On vg.id = ve.venta_general_fk
+        Join catalogo_productos As cp
+        On cp.id = ve.productos_fk
+        Where vg.id In(Select MAX(id) from venta_general)", cnx)
+        Dim ds As New DataSet()
+        datos.Fill(ds, "venta_especifica")
+
+        Me.DGVventa.DataSource = ds.Tables("venta_especifica")
+        cnx.Close()
         TextBoxAlto.Text = ""
         TextBoxAncho.Text = ""
         TextBoxColor.Text = ""
@@ -256,17 +292,18 @@ where usuario = '" & TextBox1.Text & "'", cnx)
     End Sub
 
     Private Sub Eliminar()
-        If cnx.State = ConnectionState.Closed Then
-            cnx.Open()
-        End If
-        Dim command As New MySqlCommand("DELETE FROM venta_especifica WHERE id = @id", cnx)
 
-        command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
+        ' If cnx.State = ConnectionState.Closed Then
+        'cnx.Open()
+        'End If
+        'Dim command As New MySqlCommand(" delete FROM `venta_especifica` WHERE id=@id", cnx)
 
-        MsgBox("Producto eliminado", MsgBoxStyle.Information, "Confirmar")
-        If cnx.State = ConnectionState.Open Then
-            cnx.Close()
-        End If
+        'Command.Parameters.Add("@id", MySqlDbType.VarChar).Value = TextBoxid.Text
+
+        'MsgBox("Producto eliminado", MsgBoxStyle.Information, "Confirmar")
+        'If cnx.State = ConnectionState.Open Then
+        'cnx.Close()
+        'End If
     End Sub
 
     Private Sub DGVventa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVventa.CellContentClick
